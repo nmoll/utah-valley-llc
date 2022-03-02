@@ -1,5 +1,5 @@
 import { css, html, LitElement } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, state } from "lit/decorators.js";
 import { map } from "lit/directives/map.js";
 import "./bible-class-leader-icon-element";
 import "./pianist-icon-element";
@@ -18,6 +18,31 @@ interface Day {
   isToday: boolean;
   event: Event | null;
 }
+
+const weekDayNames: Record<number, string> = {
+  0: "Sunday",
+  1: "Monday",
+  2: "Tuesday",
+  3: "Wednesday",
+  4: "Thursday",
+  5: "Friday",
+  6: "Saturday",
+};
+
+const monthNames: Record<number, string> = {
+  1: "Jan",
+  2: "Feb",
+  3: "Mar",
+  4: "Apr",
+  5: "May",
+  6: "Jun",
+  7: "Jul",
+  8: "Aug",
+  9: "Sep",
+  10: "Oct",
+  11: "Nov",
+  12: "Dec",
+};
 
 const events: Record<string, Event> = {
   "2-2": {
@@ -82,8 +107,17 @@ export class UtahCalendarElement extends LitElement {
     .calendar {
       display: grid;
       grid-template-columns: repeat(7, minmax(0, 1fr));
+      grid-auto-rows: 1fr;
       width: 100%;
       height: 100%;
+    }
+
+    .calendar.mobile {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .calendar.mobile .day {
+      min-height: 130px;
     }
 
     .day {
@@ -98,6 +132,11 @@ export class UtahCalendarElement extends LitElement {
       background: #e5e7eb;
     }
 
+    .day-marker {
+      text-align: center;
+      color: gray;
+    }
+
     .event-detail {
       display: flex;
       gap: 0.5rem;
@@ -107,27 +146,63 @@ export class UtahCalendarElement extends LitElement {
 
     .today {
       background: #fda4af;
-      display: flex;
+      color: black;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       width: 1.5rem;
       height: 1.5rem;
       border-radius: 50%;
+      position: relative;
+    }
+
+    .week-day-name {
+      position: absolute;
+      right: 10px;
     }
   `;
 
   days = Array.from(new Array(35)).map((_, idx) => idx);
 
+  @state()
+  isMobile = false;
+
+  constructor() {
+    super();
+
+    this.isMobile = document.body.getBoundingClientRect().width < 600;
+
+    let resizeTimer = 0;
+
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        console.log("resize");
+        this.isMobile = document.body.getBoundingClientRect().width < 600;
+      }, 250);
+    });
+  }
+
   render() {
     return html`
-      <div class="calendar">
+      <div class="calendar ${this.isMobile ? "mobile" : ""}">
         ${map(
           this.buildDays(),
           (day) =>
             html`<div class="day ${day.isCurrentMonth ? "" : "gray"}">
-              <span class="${day.isToday ? "today" : ""}"
-                >${day.isCurrentMonth ? day.date.getDate() : ""}</span
-              >
+              <span class="day-marker">
+                ${this.isMobile
+                  ? html`
+                  ${monthNames[day.date.getMonth()]} ${day.date.getDate()}
+                  </span>
+                  <span class="week-day-name">
+                      ${weekDayNames[day.date.getDay()]}<span>
+                      </span>
+                    `
+                  : html`<span class="${day.isToday ? "today" : ""}"
+                      >${day.isCurrentMonth ? day.date.getDate() : ""}</span
+                    >`}
+              </span>
               ${day.event
                 ? html`
                     <span>${day.event.description}</span>
@@ -176,6 +251,10 @@ export class UtahCalendarElement extends LitElement {
         isToday,
         event: events[`${date.getMonth()}-${date.getDate()}`] ?? null,
       });
+    }
+
+    if (this.isMobile) {
+      return result.filter((day) => !!day.event);
     }
     return result;
   }
