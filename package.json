@@ -2,11 +2,6 @@
   "name": "utah-valley-llc",
   "private": true,
   "version": "0.0.0",
-  "main": "dist/utah-calendar-element.es.js",
-  "exports": {
-    ".": "./dist/utah-calendar-element.es.js"
-  },
-  "types": "types/utah-calendar-element.d.ts",
   "files": [
     "dist",
     "types"
