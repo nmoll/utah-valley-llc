@@ -30,18 +30,18 @@ const weekDayNames: Record<number, string> = {
 };
 
 const monthNames: Record<number, string> = {
-  1: "Jan",
-  2: "Feb",
-  3: "Mar",
-  4: "Apr",
-  5: "May",
-  6: "Jun",
-  7: "Jul",
-  8: "Aug",
-  9: "Sep",
-  10: "Oct",
-  11: "Nov",
-  12: "Dec",
+  0: "Jan",
+  1: "Feb",
+  2: "Mar",
+  3: "Apr",
+  4: "May",
+  5: "Jun",
+  6: "Jul",
+  7: "Aug",
+  8: "Sep",
+  9: "Oct",
+  10: "Nov",
+  11: "Dec",
 };
 
 const events: Record<string, Event> = {
@@ -104,12 +104,20 @@ export class UtahCalendarElement extends LitElement {
       height: 100%;
     }
 
+    .header {
+      text-align: center;
+      width: 100%;
+      background: #0e7490;
+      padding: 0.75rem;
+      color: white;
+    }
+
     .calendar {
       display: grid;
       grid-template-columns: repeat(7, minmax(0, 1fr));
       grid-auto-rows: 1fr;
       width: 100%;
-      height: 100%;
+      height: calc(100% - 38px);
     }
 
     .calendar.mobile {
@@ -123,6 +131,7 @@ export class UtahCalendarElement extends LitElement {
     .day {
       border: 1px solid #e5e7eb;
       padding: 0.25rem;
+      padding-left: 0.5rem;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
@@ -132,16 +141,10 @@ export class UtahCalendarElement extends LitElement {
       background: #e5e7eb;
     }
 
-    .day-marker {
-      text-align: center;
-      color: gray;
-    }
-
     .event-detail {
       display: flex;
       gap: 0.5rem;
       align-items: center;
-      margin-left: 0.5rem;
     }
 
     .today {
@@ -156,9 +159,28 @@ export class UtahCalendarElement extends LitElement {
       position: relative;
     }
 
-    .week-day-name {
-      position: absolute;
-      right: 10px;
+    .flex {
+      display: flex;
+    }
+
+    .text-gray {
+      color: gray;
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .bold {
+      font-weight: 500;
     }
   `;
 
@@ -170,7 +192,7 @@ export class UtahCalendarElement extends LitElement {
   constructor() {
     super();
 
-    this.isMobile = document.body.getBoundingClientRect().width < 600;
+    this.isMobile = document.body.getBoundingClientRect().width < 768;
 
     let resizeTimer = 0;
 
@@ -178,34 +200,36 @@ export class UtahCalendarElement extends LitElement {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
         console.log("resize");
-        this.isMobile = document.body.getBoundingClientRect().width < 600;
+        this.isMobile = document.body.getBoundingClientRect().width < 768;
       }, 250);
     });
   }
 
   render() {
     return html`
+      <div class="header">Utah Valley LLC Schedule</div>
       <div class="calendar ${this.isMobile ? "mobile" : ""}">
         ${map(
           this.buildDays(),
           (day) =>
             html`<div class="day ${day.isCurrentMonth ? "" : "gray"}">
-              <span class="day-marker">
-                ${this.isMobile
-                  ? html`
-                  ${monthNames[day.date.getMonth()]} ${day.date.getDate()}
-                  </span>
-                  <span class="week-day-name">
-                      ${weekDayNames[day.date.getDay()]}<span>
+              ${this.isMobile
+                ? html`
+                    <span class="flex justify-between text-gray text-sm">
+                      <span>${weekDayNames[day.date.getDay()]}</span>
+                      <span>
+                        ${monthNames[day.date.getMonth()]} ${day.date.getDate()}
                       </span>
-                    `
-                  : html`<span class="${day.isToday ? "today" : ""}"
+                    </span>
+                  `
+                : html`<span class="text-gray text-center"
+                    ><span class="${day.isToday ? "today" : ""}"
                       >${day.isCurrentMonth ? day.date.getDate() : ""}</span
-                    >`}
-              </span>
+                    ><span></span
+                  ></span>`}
               ${day.event
                 ? html`
-                    <span>${day.event.description}</span>
+                    <span class="bold">${day.event.description}</span>
                     <span class="event-detail">
                       <utah-service-host-icon></utah-service-host-icon>
                       ${day.event.host}
