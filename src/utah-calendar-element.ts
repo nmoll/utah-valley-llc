@@ -106,7 +106,6 @@ export class UtahCalendarElement extends LitElement {
 
     .header {
       text-align: center;
-      width: 100%;
       background: #0e7490;
       padding: 0.75rem;
       color: white;
