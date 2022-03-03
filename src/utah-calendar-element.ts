@@ -53,24 +53,24 @@ const events: Record<string, Event> = {
   "2-6": {
     description: "10:30am Services",
     host: "Kenton & Katie",
-    pianists: ["Tristan"],
+    pianists: ["Haley B"],
   },
   "2-9": {
     description: "7pm Bible Class",
     host: "Bryce & Emily",
     bibleClass: "Eric",
-    pianists: ["Haley B"],
+    pianists: ["Hayley S"],
   },
   "2-13": {
     description: "10:30am Services",
     host: "Trav & Hayley",
-    pianists: ["Hayley S"],
+    pianists: ["Nate"],
   },
   "2-16": {
     description: "7pm Bible Class",
     host: "Eric & Janell",
     bibleClass: "Matt",
-    pianists: ["Nate"],
+    pianists: ["Tristan"],
   },
   "2-20": {
     description: "10:30am Services",
@@ -81,18 +81,18 @@ const events: Record<string, Event> = {
     description: "7pm Bible Class",
     host: "Draper Guys",
     bibleClass: "Chad",
-    pianists: ["Tristan"],
+    pianists: ["Haley B"],
   },
   "2-27": {
     description: "10:30am Services",
     host: "Eric & Janell",
-    pianists: ["Haley B"],
+    pianists: ["Hayley S"],
   },
   "2-30": {
     description: "7pm Bible Class",
     host: "Matt, Chad, Alan",
     bibleClass: "Cody",
-    pianists: ["Haley S"],
+    pianists: ["Tristan"],
   },
 };
 
