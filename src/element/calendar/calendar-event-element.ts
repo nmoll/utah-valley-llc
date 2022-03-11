@@ -33,19 +33,19 @@ export class UtahCalendarEventElement extends LitElement {
       <span class="bold">${this.event.description}</span>
       <span class="event-detail">
         <utah-service-host-icon></utah-service-host-icon>
-        ${this.event.host}
+        ${this.event.host.name}
       </span>
-      ${this.event.bibleClass
+      ${this.event.bibleClassLeader
         ? html`
             <span class="event-detail">
               <utah-bible-class-leader-icon></utah-bible-class-leader-icon>
-              ${this.event.bibleClass}
+              ${this.event.bibleClassLeader.name}
             </span>
           `
         : ""}
       <span class="event-detail">
         <utah-pianist-icon></utah-pianist-icon>
-        ${this.event.pianists.join(", ")}
+        ${this.event.pianists.map((p) => p.name).join(", ")}
       </span>
     `;
   }

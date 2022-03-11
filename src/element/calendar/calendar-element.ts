@@ -1,8 +1,10 @@
+import * as dayjs from "dayjs";
+import { Dayjs } from "dayjs";
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { map } from "lit/directives/map.js";
-import { CalendarEvents } from "../../model/calendar-event.model";
-import { CalendarUtil } from "../../util/calendar.util";
+import { CalendarEvent } from "../../model/calendar-event.model";
+import { ScheduleUtil } from "../../util/schedule.util";
 import "./calendar-event-element";
 
 @customElement("utah-calendar")
@@ -48,32 +50,41 @@ export class UtahCalendarElement extends LitElement {
   `;
 
   @property()
-  events!: CalendarEvents;
+  events!: CalendarEvent[];
 
   render() {
-    const days = CalendarUtil.buildDays(this.events);
-
     return html`
-      ${map(
-        days,
-        (day) => html`
-          <div class="day ${day.isCurrentMonth ? "" : "gray"}">
+      ${map(this.getWeeks(), (date) => {
+        const event = this.events.find((event) =>
+          event.date.isSame(date, "day")
+        );
+        return html`
+          <div class="day ${date.isSame(dayjs(), "month") ? "" : "gray"}">
             ${html`
               <span class="day-label">
-                <span class="${day.isToday ? "today-marker" : ""}">
-                  ${day.isCurrentMonth ? day.date.getDate() : ""}
+                <span
+                  class="${date.isSame(dayjs(), "day") ? "today-marker" : ""}"
+                >
+                  ${date.date()}
                 </span>
               </span>
             `}
-            ${day.event
+            ${event
               ? html`<utah-calendar-event
-                  .event="${day.event}"
+                  .event="${event}"
                 ></utah-calendar-event>`
               : ""}
           </div>
-        `
-      )}
+        `;
+      })}
     `;
+  }
+
+  private getWeeks(): Dayjs[] {
+    const start = dayjs().startOf("month").startOf("week");
+    const end = start.add(33, "day");
+
+    return ScheduleUtil.getDatesBetween(start, end);
   }
 }
 

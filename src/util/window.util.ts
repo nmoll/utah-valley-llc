@@ -1,7 +1,7 @@
 const MOBILE_BREAKPOINT = 768;
 
 const resize = (callback: Function) => {
-  let resizeTimer = 0;
+  let resizeTimer: any = null;
 
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);

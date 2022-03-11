@@ -1,8 +1,8 @@
+import * as dayjs from "dayjs";
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { map } from "lit/directives/map.js";
-import { CalendarEvents } from "../../model/calendar-event.model";
-import { CalendarUtil } from "../../util/calendar.util";
+import { CalendarEvent } from "../../model/calendar-event.model";
 import "./calendar-event-element";
 
 @customElement("utah-calendar-mobile")
@@ -31,30 +31,20 @@ export class UtahCalendarMobileElement extends LitElement {
   `;
 
   @property()
-  events!: CalendarEvents;
+  events!: CalendarEvent[];
 
   render() {
-    const days = CalendarUtil.filterByFutureEvent(
-      CalendarUtil.buildDays(this.events)
-    );
-
     return html`
       ${map(
-        days,
-        (day) =>
+        this.events.filter((event) => !event.date.isBefore(dayjs(), "day")),
+        (event) =>
           html`
             <div class="day">
               <span class="day-label">
-                <span>${CalendarUtil.getWeekDayName(day.date)}</span>
-                <span>
-                  ${CalendarUtil.getMonthName(day.date)} ${day.date.getDate()}
-                </span>
+                <span>${event.date.format("ddd")}</span>
+                <span> ${event.date.format("MMM D")} </span>
               </span>
-              ${day.event
-                ? html`<utah-calendar-event
-                    .event="${day.event}"
-                  ></utah-calendar-event>`
-                : ""}
+              <utah-calendar-event .event="${event}"></utah-calendar-event>
             </div>
           `
       )}
