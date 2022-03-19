@@ -28,27 +28,50 @@ export class UtahCalendarMobileElement extends LitElement {
       font-size: 0.875rem;
       justify-content: space-between;
     }
+
+    utah-calendar-header {
+      position: sticky;
+      top: 0;
+    }
   `;
 
   @property()
   events!: CalendarEvent[];
 
   render() {
-    return html`
-      ${map(
-        this.events.filter((event) => !event.date.isBefore(dayjs(), "day")),
-        (event) =>
-          html`
-            <div class="day">
-              <span class="day-label">
-                <span>${event.date.format("ddd")}</span>
-                <span> ${event.date.format("MMM D")} </span>
-              </span>
-              <utah-calendar-event .event="${event}"></utah-calendar-event>
-            </div>
-          `
-      )}
-    `;
+    const futureEvents = this.events.filter(
+      (event) => !event.date.isBefore(dayjs(), "day")
+    );
+    const eventsByMonth = futureEvents.reduce<Record<string, CalendarEvent[]>>(
+      (result, event) => {
+        const monthName = event.date.format("MMMM");
+        const events = result[monthName] ?? [];
+        return {
+          ...result,
+          [monthName]: [...events, event],
+        };
+      },
+      {}
+    );
+
+    return map(
+      Object.keys(eventsByMonth),
+      (month) => html`<div>
+        <utah-calendar-header>${month}</utah-calendar-header> ${map(
+          eventsByMonth[month],
+          (event) =>
+            html`
+              <div class="day">
+                <span class="day-label">
+                  <span>${event.date.format("ddd")}</span>
+                  <span> ${event.date.format("MMM D")} </span>
+                </span>
+                <utah-calendar-event .event="${event}"></utah-calendar-event>
+              </div>
+            `
+        )}
+      </div>`
+    );
   }
 }
 
