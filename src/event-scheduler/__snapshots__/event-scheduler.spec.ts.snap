@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventScheduler scheduleAll() should schedule events between dates 1`] = `
+Array [
+  Sun Jan 2: 10:30am Service
+  Host: Host A
+  Pianists: Pianist A
+  Bible Class: 
+,
+  Wed Jan 5: 7pm Song Services
+  Host: Host C
+  Pianists: Pianist B
+  Bible Class: 
+,
+  Sun Jan 9: 10:30am Service
+  Host: Host B
+  Pianists: Pianist C
+  Bible Class: 
+,
+  Wed Jan 12: 7pm Bible Class
+  Host: Host D
+  Pianists: Pianist D
+  Bible Class: BCL A
+,
+  Sun Jan 16: 10:30am Service
+  Host: Host C
+  Pianists: Pianist A
+  Bible Class: 
+,
+  Wed Jan 19: 7pm Bible Class
+  Host: Host A
+  Pianists: Pianist B
+  Bible Class: BCL B
+,
+  Sun Jan 23: 10:30am Service
+  Host: Host D
+  Pianists: Pianist C
+  Bible Class: 
+,
+  Wed Jan 26: 7pm Bible Class
+  Host: Host B
+  Pianists: Pianist D
+  Bible Class: BCL C
+,
+  Sun Jan 30: 10:30am Service
+  Host: Host A
+  Pianists: Pianist A
+  Bible Class: 
+,
+]
+`;

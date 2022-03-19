@@ -1,7 +1,8 @@
 import { Dayjs } from "dayjs";
 import { CalendarEvent } from "./calendar-event.model";
 
-export interface CalendarDay {
+export interface ScheduleUpdate {
   date: Dayjs;
-  event: CalendarEvent | null;
+  changes: Partial<CalendarEvent>;
+  twoPianists?: true;
 }
