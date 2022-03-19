@@ -20,8 +20,9 @@ export class UtahCalendarEventElement extends LitElement {
       align-items: center;
     }
 
-    .bold {
+    .event-description {
       font-weight: 500;
+      font-size: 1.125rem;
     }
   `;
 
@@ -30,7 +31,7 @@ export class UtahCalendarEventElement extends LitElement {
 
   render() {
     return html`
-      <span class="bold">${this.event.description}</span>
+      <span class="event-description">${this.event.description}</span>
       <span class="event-detail">
         <utah-service-host-icon></utah-service-host-icon>
         ${this.event.host.name}

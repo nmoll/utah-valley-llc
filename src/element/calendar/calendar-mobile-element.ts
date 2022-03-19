@@ -13,20 +13,40 @@ export class UtahCalendarMobileElement extends LitElement {
     }
 
     .day {
-      min-height: 130px;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       border: 1px solid #e5e7eb;
-      padding: 0.25rem;
-      padding-left: 0.5rem;
-      gap: 0.5rem;
+      padding: 1rem;
+      padding-left: 0;
+      padding-bottom: 1.5rem;
     }
 
     .day-label {
       display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      width: 6rem;
+    }
+
+    .day-label__name {
       color: gray;
-      font-size: 0.875rem;
-      justify-content: space-between;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .day-label__date {
+      font-size: 1.5rem;
+      color: #0f766e;
+    }
+
+    .day-details {
+      flex-grow: 1;
+    }
+
+    utah-calendar-event {
+      width: 100%;
     }
 
     utah-calendar-header {
@@ -62,11 +82,13 @@ export class UtahCalendarMobileElement extends LitElement {
           (event) =>
             html`
               <div class="day">
-                <span class="day-label">
-                  <span>${event.date.format("ddd")}</span>
-                  <span> ${event.date.format("MMM D")} </span>
-                </span>
-                <utah-calendar-event .event="${event}"></utah-calendar-event>
+                <div class="day-label">
+                  <div class="day-label__name">${event.date.format("ddd")}</div>
+                  <div class="day-label__date">${event.date.format("D")}</div>
+                </div>
+                <div class="day-details">
+                  <utah-calendar-event .event="${event}"></utah-calendar-event>
+                </div>
               </div>
             `
         )}
