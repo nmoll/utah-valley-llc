@@ -10,11 +10,13 @@ export class UtahCalendarHeaderElement extends LitElement {
       background: #0e7490;
       padding: 0.75rem;
       color: white;
+      filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+        drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     }
   `;
 
   render() {
-    return html`Utah Valley LLC Schedule `;
+    return html`<slot></slot>`;
   }
 }
 

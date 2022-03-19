@@ -49,14 +49,14 @@ export class UtahAppElement extends LitElement {
   }
 
   render() {
-    return html` <utah-calendar-header></utah-calendar-header>
-      ${this.isMobile
-        ? html`<utah-calendar-mobile
-            .events="${this.calendarEvents}"
-          ></utah-calendar-mobile>`
-        : html`<utah-calendar
-            .events="${this.calendarEvents}"
-          ></utah-calendar>`}`;
+    return html` ${this.isMobile
+      ? html`<utah-calendar-mobile
+          .events="${this.calendarEvents}"
+        ></utah-calendar-mobile>`
+      : html` <utah-calendar-header
+            >${dayjs().format("MMMM")}</utah-calendar-header
+          >
+          <utah-calendar .events="${this.calendarEvents}"></utah-calendar>`}`;
   }
 }
 
