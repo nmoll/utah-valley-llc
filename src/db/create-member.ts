@@ -1,4 +1,4 @@
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import { Member } from "../model/member";
 
 export const createMember = (

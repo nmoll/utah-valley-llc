@@ -1,4 +1,4 @@
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import { Member } from "../model/member";
 import { hosts, hostsByName } from "../test/mock-data";
 import { ScheduleUtil } from "./schedule.util";

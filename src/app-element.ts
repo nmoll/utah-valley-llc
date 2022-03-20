@@ -1,4 +1,4 @@
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import { css, html, LitElement } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { bibleClassLeaders } from "./db/bible-class-leaders";

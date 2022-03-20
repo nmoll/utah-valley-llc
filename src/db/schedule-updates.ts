@@ -1,4 +1,4 @@
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import { CalendarEvent } from "../model/calendar-event.model";
 import { ScheduleUpdate } from "../model/schedule-update.model";
 
