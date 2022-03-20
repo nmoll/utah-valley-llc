@@ -19,10 +19,6 @@ export class UtahAppElement extends LitElement {
       display: block;
       height: 100%;
     }
-
-    utah-calendar {
-      height: calc(100% - 38px);
-    }
   `;
 
   @state()
@@ -53,10 +49,9 @@ export class UtahAppElement extends LitElement {
       ? html`<utah-calendar-mobile
           .events="${this.calendarEvents}"
         ></utah-calendar-mobile>`
-      : html` <utah-calendar-header
-            >${dayjs().format("MMMM")}</utah-calendar-header
-          >
-          <utah-calendar .events="${this.calendarEvents}"></utah-calendar>`}`;
+      : html` <utah-calendar
+          .events="${this.calendarEvents}"
+        ></utah-calendar>`}`;
   }
 }
 
