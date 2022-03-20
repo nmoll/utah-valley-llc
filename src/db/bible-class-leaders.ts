@@ -5,6 +5,7 @@ export const bibleClassLeaders: Member[] = [
   createMember("Matt", "2022-03-01"),
   createMember("Eric", "2022-03-01"),
   createMember("Chad", "2022-03-01"),
+  createMember("Kenton", "2022-03-01"),
   createMember("Trav", "2022-03-01"),
   createMember("Cody", "2022-03-01"),
   createMember("Quincy", "2022-03-01"),

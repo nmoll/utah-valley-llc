@@ -44,8 +44,8 @@ export class UtahCalendarElement extends LitElement {
     }
 
     .today-marker {
-      background: #fda4af;
-      color: black;
+      background: var(--primary-800);
+      color: white;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -53,6 +53,7 @@ export class UtahCalendarElement extends LitElement {
       height: 1.5rem;
       border-radius: 50%;
       position: relative;
+      padding: 0.125rem;
     }
 
     .day-label {
@@ -61,14 +62,26 @@ export class UtahCalendarElement extends LitElement {
     }
 
     button {
-      background: transparent;
       border: 0;
       cursor: pointer;
+      border-radius: 50%;
+      background: var(--primary-700);
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .month-label {
       width: 6rem;
       display: inline-block;
+    }
+
+    @media print {
+      .today-marker {
+        color: inherit;
+      }
     }
   `;
 

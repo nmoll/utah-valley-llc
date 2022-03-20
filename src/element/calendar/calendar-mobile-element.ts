@@ -15,7 +15,7 @@ export class UtahCalendarMobileElement extends LitElement {
     .day {
       display: flex;
       flex-direction: row;
-      border: 1px solid #e5e7eb;
+      border: 1px solid rgb(241, 245, 249);
       padding: 1rem;
       padding-left: 0;
       padding-bottom: 1.5rem;

@@ -7,11 +7,18 @@ export class UtahCalendarHeaderElement extends LitElement {
     :host {
       display: block;
       text-align: center;
-      background: #115e59;
+      background: var(--primary-800);
       padding: 0.75rem;
       color: white;
       filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
         drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    }
+
+    @media print {
+      :host {
+        filter: none;
+        color: black;
+      }
     }
   `;
 
