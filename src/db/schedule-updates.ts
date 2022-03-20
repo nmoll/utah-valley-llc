@@ -17,7 +17,7 @@ const update = (
 export const scheduleUpdates: ScheduleUpdate[] = [
   update("2022-03-26", {
     changes: {
-      description: "7pm Bible Class - Daniel",
+      description: "7pm Bible Class (Dan)",
     },
   }),
   update("2022-03-27", {

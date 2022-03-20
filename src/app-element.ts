@@ -37,7 +37,7 @@ export class UtahAppElement extends LitElement {
 
   calendarEvents: CalendarEvent[] = this.eventScheduler.scheduleAll(
     dayjs().startOf("month"),
-    dayjs().add(1, "month").endOf("month")
+    dayjs().add(2, "month").endOf("month")
   );
 
   constructor() {

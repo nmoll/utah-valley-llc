@@ -26,8 +26,8 @@ export class UtahCalendarMobileElement extends LitElement {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 0.5rem;
-      width: 6rem;
+      gap: 0.25rem;
+      width: 7rem;
     }
 
     .day-label__name {
@@ -37,7 +37,7 @@ export class UtahCalendarMobileElement extends LitElement {
     }
 
     .day-label__date {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       color: #0f766e;
     }
 
