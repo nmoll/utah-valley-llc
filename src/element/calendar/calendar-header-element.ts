@@ -9,7 +9,9 @@ export class UtahCalendarHeaderElement extends LitElement {
       text-align: center;
       background: var(--slate-900);
       padding: 0.75rem;
-      color: var(--primary-500);
+      color: var(--primary-400);
+      font-weight: 200;
+      font-size: 1.25rem;
       filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
         drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     }

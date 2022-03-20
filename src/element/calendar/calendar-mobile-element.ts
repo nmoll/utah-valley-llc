@@ -34,11 +34,13 @@ export class UtahCalendarMobileElement extends LitElement {
       color: var(--slate-300);
       font-size: 0.75rem;
       text-transform: uppercase;
+      font-weight: 200;
     }
 
     .day-label__date {
       font-size: 1.75rem;
       color: var(--primary-400);
+      font-weight: 200;
     }
 
     .day-details {
