@@ -7,9 +7,9 @@ export class UtahCalendarHeaderElement extends LitElement {
     :host {
       display: block;
       text-align: center;
-      background: var(--primary-800);
+      background: var(--slate-900);
       padding: 0.75rem;
-      color: white;
+      color: var(--primary-500);
       filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
         drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     }

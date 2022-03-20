@@ -33,14 +33,14 @@ export class UtahCalendarElement extends LitElement {
     .day {
       display: flex;
       flex-direction: column;
-      border: 1px solid #e5e7eb;
+      border: 1px solid var(--slate-700);
       padding: 0.25rem;
       padding-left: 0.5rem;
       gap: 0.5rem;
     }
 
-    .day.gray {
-      background: #e5e7eb;
+    .day__out-of-month {
+      background: var(--slate-800);
     }
 
     .today-marker {
@@ -57,7 +57,7 @@ export class UtahCalendarElement extends LitElement {
     }
 
     .day-label {
-      color: gray;
+      color: var(--slate-300);
       text-align: center;
     }
 
@@ -65,12 +65,13 @@ export class UtahCalendarElement extends LitElement {
       border: 0;
       cursor: pointer;
       border-radius: 50%;
-      background: var(--primary-700);
+      background: var(--slate-800);
       width: 24px;
       height: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: var(--primary-300);
     }
 
     .month-label {
@@ -108,13 +109,15 @@ export class UtahCalendarElement extends LitElement {
             event.date.isSame(date, "day")
           );
           return html`
-            <div class="day ${date.isSame(this.month, "month") ? "" : "gray"}">
+            <div
+              class="day ${date.isSame(this.month, "month")
+                ? ""
+                : "day__out-of-month"}"
+            >
               ${html`
                 <span class="day-label">
                   <span
-                    class="${date.isSame(this.month, "day")
-                      ? "today-marker"
-                      : ""}"
+                    class="${date.isSame(dayjs(), "day") ? "today-marker" : ""}"
                   >
                     ${date.date()}
                   </span>

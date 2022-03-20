@@ -15,7 +15,7 @@ export class UtahCalendarMobileElement extends LitElement {
     .day {
       display: flex;
       flex-direction: row;
-      border: 1px solid rgb(241, 245, 249);
+      border: 1px solid var(--slate-800);
       padding: 1rem;
       padding-left: 0;
       padding-bottom: 1.5rem;
@@ -31,14 +31,14 @@ export class UtahCalendarMobileElement extends LitElement {
     }
 
     .day-label__name {
-      color: gray;
+      color: var(--slate-300);
       font-size: 0.75rem;
       text-transform: uppercase;
     }
 
     .day-label__date {
       font-size: 1.75rem;
-      color: #0f766e;
+      color: var(--primary-400);
     }
 
     .day-details {
