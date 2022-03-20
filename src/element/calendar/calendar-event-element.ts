@@ -19,7 +19,7 @@ export class UtahCalendarEventElement extends LitElement {
       gap: 0.5rem;
       align-items: center;
       color: var(--slate-300);
-      font-weight: 100;
+      font-weight: 200;
     }
 
     .event-description {
