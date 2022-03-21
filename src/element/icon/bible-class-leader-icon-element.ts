@@ -16,7 +16,7 @@ export class UtahBibleClassLeaderElement extends LitElement {
       height="16px"
       viewBox="0 0 24 24"
       width="16px"
-      fill="var(--slate-400)"
+      fill="var(--gray-400)"
     >
       <path d="M0 0h24v24H0z" fill="none" />
       <path

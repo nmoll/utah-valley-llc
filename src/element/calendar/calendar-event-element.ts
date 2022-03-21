@@ -18,13 +18,13 @@ export class UtahCalendarEventElement extends LitElement {
       display: flex;
       gap: 0.5rem;
       align-items: center;
-      color: var(--slate-300);
+      color: var(--gray-900);
       font-weight: 200;
     }
 
     .event-description {
       font-size: 1.125rem;
-      color: var(--slate-300);
+      color: var(--gray-900);
     }
   `;
 

@@ -33,18 +33,18 @@ export class UtahCalendarElement extends LitElement {
     .day {
       display: flex;
       flex-direction: column;
-      border: 1px solid var(--slate-700);
+      border: 1px solid var(--gray-200);
       padding: 0.25rem;
       padding-left: 0.5rem;
       gap: 0.5rem;
     }
 
     .day__out-of-month {
-      background: var(--slate-800);
+      background: var(--gray-100);
     }
 
     .today-marker {
-      background: var(--primary-800);
+      background: var(--primary-600);
       color: white;
       display: inline-flex;
       align-items: center;
@@ -57,7 +57,7 @@ export class UtahCalendarElement extends LitElement {
     }
 
     .day-label {
-      color: var(--slate-300);
+      color: var(--gray-400);
       text-align: center;
     }
 
@@ -65,13 +65,12 @@ export class UtahCalendarElement extends LitElement {
       border: 0;
       cursor: pointer;
       border-radius: 50%;
-      background: var(--slate-800);
+      background: var(--primary-600);
       width: 24px;
       height: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--primary-300);
     }
 
     .month-label {
@@ -82,6 +81,9 @@ export class UtahCalendarElement extends LitElement {
     @media print {
       .today-marker {
         color: inherit;
+      }
+      button {
+        display: none;
       }
     }
   `;

@@ -45,13 +45,11 @@ export class UtahAppElement extends LitElement {
   }
 
   render() {
-    return html` ${this.isMobile
+    return this.isMobile
       ? html`<utah-calendar-mobile
           .events="${this.calendarEvents}"
         ></utah-calendar-mobile>`
-      : html` <utah-calendar
-          .events="${this.calendarEvents}"
-        ></utah-calendar>`}`;
+      : html`<utah-calendar .events="${this.calendarEvents}"></utah-calendar>`;
   }
 }
 

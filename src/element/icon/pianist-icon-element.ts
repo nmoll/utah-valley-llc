@@ -17,7 +17,7 @@ export class UtahPianistIconElement extends LitElement {
       height="16px"
       viewBox="0 0 24 24"
       width="16px"
-      fill="var(--slate-400)"
+      fill="var(--gray-400)"
     >
       <rect fill="none" height="24" width="24" />
       <path

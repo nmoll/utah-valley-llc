@@ -15,7 +15,7 @@ export const hosts: Member[] = [
   createMember("Bryce & Emily", "2022-03-01"),
   createMember("Eric & Janell", "2022-03-01"),
   createMember("Draper Guys", "2022-03-01"),
-  createMember("Matt/Chad/Alan", "2022-03-01"),
+  createMember("Matt, Chad, Alan", "2022-03-01"),
   createMember("Quincy & Nora", "2022-03-01"),
   createMember("Cody & Briana", "2022-03-01"),
 ];
