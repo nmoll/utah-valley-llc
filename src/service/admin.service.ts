@@ -8,11 +8,16 @@ type MemberResponse = null | Array<{
   active?: string;
 } | null>;
 
+interface SerializedScheduleUpdateChanges {
+  description?: string;
+  host?: string;
+  pianists?: string;
+  bibleClassLeader?: string;
+}
+
 interface SerializedScheduleUpdate {
   date: string;
-  changes?: {
-    description?: string;
-  };
+  changes?: SerializedScheduleUpdateChanges;
   twoPianists?: true;
 }
 
@@ -37,7 +42,7 @@ export class AdminService {
 
   getBibleClassLeaders(): Promise<Member[]> {
     return this.httpService
-      .get<MemberResponse>(`${API}/bibleCLassLeaders.json`)
+      .get<MemberResponse>(`${API}/bibleClassLeaders.json`)
       .then(this.transformMembersResponse);
   }
 
@@ -99,23 +104,73 @@ export class AdminService {
 
     return scheduleUpdates
       .filter((update) => !!update)
-      .map((update) => ({
-        date: update?.date ? dayjs(update?.date) : dayjs(),
-        changes: {
-          ...(update?.changes?.description
-            ? { description: update?.changes?.description }
-            : {}),
-        },
-        ...(update?.twoPianists === true ? { twoPianists: true } : {}),
-      }));
+      .map((update) => {
+        const result: ScheduleUpdate = {
+          date: update?.date ? dayjs(update?.date) : dayjs(),
+          changes: {},
+        };
+
+        if (update?.changes?.description) {
+          result.changes.description = update.changes.description;
+        }
+
+        if (update?.changes?.host) {
+          result.changes.host = {
+            active: dayjs("2021-01-01"),
+            name: update?.changes?.host,
+          };
+        }
+
+        if (update?.changes?.bibleClassLeader) {
+          result.changes.bibleClassLeader = {
+            active: dayjs("2021-01-01"),
+            name: update.changes.bibleClassLeader,
+          };
+        }
+
+        if (update?.changes?.pianists) {
+          result.changes.pianists = update.changes.pianists
+            .split(",")
+            .map((name) => ({
+              active: dayjs("2021-01-01"),
+              name: name.trim(),
+            }));
+        }
+
+        if (update?.twoPianists) {
+          result.twoPianists = true;
+        }
+
+        return result;
+      });
   }
 
   private transformScheduleUpdateRequest(
     update: ScheduleUpdate
   ): SerializedScheduleUpdate {
+    const changes: SerializedScheduleUpdateChanges = {};
+
+    if (update.changes.description) {
+      changes.description = update.changes.description;
+    }
+
+    if (update.changes.host) {
+      changes.host = update.changes.host.name;
+    }
+
+    if (update.changes.pianists) {
+      changes.pianists = update.changes.pianists
+        .map((pianist) => pianist.name)
+        .join(", ");
+    }
+
+    if (update.changes.bibleClassLeader) {
+      changes.bibleClassLeader = update.changes.bibleClassLeader.name;
+    }
+
     return {
       date: update.date.format("YYYY-MM-DD"),
-      changes: update.changes,
+      changes,
       twoPianists: update.twoPianists,
     };
   }

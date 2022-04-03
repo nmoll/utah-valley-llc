@@ -33,7 +33,7 @@ describe("AdminService", () => {
         },
       ];
 
-      const hosts: Member[] = [
+      const expected: Member[] = [
         {
           name: "Test Host",
           active: dayjs("2022-01-01"),
@@ -48,11 +48,93 @@ describe("AdminService", () => {
         .spyOn(httpService, "get")
         .mockReturnValue(Promise.resolve(httpResponse));
 
-      const result = await adminService.getHosts();
-      expect(result).toEqual(hosts);
+      const actual = await adminService.getHosts();
+      expect(actual).toEqual(expected);
       expect(httpService.get).toHaveBeenCalledWith(
         "https://llcuv-calendar-default-rtdb.firebaseio.com/hosts.json"
       );
+    });
+  });
+
+  describe("getScheduleUpdates", () => {
+    it("should fetch schedule update", async () => {
+      const httpResponse = [
+        {
+          date: "2022-01-01",
+        },
+        {
+          date: "2022-01-02",
+          changes: {
+            description: "Updated description",
+          },
+          twoPianists: true,
+        },
+        {
+          date: "2022-01-03",
+          changes: {
+            description: "New Event",
+            host: "New host",
+            pianists: "Pianist 1",
+            bibleClassLeader: "BCL 1",
+          },
+        },
+        {
+          date: "2022-01-04",
+          changes: {
+            pianists: "Pianist 1, Pianist 2",
+          },
+        },
+      ];
+
+      const expected: ScheduleUpdate[] = [
+        {
+          date: dayjs("2022-01-01"),
+          changes: {},
+        },
+        {
+          date: dayjs("2022-01-02"),
+          changes: {
+            description: "Updated description",
+          },
+          twoPianists: true,
+        },
+        {
+          date: dayjs("2022-01-03"),
+          changes: {
+            description: "New Event",
+            host: {
+              name: "New host",
+              active: dayjs("2021-01-01"),
+            },
+            pianists: [
+              {
+                name: "Pianist 1",
+                active: dayjs("2021-01-01"),
+              },
+            ],
+            bibleClassLeader: {
+              name: "BCL 1",
+              active: dayjs("2021-01-01"),
+            },
+          },
+        },
+        {
+          date: dayjs("2022-01-04"),
+          changes: {
+            pianists: [
+              { name: "Pianist 1", active: dayjs("2021-01-01") },
+              { name: "Pianist 2", active: dayjs("2021-01-01") },
+            ],
+          },
+        },
+      ];
+
+      jest
+        .spyOn(httpService, "get")
+        .mockReturnValue(Promise.resolve(httpResponse));
+
+      const actual = await adminService.getScheduleUpdates();
+      expect(actual).toEqual(expected);
     });
   });
 
