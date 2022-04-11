@@ -84,6 +84,10 @@ describe("AdminService", () => {
             pianists: "Pianist 1, Pianist 2",
           },
         },
+        {
+          date: "2022-01-05",
+          cancelled: true,
+        },
       ];
 
       const expected: ScheduleUpdate[] = [
@@ -126,6 +130,11 @@ describe("AdminService", () => {
               { name: "Pianist 2", active: dayjs("2021-01-01") },
             ],
           },
+        },
+        {
+          date: dayjs("2022-01-05"),
+          changes: {},
+          cancelled: true,
         },
       ];
 

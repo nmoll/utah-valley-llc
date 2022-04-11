@@ -19,6 +19,7 @@ interface SerializedScheduleUpdate {
   date: string;
   changes?: SerializedScheduleUpdateChanges;
   twoPianists?: true;
+  cancelled?: true;
 }
 
 type ScheduleUpdateResponse = null | Array<SerializedScheduleUpdate | null>;
@@ -139,6 +140,10 @@ export class AdminService {
 
         if (update?.twoPianists) {
           result.twoPianists = true;
+        }
+
+        if (update?.cancelled) {
+          result.cancelled = true;
         }
 
         return result;

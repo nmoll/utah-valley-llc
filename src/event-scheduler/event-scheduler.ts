@@ -18,6 +18,14 @@ export class EventScheduler {
   );
 
   schedule(date: Dayjs): CalendarEvent | null {
+    const update = this.config.scheduleUpdates.find((update) =>
+      update.date.isSame(date, "day")
+    );
+
+    if (update?.cancelled) {
+      return null;
+    }
+
     const scheduleStrategy =
       this.scheduleEventStrategyFactory.getStrategy(date);
     if (!scheduleStrategy) {
@@ -33,10 +41,6 @@ export class EventScheduler {
       return null;
     }
 
-    const updates = this.config.scheduleUpdates.find((update) =>
-      update.date.isSame(date, "day")
-    );
-
     return {
       date,
       description,
@@ -44,7 +48,7 @@ export class EventScheduler {
       pianists,
       bibleClassLeader,
 
-      ...updates?.changes,
+      ...update?.changes,
     };
   }
 
@@ -131,11 +135,16 @@ export class EventScheduler {
    * first host's active date
    */
   private getEventDates(date: Dayjs): Dayjs[] {
-    return ScheduleUtil.getDatesBetween(
-      this.config.hosts[0].active,
-      date
-    ).filter(
-      ScheduleUtil.dateFilter(this.scheduleEventStrategyFactory.getAll())
+    return ScheduleUtil.getDatesBetween(this.config.hosts[0].active, date)
+      .filter((date) => !this.isCancelled(date))
+      .filter(
+        ScheduleUtil.dateFilter(this.scheduleEventStrategyFactory.getAll())
+      );
+  }
+
+  private isCancelled(date: Dayjs): boolean {
+    return this.config.scheduleUpdates.some(
+      (update) => update.date.isSame(date, "day") && update.cancelled
     );
   }
 }

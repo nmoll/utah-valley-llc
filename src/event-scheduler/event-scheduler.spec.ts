@@ -221,5 +221,22 @@ describe("EventScheduler", () => {
         Member[]
       >([pianistsByName["D"]]);
     });
+
+    it("should cancel service and continue rotation after", () => {
+      const scheduler = new EventScheduler({
+        ...config,
+        scheduleUpdates: [
+          {
+            date: dayjs("2022-01-05"),
+            changes: {},
+            cancelled: true,
+          },
+        ],
+      });
+
+      expect(
+        scheduler.scheduleAll(dayjs("2022-01-02"), dayjs("2022-01-30"))
+      ).toMatchSnapshot();
+    });
   });
 });

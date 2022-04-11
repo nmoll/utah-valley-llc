@@ -5,4 +5,5 @@ export interface ScheduleUpdate {
   date: Dayjs;
   changes: Partial<CalendarEvent>;
   twoPianists?: true;
+  cancelled?: true;
 }
