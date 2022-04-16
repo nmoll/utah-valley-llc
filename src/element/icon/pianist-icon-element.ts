@@ -1,7 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 
-@customElement("utah-pianist-icon")
+@customElement("llcuv-pianist-icon")
 export class UtahPianistIconElement extends LitElement {
   static styles = css`
     :host {
@@ -29,6 +29,6 @@ export class UtahPianistIconElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "utah-pianist-icon": UtahPianistIconElement;
+    "llcuv-pianist-icon": UtahPianistIconElement;
   }
 }

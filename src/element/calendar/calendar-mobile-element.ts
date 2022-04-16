@@ -5,7 +5,7 @@ import { map } from "lit/directives/map.js";
 import { CalendarEvent } from "../../model/calendar-event.model";
 import "./calendar-event-element";
 
-@customElement("utah-calendar-mobile")
+@customElement("llcuv-calendar-mobile")
 export class UtahCalendarMobileElement extends LitElement {
   static styles = css`
     :host {
@@ -46,11 +46,11 @@ export class UtahCalendarMobileElement extends LitElement {
       flex-grow: 1;
     }
 
-    utah-calendar-event {
+    llcuv-calendar-event {
       width: 100%;
     }
 
-    utah-calendar-header {
+    llcuv-calendar-header {
       position: sticky;
       top: 0;
     }
@@ -78,7 +78,7 @@ export class UtahCalendarMobileElement extends LitElement {
     return map(
       Object.keys(eventsByMonth),
       (month) => html`<div>
-        <utah-calendar-header>${month}</utah-calendar-header> ${map(
+        <llcuv-calendar-header>${month}</llcuv-calendar-header> ${map(
           eventsByMonth[month],
           (event) =>
             html`
@@ -88,7 +88,9 @@ export class UtahCalendarMobileElement extends LitElement {
                   <div class="day-label__date">${event.date.format("D")}</div>
                 </div>
                 <div class="day-details">
-                  <utah-calendar-event .event="${event}"></utah-calendar-event>
+                  <llcuv-calendar-event
+                    .event="${event}"
+                  ></llcuv-calendar-event>
                 </div>
               </div>
             `
@@ -100,6 +102,6 @@ export class UtahCalendarMobileElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "utah-calendar-mobile": UtahCalendarMobileElement;
+    "llcuv-calendar-mobile": UtahCalendarMobileElement;
   }
 }

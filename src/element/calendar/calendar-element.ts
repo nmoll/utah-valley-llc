@@ -7,7 +7,7 @@ import { ScheduleUtil } from "../../util/schedule.util";
 import "../icon/chevron-left-icon-element";
 import "../icon/chevron-right-icon-element";
 import "./calendar-event-element";
-@customElement("utah-calendar")
+@customElement("llcuv-calendar")
 export class UtahCalendarElement extends LitElement {
   static styles = css`
     :host {
@@ -15,7 +15,7 @@ export class UtahCalendarElement extends LitElement {
       display: block;
     }
 
-    utah-calendar-header {
+    llcuv-calendar-header {
       col-span: 7;
       display: flex;
       align-items: center;
@@ -96,15 +96,15 @@ export class UtahCalendarElement extends LitElement {
 
   render() {
     return html`
-      <utah-calendar-header>
+      <llcuv-calendar-header>
         <button @click="${() => this.previous()}" type="button">
-          <utah-chevron-left-icon></utah-chevron-left-icon>
+          <llcuv-chevron-left-icon></llcuv-chevron-left-icon>
         </button>
         <span class="month-label">${this.month.format("MMMM")}</span>
         <button @click="${() => this.next()}" type="button">
-          <utah-chevron-right-icon></utah-chevron-right-icon>
+          <llcuv-chevron-right-icon></llcuv-chevron-right-icon>
         </button>
-      </utah-calendar-header>
+      </llcuv-calendar-header>
       <div class="calendar">
         ${map(this.getWeeks(), (date) => {
           const event = this.events.find((event) =>
@@ -126,9 +126,9 @@ export class UtahCalendarElement extends LitElement {
                 </span>
               `}
               ${event
-                ? html`<utah-calendar-event
+                ? html`<llcuv-calendar-event
                     .event="${event}"
-                  ></utah-calendar-event>`
+                  ></llcuv-calendar-event>`
                 : ""}
             </div>
           `;
@@ -155,6 +155,6 @@ export class UtahCalendarElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "utah-calendar": UtahCalendarElement;
+    "llcuv-calendar": UtahCalendarElement;
   }
 }

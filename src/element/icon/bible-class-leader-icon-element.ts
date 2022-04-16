@@ -1,7 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 
-@customElement("utah-bible-class-leader-icon")
+@customElement("llcuv-bible-class-leader-icon")
 export class UtahBibleClassLeaderElement extends LitElement {
   static styles = css`
     :host {
@@ -28,6 +28,6 @@ export class UtahBibleClassLeaderElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "utah-bible-class-leader-icon": UtahBibleClassLeaderElement;
+    "llcuv-bible-class-leader-icon": UtahBibleClassLeaderElement;
   }
 }

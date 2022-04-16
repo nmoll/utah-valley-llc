@@ -1,7 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 
-@customElement("utah-calendar-header")
+@customElement("llcuv-calendar-header")
 export class UtahCalendarHeaderElement extends LitElement {
   static styles = css`
     :host {
@@ -31,6 +31,6 @@ export class UtahCalendarHeaderElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "utah-calendar-header": UtahCalendarHeaderElement;
+    "llcuv-calendar-header": UtahCalendarHeaderElement;
   }
 }

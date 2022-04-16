@@ -1,8 +1,8 @@
 import { css, html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 
-@customElement("llcuv-chevron-right-icon")
-export class UtahChevronRightIconElement extends LitElement {
+@customElement("llcuv-swap-icon")
+export class SwapIconElement extends LitElement {
   static styles = css`
     :host {
       display: flex;
@@ -16,16 +16,18 @@ export class UtahChevronRightIconElement extends LitElement {
       height="24px"
       viewBox="0 0 24 24"
       width="24px"
-      fill="white"
+      fill="var(--gray-500)"
     >
-      <path d="M0 0h24v24H0z" fill="none" />
-      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path
+        d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z"
+      />
     </svg>`;
   }
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    "llcuv-chevron-right-icon": UtahChevronRightIconElement;
+    "llcuv-swap-icon": SwapIconElement;
   }
 }

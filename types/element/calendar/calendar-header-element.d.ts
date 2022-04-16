@@ -1,10 +1,10 @@
 import { LitElement } from "lit";
 export declare class UtahCalendarHeaderElement extends LitElement {
-    static styles: import("lit").CSSResult;
-    render(): import("lit-html").TemplateResult<1>;
+  static styles: import("lit").CSSResult;
+  render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
-    interface HTMLElementTagNameMap {
-        "utah-calendar-header": UtahCalendarHeaderElement;
-    }
+  interface HTMLElementTagNameMap {
+    "llcuv-calendar-header": UtahCalendarHeaderElement;
+  }
 }

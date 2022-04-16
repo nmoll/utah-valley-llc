@@ -1,7 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 
-@customElement("utah-chevron-left-icon")
+@customElement("llcuv-chevron-left-icon")
 export class UtahChevronLeftIconElement extends LitElement {
   static styles = css`
     :host {
@@ -26,6 +26,6 @@ export class UtahChevronLeftIconElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "utah-chevron-left-icon": UtahChevronLeftIconElement;
+    "llcuv-chevron-left-icon": UtahChevronLeftIconElement;
   }
 }
