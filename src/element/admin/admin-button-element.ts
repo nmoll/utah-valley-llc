@@ -1,30 +1,17 @@
-import { css, html, LitElement } from "lit";
+import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
+import { buttonStyles } from "../styles/button-styles";
 
 @customElement("llcuv-admin-button")
 export class UtahAdminButtonElement extends LitElement {
-  static styles = css`
-    button {
-      width: 100%;
-      color: var(--primary-500);
-      border: 1px solid var(--primary-500);
-      padding: 1rem;
-      border-radius: 0.5rem;
-      background-color: white;
-    }
-
-    .active {
-      background-color: var(--primary-500);
-      color: white;
-    }
-  `;
+  static styles = [buttonStyles];
 
   @property()
   active = false;
 
   render() {
-    const classes = { active: this.active };
+    const classes = { active: this.active, button: true };
     return html`<button class=${classMap(classes)}><slot></slot></button>`;
   }
 }

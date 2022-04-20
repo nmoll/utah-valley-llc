@@ -5,8 +5,8 @@ import { CalendarEvent } from "../../model/calendar-event.model";
 import { ScheduleUpdate } from "../../model/schedule-update.model";
 import { buttonStyles } from "../styles/button-styles";
 
-@customElement("llcuv-admin-swap-pianists")
-export class UtahAdminSwapPianistsElement extends LitElement {
+@customElement("llcuv-admin-swap-bible-class")
+export class UtahAdminSwapBibleClassElement extends LitElement {
   static styles = [
     buttonStyles,
     css`
@@ -75,7 +75,7 @@ export class UtahAdminSwapPianistsElement extends LitElement {
 
   render() {
     return html`
-      <p>Swap pianists</p>
+      <p>Swap bible class</p>
       <div class="list">
         <div class="button-group">
           ${this.getOptionsA().map(
@@ -90,11 +90,7 @@ export class UtahAdminSwapPianistsElement extends LitElement {
                   <span class="date-month">${option.date.format("ddd")}</span>
                   <span>${option.date.format("MMMM D")}</span>
                 </span>
-                <span
-                  >${option.pianists
-                    .map((pianist) => pianist.name)
-                    .join(", ")}</span
-                >
+                <span>${option.bibleClassLeader?.name}</span>
               </button>
             `
           )}
@@ -117,11 +113,7 @@ export class UtahAdminSwapPianistsElement extends LitElement {
                   <span class="date-month">${option.date.format("ddd")}</span>
                   <span>${option.date.format("MMMM D")}</span>
                 </span>
-                <span
-                  >${option.pianists
-                    .map((pianist) => pianist.name)
-                    .join(", ")}</span
-                >
+                <span>${option.bibleClassLeader?.name}</span>
               </button>
             `
           )}
@@ -188,7 +180,9 @@ export class UtahAdminSwapPianistsElement extends LitElement {
       return [this.selectedA];
     }
 
-    return this.calendarEvents.filter((option) => option !== this.selectedB);
+    return this.calendarEvents.filter(
+      (option) => option.bibleClassLeader && option !== this.selectedB
+    );
   }
 
   private getOptionsB(): CalendarEvent[] {
@@ -196,7 +190,9 @@ export class UtahAdminSwapPianistsElement extends LitElement {
       return [this.selectedB];
     }
 
-    return this.calendarEvents.filter((option) => option !== this.selectedA);
+    return this.calendarEvents.filter(
+      (option) => option.bibleClassLeader && option !== this.selectedA
+    );
   }
 
   private toggleSelectA(option: CalendarEvent) {
@@ -210,6 +206,6 @@ export class UtahAdminSwapPianistsElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "llcuv-admin-swap-pianists": UtahAdminSwapPianistsElement;
+    "llcuv-admin-swap-bible-class": UtahAdminSwapBibleClassElement;
   }
 }
