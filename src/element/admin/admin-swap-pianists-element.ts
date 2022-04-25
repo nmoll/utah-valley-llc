@@ -1,4 +1,3 @@
-import dayjs from "dayjs";
 import { css, html, LitElement } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { CalendarEvent } from "../../model/calendar-event.model";
@@ -157,15 +156,15 @@ export class UtahAdminSwapPianistsElement extends LitElement {
 
     const updates: ScheduleUpdate[] = [
       {
-        date: dayjs(),
+        date: this.selectedA.date,
         changes: {
-          pianists: this.selectedA.pianists,
+          pianists: this.selectedB.pianists,
         },
       },
       {
-        date: dayjs(),
+        date: this.selectedB.date,
         changes: {
-          pianists: this.selectedB.pianists,
+          pianists: this.selectedA.pianists,
         },
       },
     ];

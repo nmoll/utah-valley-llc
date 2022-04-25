@@ -171,7 +171,12 @@ describe("AdminService", () => {
         },
       });
 
-      expect(result).toEqual<ScheduleUpdate[]>([
+      if (result.type === "error") {
+        expect(result.type).not.toEqual("error");
+        return;
+      }
+
+      expect(result.data).toEqual<ScheduleUpdate[]>([
         {
           date: dayjs("2022-01-01"),
           changes: {
@@ -226,7 +231,12 @@ describe("AdminService", () => {
         },
       });
 
-      expect(result).toEqual<ScheduleUpdate[]>([
+      if (result.type === "error") {
+        expect(result.type).not.toEqual("error");
+        return;
+      }
+
+      expect(result.data).toEqual<ScheduleUpdate[]>([
         {
           date: dayjs("2022-01-01"),
           changes: {

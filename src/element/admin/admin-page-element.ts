@@ -6,6 +6,7 @@ import { CalendarEvent } from "../../model/calendar-event.model";
 import { ScheduleUpdate } from "../../model/schedule-update.model";
 import { AdminService } from "../../service/admin.service";
 import { HttpService } from "../../service/http.service";
+import "../icon/error-icon-element";
 import "../icon/success-animation-icon-element";
 import "../icon/swap-icon-element";
 import { buttonStyles } from "../styles/button-styles";
@@ -17,7 +18,8 @@ type Page =
   | "Swap Hosts"
   | "Swap Pianists"
   | "Swap Bible Class"
-  | "Success Confirmation";
+  | "Success Confirmation"
+  | "Save Error";
 
 interface ConfirmEvent {
   detail: {
@@ -49,13 +51,12 @@ export class UtahAdminPageElement extends LitElement {
         gap: 1rem;
       }
 
-      .updated-message {
+      .message-overlay {
         position: absolute;
         top: 0;
         right: 0;
         left: 0;
         bottom: 0;
-        background-color: var(--primary-500);
         color: white;
         font-size: 2rem;
         display: flex;
@@ -65,6 +66,14 @@ export class UtahAdminPageElement extends LitElement {
         align-items: center;
         justify-content: center;
       }
+
+      .message-overlay--success {
+        background-color: var(--primary-500);
+      }
+
+      .message-overlay--error {
+        background-color: var(--red-500);
+      }
     `,
   ];
 
@@ -72,21 +81,22 @@ export class UtahAdminPageElement extends LitElement {
   page: Page | null = null;
 
   @state()
-  updates: ScheduleUpdate[] | null = null;
-
-  @state()
   calendarEvents: CalendarEvent[] = [];
+
+  saving = false;
+
+  adminService: AdminService;
 
   constructor() {
     super();
 
-    const adminService = new AdminService(new HttpService());
+    this.adminService = new AdminService(new HttpService());
 
     Promise.all([
-      adminService.getHosts(),
-      adminService.getPianists(),
-      adminService.getBibleClassLeaders(),
-      adminService.getScheduleUpdates(),
+      this.adminService.getHosts(),
+      this.adminService.getPianists(),
+      this.adminService.getBibleClassLeaders(),
+      this.adminService.getScheduleUpdates(),
     ]).then(([hosts, pianists, bibleClassLeaders, scheduleUpdates]) => {
       const scheduler = new EventScheduler({
         hosts,
@@ -97,7 +107,7 @@ export class UtahAdminPageElement extends LitElement {
 
       this.calendarEvents = scheduler.scheduleAll(
         dayjs(),
-        dayjs().add(35, "days")
+        dayjs().add(60, "days")
       );
     });
   }
@@ -166,9 +176,14 @@ export class UtahAdminPageElement extends LitElement {
           @cancel="${this.onCancel}"
         ></llcuv-admin-swap-bible-class>`;
       case "Success Confirmation":
-        return html`<div class="updated-message">
+        return html`<div class="message-overlay message-overlay--success">
           <llcuv-success-animation-icon></llcuv-success-animation-icon>
           Schedule updated!
+        </div>`;
+      case "Save Error":
+        return html`<div class="message-overlay message-overlay--error">
+          <llcuv-error-icon></llcuv-error-icon>
+          Failed to save
         </div>`;
     }
   }
@@ -177,9 +192,19 @@ export class UtahAdminPageElement extends LitElement {
     this.page = page;
   }
 
-  private onConfirm(event: ConfirmEvent) {
-    this.updates = event.detail.updates;
-    this.page = "Success Confirmation";
+  private async onConfirm(event: ConfirmEvent) {
+    if (this.saving) {
+      return;
+    }
+
+    this.saving = true;
+
+    const result = await this.adminService.saveScheduleUpdates(
+      event.detail.updates
+    );
+
+    this.page = result.type === "error" ? "Save Error" : "Success Confirmation";
+    this.saving = false;
 
     setTimeout(() => {
       this.page = null;

@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import { AsyncResult } from "../model/async-result.model";
 import { Member } from "../model/member";
 import { ScheduleUpdate } from "../model/schedule-update.model";
 import { HttpService } from "./http.service";
@@ -26,7 +27,10 @@ interface SerializedScheduleUpdate {
   cancelled?: true;
 }
 
-type ScheduleUpdateResponse = null | Array<SerializedScheduleUpdate | null>;
+type ScheduleUpdateResponse =
+  | null
+  | Array<SerializedScheduleUpdate | null>
+  | Record<string, SerializedScheduleUpdate>;
 
 const API = "https://llcuv-calendar-default-rtdb.firebaseio.com";
 
@@ -57,31 +61,65 @@ export class AdminService {
       .then(this.transformScheduleUpdatesResponse);
   }
 
-  saveScheduleUpdate(update: ScheduleUpdate): Promise<ScheduleUpdate[]> {
-    return this.getScheduleUpdates().then((updates) => {
-      const existingIdx = updates.findIndex(
-        (u) => u.date.isSame(update.date),
-        "day"
-      );
+  async saveScheduleUpdate(
+    update: ScheduleUpdate
+  ): Promise<AsyncResult<ScheduleUpdate[]>> {
+    const updates = await this.getScheduleUpdates();
+    const existingIdx = updates.findIndex(
+      (u) => u.date.isSame(update.date),
+      "day"
+    );
 
-      if (existingIdx > -1) {
-        return this.httpService
-          .put(
-            `${API}/scheduleUpdates/${existingIdx}.json`,
-            this.transformScheduleUpdateRequest(update)
-          )
-          .then(() =>
-            updates.map((u, idx) => (idx === existingIdx ? update : u))
-          );
-      } else {
-        return this.httpService
-          .post(
-            `${API}/scheduleUpdates.json`,
-            this.transformScheduleUpdateRequest(update)
-          )
-          .then(() => [...updates, update]);
+    if (existingIdx > -1) {
+      const resp = await this.httpService.put(
+        `${API}/scheduleUpdates/${existingIdx}.json`,
+        this.transformScheduleUpdateRequest(update)
+      );
+      if ("error" in resp) {
+        return {
+          type: "error",
+        };
       }
-    });
+
+      return {
+        type: "success",
+        data: updates.map((u, idx) => (idx === existingIdx ? update : u)),
+      };
+    } else {
+      const resp = await this.httpService.post(
+        `${API}/scheduleUpdates.json`,
+        this.transformScheduleUpdateRequest(update)
+      );
+      if ("error" in resp) {
+        return {
+          type: "error",
+        };
+      }
+
+      return {
+        type: "success",
+        data: [...updates, update],
+      };
+    }
+  }
+
+  async saveScheduleUpdates(
+    updates: ScheduleUpdate[]
+  ): Promise<AsyncResult<ScheduleUpdate[]>> {
+    let result = [] as ScheduleUpdate[];
+    for (let update of updates) {
+      const resp = await this.saveScheduleUpdate(update);
+      if (resp.type === "error") {
+        return {
+          type: "error",
+        };
+      }
+    }
+
+    return {
+      type: "success",
+      data: result,
+    };
   }
 
   private transformMembersResponse(members: MemberResponse): Member[] {
@@ -113,6 +151,9 @@ export class AdminService {
   ): ScheduleUpdate[] {
     if (!scheduleUpdates) {
       return [];
+    }
+    if (!Array.isArray(scheduleUpdates)) {
+      scheduleUpdates = Object.values(scheduleUpdates);
     }
 
     return scheduleUpdates
