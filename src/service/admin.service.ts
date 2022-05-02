@@ -6,6 +6,10 @@ import { HttpService } from "./http.service";
 type MemberResponse = null | Array<{
   name?: string;
   active?: string;
+  inactive?: {
+    start: string;
+    end?: string;
+  }[];
 } | null>;
 
 interface SerializedScheduleUpdateChanges {
@@ -86,10 +90,18 @@ export class AdminService {
     }
 
     return members
-      .map((member) => ({
-        name: member?.name ?? null,
-        active: member?.active ? dayjs(member.active) : null,
-      }))
+      .map(
+        (member) =>
+          ({
+            name: member?.name ?? null,
+            active: member?.active ? dayjs(member.active) : null,
+            inactive:
+              member?.inactive?.map((inactive) => ({
+                start: dayjs(inactive.start),
+                end: inactive.end ? dayjs(inactive.end) : null,
+              })) ?? [],
+          } as Member)
+      )
       .filter(
         (member): member is Member =>
           member.name !== null && member.active !== null
