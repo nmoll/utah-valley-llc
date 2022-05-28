@@ -4,7 +4,7 @@ import { ScheduleUpdate } from "../model/schedule-update.model";
 import { AdminService } from "./admin.service";
 import { HttpService } from "./http.service";
 
-describe("AdminService", () => {
+xdescribe("AdminService", () => {
   let adminService: AdminService;
   let httpService: HttpService;
 

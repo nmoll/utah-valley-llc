@@ -22,7 +22,7 @@ interface SerializedScheduleUpdateChanges {
 interface SerializedScheduleUpdate {
   date: string;
   changes?: SerializedScheduleUpdateChanges;
-  twoPianists?: true;
+  twoPianists?: boolean;
   cancelled?: true;
 }
 
@@ -34,27 +34,74 @@ export class AdminService {
   constructor(private httpService: HttpService) {}
 
   getHosts(): Promise<Member[]> {
-    return this.httpService
-      .get<MemberResponse>(`${API}/hosts.json`)
-      .then(this.transformMembersResponse);
+    return (
+      Promise.resolve([
+        { active: "2022-06-01", name: "Bryce & Emily" },
+        { active: "2022-06-01", name: "Eric & Janell" },
+        { active: "2022-06-01", name: "Nate & Kate" },
+        { active: "2022-06-01", name: "Kenton & Katie" },
+        { active: "2022-06-01", name: "Sean & Mandy" },
+        { active: "2022-06-01", name: "Girls Place" },
+        { active: "2022-06-01", name: "Draper Guys" },
+        { active: "2022-06-01", name: "Matt, Chad, Alan, Sam" },
+        { active: "2022-06-01", name: "Quincy & Nora" },
+        { active: "2022-06-01", name: "Cody & Briana" },
+        { active: "2022-06-01", name: "Trav & Hayley" },
+      ])
+
+        // return this.httpService
+        //   .get<MemberResponse>(`${API}/hosts.json`)
+        .then(this.transformMembersResponse)
+    );
   }
 
   getPianists(): Promise<Member[]> {
-    return this.httpService
-      .get<MemberResponse>(`${API}/pianists.json`)
-      .then(this.transformMembersResponse);
+    return (
+      Promise.resolve([
+        { active: "2022-06-01", name: "Tristan" },
+        { active: "2022-06-01", name: "Emily" },
+        { active: "2022-06-01", name: "Nate" },
+        { active: "2022-06-01", name: "Hayley S" },
+      ])
+        // return this.httpService
+        //   .get<MemberResponse>(`${API}/pianists.json`)
+        .then(this.transformMembersResponse)
+    );
   }
 
   getBibleClassLeaders(): Promise<Member[]> {
-    return this.httpService
-      .get<MemberResponse>(`${API}/bibleClassLeaders.json`)
-      .then(this.transformMembersResponse);
+    return (
+      Promise.resolve([
+        { active: "2022-06-01", name: "Tristan" },
+        { active: "2022-06-01", name: "Eric" },
+        { active: "2022-06-01", name: "John" },
+        { active: "2022-06-01", name: "Kenton" },
+        { active: "2022-06-01", name: "Trav" },
+        { active: "2022-06-01", name: "Chad" },
+        { active: "2022-06-01", name: "Cody" },
+        { active: "2022-06-01", name: "Quincy" },
+        { active: "2022-06-01", name: "Matt" },
+      ])
+        // return this.httpService
+        //   .get<MemberResponse>(`${API}/bibleClassLeaders.json`)
+        .then(this.transformMembersResponse)
+    );
   }
 
   getScheduleUpdates(): Promise<ScheduleUpdate[]> {
-    return this.httpService
-      .get<ScheduleUpdateResponse>(`${API}/scheduleUpdates.json`)
-      .then(this.transformScheduleUpdatesResponse);
+    return (
+      Promise.resolve([
+        { changes: { description: "7pm - Mike Kumpula" }, date: "2022-06-11" },
+        {
+          changes: { description: "10:30 Communion - Mike Kumpula" },
+          date: "2022-06-12",
+          twoPianists: true,
+        },
+      ])
+        // return this.httpService
+        //   .get<ScheduleUpdateResponse>(`${API}/scheduleUpdates.json`)
+        .then(this.transformScheduleUpdatesResponse)
+    );
   }
 
   saveScheduleUpdate(update: ScheduleUpdate): Promise<ScheduleUpdate[]> {
