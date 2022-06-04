@@ -91,6 +91,10 @@ export class AdminService {
   getScheduleUpdates(): Promise<ScheduleUpdate[]> {
     return (
       Promise.resolve([
+        {
+          changes: { description: "10:30 Sunday School Picnic" },
+          date: "2022-06-05",
+        },
         { changes: { description: "7pm - Mike Kumpula" }, date: "2022-06-11" },
         {
           changes: { description: "10:30 Communion - Mike Kumpula" },

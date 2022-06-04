@@ -2,8 +2,10 @@ import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { CalendarEvent } from "../../model/calendar-event.model";
 import "../icon/bible-class-leader-icon-element";
+import "../icon/location-icon-element";
 import "../icon/pianist-icon-element";
 import "../icon/service-host-icon-element";
+import { locationData } from "./event-locations";
 
 @customElement("llcuv-calendar-event")
 export class UtahCalendarEventElement extends LitElement {
@@ -50,6 +52,26 @@ export class UtahCalendarEventElement extends LitElement {
         <llcuv-pianist-icon></llcuv-pianist-icon>
         ${this.event.pianists.map((p) => p.name).join(", ")}
       </span>
+      ${this.renderLocation()}
+    `;
+  }
+
+  private renderLocation() {
+    const location = locationData[this.event.date.format("YYYY-MM-DD")];
+    if (!location) {
+      return "";
+    }
+
+    return html`
+      <div class="event-detail">
+        <llcuv-location-icon></llcuv-location-icon>
+        <div>
+          <span>${location.name}</span>
+          ${location.address
+            ? html`<address>${location.address}</address>`
+            : ""}
+        </div>
+      </div>
     `;
   }
 }
