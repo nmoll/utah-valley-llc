@@ -1,19 +1,12 @@
 import { LitElement } from "lit";
-import "./element/calendar/calendar-element";
-import "./element/calendar/calendar-header-element";
-import "./element/calendar/calendar-mobile-element";
-import { EventScheduler } from "./event-scheduler/event-scheduler";
-import { CalendarEvent } from "./model/calendar-event.model";
+import "./element/admin/admin-page-element";
+import "./element/calendar/calendar-page-element";
 export declare class UtahAppElement extends LitElement {
-  static styles: import("lit").CSSResult;
-  isMobile: boolean;
-  eventScheduler: EventScheduler;
-  calendarEvents: CalendarEvent[];
-  constructor();
-  render(): import("lit-html").TemplateResult<1>;
+    static styles: import("lit").CSSResult;
+    render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
-  interface HTMLElementTagNameMap {
-    "llcuv-app": UtahAppElement;
-  }
+    interface HTMLElementTagNameMap {
+        "llcuv-app": UtahAppElement;
+    }
 }

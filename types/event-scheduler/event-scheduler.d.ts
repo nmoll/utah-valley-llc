@@ -18,4 +18,5 @@ export declare class EventScheduler {
      * first host's active date
      */
     private getEventDates;
+    private isCancelled;
 }

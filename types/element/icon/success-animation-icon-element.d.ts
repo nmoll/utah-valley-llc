@@ -1,10 +1,10 @@
 import { LitElement } from "lit";
-export declare class UtahPianistIconElement extends LitElement {
+export declare class SuccessAnimationIcon extends LitElement {
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        "llcuv-pianist-icon": UtahPianistIconElement;
+        "llcuv-success-animation-icon": SuccessAnimationIcon;
     }
 }
