@@ -92,7 +92,7 @@ export class AdminService {
     return (
       Promise.resolve([
         {
-          changes: { description: "10:30 Sunday School Picnic" },
+          changes: { description: "10am Sunday School Picnic" },
           date: "2022-06-05",
         },
         { changes: { description: "7pm - Mike Kumpula" }, date: "2022-06-11" },
