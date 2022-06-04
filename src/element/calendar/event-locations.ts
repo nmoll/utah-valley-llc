@@ -19,7 +19,10 @@ const tbd: EventLocation = {
 };
 
 export const locationData: Record<string, EventLocation> = {
-  "2022-06-05": tbd,
+  "2022-06-05": {
+    name:"Timpanogos Cove Park",
+    address: "9508 N Timpanogos Cove"
+  },
   "2022-06-08": seniorCenter,
   "2022-06-11": broadbentCommunityRoom,
   "2022-06-12": broadbentCommunityRoom,
