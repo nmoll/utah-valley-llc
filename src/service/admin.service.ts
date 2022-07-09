@@ -101,6 +101,18 @@ export class AdminService {
           date: "2022-06-12",
           twoPianists: true,
         },
+        {
+          date: "2022-07-13",
+          changes: { host: "Hayley & Trav" },
+        },
+        {
+          date: "2022-07-24",
+          changes: { host: "Kenton & Katie" },
+        },
+        {
+          date: "2022-08-03",
+          changes: { host: "Nate & Kate" },
+        },
       ])
         // return this.httpService
         //   .get<ScheduleUpdateResponse>(`${API}/scheduleUpdates.json`)
