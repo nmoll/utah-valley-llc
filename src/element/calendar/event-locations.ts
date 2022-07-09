@@ -13,21 +13,26 @@ const broadbentCommunityRoom: EventLocation = {
   address: "128 North 100 East, Lehi, UT 43033",
 };
 
-const tbd: EventLocation = {
-  name: "TBD",
-  address: "",
-};
+// const tbd: EventLocation = {
+//   name: "TBD",
+//   address: "",
+// };
 
 export const locationData: Record<string, EventLocation> = {
-  "2022-06-05": {
-    name:"Timpanogos Cove Park",
-    address: "9508 N Timpanogos Cove"
-  },
-  "2022-06-08": seniorCenter,
-  "2022-06-11": broadbentCommunityRoom,
-  "2022-06-12": broadbentCommunityRoom,
-  "2022-06-15": seniorCenter,
-  "2022-06-19": tbd,
-  "2022-06-22": seniorCenter,
-  "2022-06-25": broadbentCommunityRoom,
+  "2022-07-10": broadbentCommunityRoom,
+  "2022-07-13": seniorCenter,
+  "2022-07-17": broadbentCommunityRoom,
+  "2022-07-20": seniorCenter,
+  "2022-07-24": broadbentCommunityRoom,
+  "2022-07-27": seniorCenter,
+  "2022-07-31": broadbentCommunityRoom,
+
+  "2022-08-03": seniorCenter,
+  "2022-08-07": broadbentCommunityRoom,
+  "2022-08-10": seniorCenter,
+  "2022-08-14": broadbentCommunityRoom,
+  "2022-08-17": seniorCenter,
+  "2022-08-21": broadbentCommunityRoom,
+  "2022-08-24": seniorCenter,
+  "2022-08-28": broadbentCommunityRoom,
 };
