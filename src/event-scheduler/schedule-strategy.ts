@@ -111,7 +111,7 @@ export class SundayMorningServiceStrategy implements ScheduleEventStrategy {
     return new ScheduleMorningHostStrategy();
   }
   getDescription(): string {
-    return "10:30am Service";
+    return "10am Service";
   }
 }
 
