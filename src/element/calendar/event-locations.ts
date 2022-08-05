@@ -20,7 +20,10 @@ const broadbentCommunityRoom: EventLocation = {
 
 export const locationData: Record<string, EventLocation> = {
   "2022-08-03": seniorCenter,
-  "2022-08-07": broadbentCommunityRoom,
+  "2022-08-07": {
+    address: "730 W Northlake Dr, Lehi",
+    name: "Nate & Kate's",
+  },
   "2022-08-11": broadbentCommunityRoom,
   "2022-08-14": broadbentCommunityRoom,
   "2022-08-18": broadbentCommunityRoom,
