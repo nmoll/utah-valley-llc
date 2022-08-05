@@ -23,7 +23,7 @@ interface SerializedScheduleUpdate {
   date: string;
   changes?: SerializedScheduleUpdateChanges;
   twoPianists?: boolean;
-  cancelled?: true;
+  cancelled?: boolean;
 }
 
 type ScheduleUpdateResponse = null | Array<SerializedScheduleUpdate | null>;
@@ -40,7 +40,7 @@ export class AdminService {
         { active: "2022-06-01", name: "Eric & Janell" },
         { active: "2022-06-01", name: "Nate & Kate" },
         { active: "2022-06-01", name: "Kenton & Katie" },
-        { active: "2022-06-01", name: "Sean & Mandy" },
+        { active: "2022-06-01", name: "Jeremy & Brooke" },
         { active: "2022-06-01", name: "Girls Place" },
         { active: "2022-06-01", name: "Draper Guys" },
         { active: "2022-06-01", name: "Matt, Chad, Alan, Sam" },
@@ -72,7 +72,6 @@ export class AdminService {
   getBibleClassLeaders(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-06-01", name: "Tristan" },
         { active: "2022-06-01", name: "Eric" },
         { active: "2022-06-01", name: "Matt" },
         { active: "2022-06-01", name: "John" },
@@ -81,6 +80,7 @@ export class AdminService {
         { active: "2022-06-01", name: "Trav" },
         { active: "2022-06-01", name: "Cody" },
         { active: "2022-06-01", name: "Quincy" },
+        { active: "2022-06-01", name: "Tristan" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/bibleClassLeaders.json`)
@@ -112,6 +112,101 @@ export class AdminService {
         {
           date: "2022-08-03",
           changes: { host: "Nate & Kate" },
+        },
+        {
+          date: "2022-08-07",
+          changes: { host: "Nate & Kate", description: "10:30 Service" },
+        },
+        {
+          date: "2022-08-10",
+          cancelled: true,
+        },
+        {
+          date: "2022-08-11",
+          changes: {
+            description: "7pm Bible Class",
+            bibleClassLeader: "Trav",
+          },
+        },
+        {
+          date: "2022-08-17",
+          cancelled: true,
+        },
+        {
+          date: "2022-08-18",
+          changes: {
+            description: "7pm Bible Class",
+            bibleClassLeader: "Cody",
+          },
+        },
+        {
+          date: "2022-08-21",
+          changes: {
+            description: "10am Annual Meeting",
+          },
+        },
+        {
+          date: "2022-08-27",
+          changes: {
+            description: "7pm Dale Johnson",
+          },
+        },
+        {
+          date: "2022-08-28",
+          changes: {
+            description: "10am Dale Johnson",
+          },
+        },
+        {
+          date: "2022-09-04",
+          changes: {
+            host: "Cody & Briana", // Swapped with Nate & Kate
+          },
+        },
+        {
+          date: "2022-09-21",
+          cancelled: true,
+        },
+        {
+          date: "2022-09-22",
+          changes: {
+            description: "7pm Bible Class",
+            bibleClassLeader: "Matt",
+          },
+        },
+        {
+          date: "2022-09-24",
+          changes: {
+            description: "7pm Art Harju",
+          },
+        },
+        {
+          date: "2022-09-25",
+          changes: {
+            description: "10:30 Art Harju",
+          },
+        },
+        {
+          date: "2022-09-28",
+          cancelled: true,
+        },
+        {
+          date: "2022-10-12",
+          changes: {
+            bibleClassLeader: "TBD",
+          },
+        },
+        {
+          date: "2022-10-19",
+          changes: {
+            bibleClassLeader: "TBD",
+          },
+        },
+        {
+          date: "2022-10-26",
+          changes: {
+            bibleClassLeader: "TBD",
+          },
         },
       ])
         // return this.httpService
