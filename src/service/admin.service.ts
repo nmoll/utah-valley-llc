@@ -129,6 +129,12 @@ export class AdminService {
           },
         },
         {
+          date: "2022-08-14",
+          changes: {
+            host: "Bryce & Emily",
+          },
+        },
+        {
           date: "2022-08-17",
           cancelled: true,
         },
@@ -143,6 +149,7 @@ export class AdminService {
           date: "2022-08-21",
           changes: {
             description: "10am Annual Meeting",
+            host: "Trav & Hayley",
           },
         },
         {
