@@ -159,6 +159,12 @@ export class AdminService {
           },
         },
         {
+          date: "2022-08-31",
+          changes: {
+            host: "Bryce & Emily", // Swapped with Trav & Hayley
+          },
+        },
+        {
           date: "2022-08-28",
           changes: {
             description: "10am Dale Johnson",
@@ -168,6 +174,12 @@ export class AdminService {
           date: "2022-09-04",
           changes: {
             host: "Cody & Briana", // Swapped with Nate & Kate
+          },
+        },
+        {
+          date: "2022-09-07",
+          changes: {
+            host: "Trav & Hayley", // Swapped with Bryce & Emily
           },
         },
         {
