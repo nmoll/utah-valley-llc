@@ -39,7 +39,16 @@ export class AdminService {
         { active: "2022-06-01", name: "Bryce & Emily" },
         { active: "2022-06-01", name: "Eric & Janell" },
         { active: "2022-06-01", name: "Nate & Kate" },
-        { active: "2022-06-01", name: "Kenton & Katie" },
+        {
+          active: "2022-06-01",
+          inactive: [
+            {
+              start: "2022-09-01",
+              end: "2022-10-31",
+            },
+          ],
+          name: "Kenton & Katie",
+        },
         { active: "2022-06-01", name: "Jeremy & Brooke" },
         { active: "2022-06-01", name: "Girls Place" },
         { active: "2022-06-01", name: "Draper Guys" },
@@ -172,6 +181,10 @@ export class AdminService {
         },
         {
           date: "2022-09-04",
+          cancelled: true,
+        },
+        {
+          date: "2022-09-11",
           changes: {
             host: "Cody & Briana", // Swapped with Nate & Kate
           },
