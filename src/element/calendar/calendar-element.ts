@@ -74,7 +74,7 @@ export class UtahCalendarElement extends LitElement {
     }
 
     .month-label {
-      width: 6rem;
+      width: 7rem;
       display: inline-block;
     }
 
