@@ -2,10 +2,12 @@ import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { CalendarEvent } from "../../model/calendar-event.model";
 import "../icon/bible-class-leader-icon-element";
+import "../icon/food-committee-icon-element";
 import "../icon/location-icon-element";
 import "../icon/pianist-icon-element";
 import "../icon/service-host-icon-element";
 import { locationData } from "./event-locations";
+import { foodCommitteeByDate } from "./food-committees";
 
 @customElement("llcuv-calendar-event")
 export class UtahCalendarEventElement extends LitElement {
@@ -40,6 +42,7 @@ export class UtahCalendarEventElement extends LitElement {
         <llcuv-service-host-icon></llcuv-service-host-icon>
         ${this.event.host.name}
       </span>
+      ${this.renderFoodCommittee()}
       ${this.event.bibleClassLeader
         ? html`
             <span class="event-detail">
@@ -71,6 +74,21 @@ export class UtahCalendarEventElement extends LitElement {
             ? html`<address>${location.address}</address>`
             : ""}
         </div>
+      </div>
+    `;
+  }
+
+  private renderFoodCommittee() {
+    const foodCommittee =
+      foodCommitteeByDate[this.event.date.format("YYYY-MM-DD")];
+    if (!foodCommittee) {
+      return "";
+    }
+
+    return html`
+      <div class="event-detail">
+        <llcuv-food-committee-icon></llcuv-food-committee-icon>
+        ${foodCommittee.people.map((name) => html`<div>${name}</div>`)}
       </div>
     `;
   }

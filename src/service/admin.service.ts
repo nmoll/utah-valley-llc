@@ -67,9 +67,11 @@ export class AdminService {
   getPianists(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-06-01", name: "Emily" },
-        { active: "2022-06-01", name: "Nate" },
         { active: "2022-06-01", name: "Hayley S" },
+        { active: "2022-10-01", name: "Kyleigh" },
+        { active: "2022-10-01", name: "Heidi" },
+        { active: "2022-06-01", name: "Nate" },
+        { active: "2022-06-01", name: "Emily" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/pianists.json`)
@@ -228,19 +230,56 @@ export class AdminService {
         {
           date: "2022-10-12",
           changes: {
-            bibleClassLeader: "Matt",
+            bibleClassLeader: "Chad",
           },
+        },
+        {
+          date: "2022-10-15",
+          changes: {
+            description: "7pm Antti Roiko",
+          },
+        },
+        {
+          date: "2022-10-16",
+          changes: {
+            description: "10:30 Communion w/ Antti Roiko",
+          },
+          twoPianists: true,
         },
         {
           date: "2022-10-19",
           changes: {
-            bibleClassLeader: "Chad",
+            bibleClassLeader: "Matt",
           },
         },
         {
           date: "2022-10-26",
           changes: {
             bibleClassLeader: "Kenton",
+          },
+        },
+        {
+          date: "2022-11-09",
+          changes: {
+            bibleClassLeader: "Trav",
+          },
+        },
+        {
+          date: "2022-11-16",
+          changes: {
+            bibleClassLeader: "John",
+          },
+        },
+        {
+          date: "2022-11-23",
+          changes: {
+            bibleClassLeader: "Cody",
+          },
+        },
+        {
+          date: "2022-11-30",
+          changes: {
+            bibleClassLeader: "Quincy",
           },
         },
       ])

@@ -25,6 +25,8 @@ export const locationData: Record<string, EventLocation> = {
   "2022-10-05": seniorCenter,
   "2022-10-09": broadbentCommunityRoom,
   "2022-10-12": seniorCenter,
+  "2022-10-15": broadbentCommunityRoom,
   "2022-10-16": broadbentCommunityRoom,
   "2022-10-19": seniorCenter,
+  "2022-10-23": broadbentCommunityRoom,
 };
