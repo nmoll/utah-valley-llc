@@ -5,7 +5,6 @@ import { ScheduleUtil } from "../util/schedule.util";
 import { ScheduleConfig } from "./schedule-config";
 import {
   BibleClassStrategy,
-  ScheduleEventStrategy,
   ScheduleEventStrategyFactory,
   ScheduleMultiplePianistsStrategy,
 } from "./schedule-strategy";
@@ -33,7 +32,7 @@ export class EventScheduler {
     }
 
     const description = scheduleStrategy.getDescription(date);
-    const host = this.scheduleHost(date, scheduleStrategy);
+    const host = this.scheduleHost(date);
     const pianists = this.schedulePianists(date);
     const bibleClassLeader = this.scheduleBibleClassLeader(date);
 
@@ -58,25 +57,10 @@ export class EventScheduler {
       .filter((event): event is CalendarEvent => !!event);
   }
 
-  private scheduleHost(
-    date: Dayjs,
-    scheduleEventStrategy: ScheduleEventStrategy
-  ): Member | null {
-    const scheduleHostStrategy =
-      scheduleEventStrategy.getScheduleHostStrategy(date);
+  private scheduleHost(date: Dayjs): Member | null {
+    const eventDates = this.getEventDates(date);
 
-    const eventDates = this.getEventDates(date).filter(
-      ScheduleUtil.dateFilter([scheduleHostStrategy])
-    );
-
-    const intialActiveMembers = this.config.hosts.filter((host) =>
-      ScheduleUtil.isMemberActive(host, date)
-    );
-    const initial = scheduleHostStrategy.getRotationOffset(intialActiveMembers);
-
-    return ScheduleUtil.scheduleMember(this.config.hosts, eventDates, {
-      initial,
-    });
+    return ScheduleUtil.scheduleMember(this.config.hosts, eventDates);
   }
 
   private schedulePianists(date: Dayjs): Member[] {

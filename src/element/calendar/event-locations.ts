@@ -1,3 +1,5 @@
+import { Dayjs } from "dayjs";
+
 export interface EventLocation {
   name: string;
   address: string;
@@ -29,4 +31,19 @@ export const locationData: Record<string, EventLocation> = {
   "2022-10-16": broadbentCommunityRoom,
   "2022-10-19": seniorCenter,
   "2022-10-23": broadbentCommunityRoom,
+};
+
+export const getLocation = (date: Dayjs): EventLocation | undefined => {
+  const location = locationData[date.format("YYYY-MM-DD")];
+
+  if (location) {
+    return location;
+  }
+
+  // if the date is Wednesday, return senior center
+  if (date.day() === 3) {
+    return seniorCenter;
+  } else {
+    return broadbentCommunityRoom;
+  }
 };

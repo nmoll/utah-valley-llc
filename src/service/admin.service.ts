@@ -36,26 +36,19 @@ export class AdminService {
   getHosts(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-06-01", name: "Bryce & Emily" },
-        { active: "2022-06-01", name: "Eric & Janell" },
-        { active: "2022-06-01", name: "Nate & Kate" },
-        {
-          active: "2022-06-01",
-          inactive: [
-            {
-              start: "2022-09-01",
-              end: "2022-10-31",
-            },
-          ],
-          name: "Kenton & Katie",
-        },
-        { active: "2022-06-01", name: "Jeremy & Brooke" },
-        { active: "2022-06-01", name: "Girls Place" },
-        { active: "2022-06-01", name: "Draper Guys" },
-        { active: "2022-06-01", name: "Matt, Chad, Alan, Sam" },
-        { active: "2022-06-01", name: "Quincy & Nora" },
-        { active: "2022-06-01", name: "Cody & Briana" },
-        { active: "2022-06-01", name: "Trav & Hayley" },
+        { active: "2022-11-01", name: "Trav & Hayley" },
+        { active: "2022-11-01", name: "Bryce & Emily" },
+        { active: "2022-11-01", name: "Nate & Kate" },
+        { active: "2022-11-01", name: "Eric & Janell" },
+        { active: "2022-11-01", name: "Jake & Suzanne" },
+        { active: "2022-11-01", name: "Kenton & Katie" },
+        { active: "2022-11-01", name: "Wyatt & Kendra" },
+        { active: "2022-11-01", name: "Jeremy & Brooke" },
+        { active: "2022-11-01", name: "Girls Place" },
+        { active: "2022-11-01", name: "Draper Guys" },
+        { active: "2022-11-01", name: "Matt, Chad, Alan, Sam" },
+        { active: "2022-11-01", name: "Quincy & Nora" },
+        { active: "2022-11-01", name: "Cody & Briana" },
       ])
 
         // return this.httpService
@@ -83,7 +76,6 @@ export class AdminService {
     return (
       Promise.resolve([
         { active: "2022-06-01", name: "Eric" },
-        { active: "2022-06-01", name: "Tristan" },
         { active: "2022-06-01", name: "Matt" },
         { active: "2022-06-01", name: "Chad" },
         { active: "2022-06-01", name: "Kenton" },
@@ -102,182 +94,43 @@ export class AdminService {
     return (
       Promise.resolve([
         {
-          changes: { description: "10am Sunday School Picnic" },
-          date: "2022-06-05",
-        },
-        { changes: { description: "7pm - Mike Kumpula" }, date: "2022-06-11" },
-        {
-          changes: { description: "10:30 Communion - Mike Kumpula" },
-          date: "2022-06-12",
-          twoPianists: true,
+          date: "2022-11-09",
+          changes: {
+            description: "Home Services",
+            host: "TBD",
+            bibleClassLeader: "none",
+          },
         },
         {
-          date: "2022-07-13",
-          changes: { host: "Hayley & Trav" },
-        },
-        {
-          date: "2022-07-24",
-          changes: { host: "Kenton & Katie" },
-        },
-        {
-          date: "2022-08-03",
-          changes: { host: "Nate & Kate" },
-        },
-        {
-          date: "2022-08-07",
-          changes: { host: "Nate & Kate", description: "10:30 Service" },
-        },
-        {
-          date: "2022-08-10",
+          date: "2022-11-16",
           cancelled: true,
         },
         {
-          date: "2022-08-11",
-          changes: {
-            description: "7pm Bible Class",
-            bibleClassLeader: "Trav",
-          },
-        },
-        {
-          date: "2022-08-14",
-          changes: {
-            host: "Bryce & Emily",
-          },
-        },
-        {
-          date: "2022-08-17",
-          cancelled: true,
-        },
-        {
-          date: "2022-08-18",
-          changes: {
-            description: "7pm Bible Class",
-            bibleClassLeader: "Cody",
-          },
-        },
-        {
-          date: "2022-08-21",
-          changes: {
-            description: "10am Annual Meeting",
-            host: "Trav & Hayley",
-          },
-        },
-        {
-          date: "2022-08-27",
-          changes: {
-            description: "7pm Dale Johnson",
-          },
-        },
-        {
-          date: "2022-08-31",
-          changes: {
-            host: "Bryce & Emily", // Swapped with Trav & Hayley
-          },
-        },
-        {
-          date: "2022-08-28",
-          changes: {
-            description: "10am Dale Johnson",
-          },
-        },
-        {
-          date: "2022-09-04",
-          cancelled: true,
-        },
-        {
-          date: "2022-09-11",
-          changes: {
-            host: "Cody & Briana", // Swapped with Nate & Kate
-          },
-        },
-        {
-          date: "2022-09-07",
-          changes: {
-            host: "Trav & Hayley", // Swapped with Bryce & Emily
-          },
-        },
-        {
-          date: "2022-09-21",
-          cancelled: true,
-        },
-        {
-          date: "2022-09-22",
-          changes: {
-            description: "7pm Bible Class",
-            bibleClassLeader: "Tristan",
-          },
-        },
-        {
-          date: "2022-09-24",
-          changes: {
-            description: "7pm Art Harju",
-          },
-        },
-        {
-          date: "2022-09-25",
-          changes: {
-            description: "10:30 Art Harju",
-          },
-        },
-        {
-          date: "2022-09-28",
-          cancelled: true,
-        },
-        {
-          date: "2022-10-02",
-          cancelled: true,
-        },
-        {
-          date: "2022-10-12",
-          changes: {
-            bibleClassLeader: "Chad",
-          },
-        },
-        {
-          date: "2022-10-15",
-          changes: {
-            description: "7pm Antti Roiko",
-          },
-        },
-        {
-          date: "2022-10-16",
-          changes: {
-            description: "10:30 Communion w/ Antti Roiko",
-          },
-          twoPianists: true,
-        },
-        {
-          date: "2022-10-19",
-          changes: {
-            bibleClassLeader: "Matt",
-          },
-        },
-        {
-          date: "2022-10-26",
+          date: "2022-11-23",
           changes: {
             bibleClassLeader: "Kenton",
           },
         },
         {
-          date: "2022-11-09",
+          date: "2022-11-30",
           changes: {
             bibleClassLeader: "Trav",
           },
         },
         {
-          date: "2022-11-16",
+          date: "2022-12-14",
           changes: {
             bibleClassLeader: "John",
           },
         },
         {
-          date: "2022-11-23",
+          date: "2022-12-21",
           changes: {
             bibleClassLeader: "Cody",
           },
         },
         {
-          date: "2022-11-30",
+          date: "2022-12-28",
           changes: {
             bibleClassLeader: "Quincy",
           },

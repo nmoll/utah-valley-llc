@@ -6,7 +6,7 @@ import "../icon/food-committee-icon-element";
 import "../icon/location-icon-element";
 import "../icon/pianist-icon-element";
 import "../icon/service-host-icon-element";
-import { locationData } from "./event-locations";
+import { getLocation } from "./event-locations";
 import { foodCommitteeByDate } from "./food-committees";
 
 @customElement("llcuv-calendar-event")
@@ -43,7 +43,8 @@ export class UtahCalendarEventElement extends LitElement {
         ${this.event.host.name}
       </span>
       ${this.renderFoodCommittee()}
-      ${this.event.bibleClassLeader
+      ${this.event.bibleClassLeader &&
+      this.event.bibleClassLeader.name !== "none"
         ? html`
             <span class="event-detail">
               <llcuv-bible-class-leader-icon></llcuv-bible-class-leader-icon>
@@ -60,7 +61,7 @@ export class UtahCalendarEventElement extends LitElement {
   }
 
   private renderLocation() {
-    const location = locationData[this.event.date.format("YYYY-MM-DD")];
+    const location = getLocation(this.event.date);
     if (!location) {
       return "";
     }

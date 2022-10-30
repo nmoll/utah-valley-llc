@@ -115,10 +115,7 @@ export class SundayMorningServiceStrategy implements ScheduleEventStrategy {
   }
 }
 
-export interface ScheduleHostStrategy extends ScheduleStrategy {
-  offsetInitialHost(): boolean;
-  getRotationOffset(hosts: Member[]): Member | null;
-}
+export interface ScheduleHostStrategy extends ScheduleStrategy {}
 
 export class ScheduleMorningHostStrategy implements ScheduleHostStrategy {
   matches(date: Dayjs): boolean {
@@ -135,17 +132,6 @@ export class ScheduleMorningHostStrategy implements ScheduleHostStrategy {
 export class ScheduleEveningHostStrategy implements ScheduleHostStrategy {
   matches(date: Dayjs): boolean {
     return date.day() !== 0;
-  }
-  offsetInitialHost(): boolean {
-    return true;
-  }
-
-  /**
-   * Offsets the rotation to the middle host so morning
-   * and evening rotations are different
-   */
-  getRotationOffset(hosts: Member[]): Member | null {
-    return hosts[Math.floor((hosts.length - 1) / 2)];
   }
 }
 

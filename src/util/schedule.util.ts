@@ -30,12 +30,11 @@ const getNextActiveMember = (
  */
 const scheduleMember = (
   members: Member[],
-  eventDates: Dayjs[],
-  options?: { initial: Member | null }
+  eventDates: Dayjs[]
 ): Member | null =>
   eventDates.reduce<Member | null>(
     (prev, eventDate) => getNextActiveMember(prev, members, eventDate),
-    options?.initial ?? null
+    null
   );
 
 /**
