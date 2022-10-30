@@ -89,7 +89,9 @@ export class UtahCalendarEventElement extends LitElement {
     return html`
       <div class="event-detail">
         <llcuv-food-committee-icon></llcuv-food-committee-icon>
-        ${foodCommittee.people.map((name) => html`<div>${name}</div>`)}
+        <div>
+          ${foodCommittee.people.map((name) => html`<div>${name}</div>`)}
+        </div>
       </div>
     `;
   }

@@ -40,9 +40,9 @@ export class AdminService {
         { active: "2022-11-01", name: "Bryce & Emily" },
         { active: "2022-11-01", name: "Nate & Kate" },
         { active: "2022-11-01", name: "Eric & Janell" },
-        { active: "2022-11-01", name: "Jake & Suzanne" },
         { active: "2022-11-01", name: "Kenton & Katie" },
         { active: "2022-11-01", name: "Wyatt & Kendra" },
+        { active: "2022-11-01", name: "Jake & Suzanne" },
         { active: "2022-11-01", name: "Jeremy & Brooke" },
         { active: "2022-11-01", name: "Girls Place" },
         { active: "2022-11-01", name: "Draper Guys" },
@@ -61,8 +61,8 @@ export class AdminService {
     return (
       Promise.resolve([
         { active: "2022-06-01", name: "Hayley S" },
-        { active: "2022-10-01", name: "Kyleigh" },
         { active: "2022-10-01", name: "Heidi" },
+        { active: "2022-10-01", name: "Kyleigh" },
         { active: "2022-06-01", name: "Nate" },
         { active: "2022-06-01", name: "Emily" },
       ])
@@ -100,6 +100,19 @@ export class AdminService {
             host: "TBD",
             bibleClassLeader: "none",
           },
+        },
+        {
+          date: "2022-11-12",
+          changes: {
+            description: "7pm Rory Sorvala",
+          },
+        },
+        {
+          date: "2022-11-13",
+          changes: {
+            description: "10:30 Communion - Rory Sorvala",
+          },
+          twoPianists: true,
         },
         {
           date: "2022-11-16",
