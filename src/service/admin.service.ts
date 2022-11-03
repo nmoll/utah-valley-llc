@@ -99,6 +99,7 @@ export class AdminService {
             description: "Home Services",
             host: "TBD",
             bibleClassLeader: "none",
+            pianists: "N/A",
           },
         },
         {
@@ -111,6 +112,7 @@ export class AdminService {
           date: "2022-11-13",
           changes: {
             description: "10:30 Communion - Rory Sorvala",
+            pianists: "Emily, Kyleigh",
           },
           twoPianists: true,
         },
@@ -129,6 +131,19 @@ export class AdminService {
           changes: {
             bibleClassLeader: "Trav",
           },
+        },
+        {
+          date: "2022-12-03",
+          changes: {
+            description: "6:30pm Christmas Program",
+          },
+        },
+        {
+          date: "2022-12-04",
+          changes: {
+            description: "10:30pm Communion - Terry Ruonavaara",
+          },
+          twoPianists: true,
         },
         {
           date: "2022-12-14",
