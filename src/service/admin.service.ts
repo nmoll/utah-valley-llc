@@ -141,7 +141,7 @@ export class AdminService {
         {
           date: "2022-12-04",
           changes: {
-            description: "10:30pm Communion - Terry Ruonavaara",
+            description: "10:30am Communion - Terry Ruonavaara",
           },
           twoPianists: true,
         },
