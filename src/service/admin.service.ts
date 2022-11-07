@@ -146,8 +146,17 @@ export class AdminService {
           twoPianists: true,
         },
         {
+          date: "2022-12-07",
+          cancelled: true,
+        },
+        {
           date: "2022-12-14",
+          cancelled: true,
+        },
+        {
+          date: "2022-12-15",
           changes: {
+            description: "7pm Bible Class",
             bibleClassLeader: "John",
           },
         },
@@ -158,8 +167,25 @@ export class AdminService {
           },
         },
         {
-          date: "2022-12-28",
+          date: "2022-12-24",
           changes: {
+            description: "4pm Christmas Eve",
+          },
+        },
+        {
+          date: "2022-12-25",
+          changes: {
+            description: "11am Christmas Day",
+          },
+        },
+        {
+          date: "2022-12-28",
+          cancelled: true,
+        },
+        {
+          date: "2022-12-29",
+          changes: {
+            description: "7pm Bible Class",
             bibleClassLeader: "Quincy",
           },
         },
