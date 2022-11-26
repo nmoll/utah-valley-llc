@@ -129,7 +129,7 @@ export class AdminService {
         {
           date: "2022-11-30",
           changes: {
-            bibleClassLeader: "Trav",
+            bibleClassLeader: "Kenton",
           },
         },
         {
@@ -156,14 +156,13 @@ export class AdminService {
         {
           date: "2022-12-15",
           changes: {
-            description: "7pm Bible Class",
-            bibleClassLeader: "John",
+            description: "7pm Xmas Song Services",
           },
         },
         {
           date: "2022-12-21",
           changes: {
-            bibleClassLeader: "Cody",
+            bibleClassLeader: "Trav",
           },
         },
         {
@@ -186,6 +185,18 @@ export class AdminService {
           date: "2022-12-29",
           changes: {
             description: "7pm Bible Class",
+            bibleClassLeader: "Cody",
+          },
+        },
+        {
+          date: "2023-01-11",
+          changes: {
+            bibleClassLeader: "John",
+          },
+        },
+        {
+          date: "2023-01-18",
+          changes: {
             bibleClassLeader: "Quincy",
           },
         },
