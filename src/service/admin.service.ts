@@ -136,6 +136,7 @@ export class AdminService {
           date: "2022-12-03",
           changes: {
             description: "6:30pm Christmas Program",
+            pianists: "Nate",
           },
         },
         {
