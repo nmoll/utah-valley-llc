@@ -151,6 +151,12 @@ export class AdminService {
           cancelled: true,
         },
         {
+          date: "2022-12-11",
+          changes: {
+            pianists: "Hayley S",
+          },
+        },
+        {
           date: "2022-12-14",
           cancelled: true,
         },
@@ -158,6 +164,13 @@ export class AdminService {
           date: "2022-12-15",
           changes: {
             description: "7pm Xmas Song Services",
+            pianists: "Nate",
+          },
+        },
+        {
+          date: "2022-12-18",
+          changes: {
+            pianists: "Emily",
           },
         },
         {
@@ -170,6 +183,7 @@ export class AdminService {
           date: "2022-12-24",
           changes: {
             description: "4pm Christmas Eve",
+            host: "Wyatt & Kendra",
           },
         },
         {
