@@ -60,7 +60,7 @@ export class AdminService {
   getPianists(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-06-01", name: "Hayley S" },
+        { active: "2022-06-01", name: "Abby" },
         { active: "2022-10-01", name: "Heidi" },
         { active: "2022-10-01", name: "Kyleigh" },
         { active: "2022-06-01", name: "Nate" },
@@ -204,15 +204,33 @@ export class AdminService {
           },
         },
         {
+          date: "2023-01-04",
+          changes: {
+            pianists: "Nate",
+          },
+        },
+        {
           date: "2023-01-11",
           changes: {
             bibleClassLeader: "John",
           },
         },
         {
+          date: "2023-01-15",
+          changes: {
+            description: "9am Annual Meeting",
+          },
+        },
+        {
           date: "2023-01-18",
           changes: {
             bibleClassLeader: "Quincy",
+          },
+        },
+        {
+          date: "2023-01-29",
+          changes: {
+            pianists: "Heidi",
           },
         },
       ])
