@@ -36,7 +36,7 @@ export class AdminService {
   getHosts(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-11-01", name: "Trav & Hayley" },
+        { active: "2022-11-01", name: "Joel & Rebecca" },
         { active: "2022-11-01", name: "Bryce & Emily" },
         { active: "2022-11-01", name: "Nate & Kate" },
         { active: "2022-11-01", name: "Eric & Janell" },
