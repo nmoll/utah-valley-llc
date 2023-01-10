@@ -233,6 +233,19 @@ export class AdminService {
             pianists: "Heidi",
           },
         },
+        {
+          date: "2023-02-11",
+          changes: {
+            description: "7pm Loren Hillukka",
+          },
+        },
+        {
+          date: "2023-02-12",
+          changes: {
+            description: "10:30am Communion - Loren Hillukka",
+          },
+          twoPianists: true,
+        },
       ])
         // return this.httpService
         //   .get<ScheduleUpdateResponse>(`${API}/scheduleUpdates.json`)
