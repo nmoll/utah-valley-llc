@@ -78,14 +78,14 @@ export class AdminService {
   getBibleClassLeaders(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-06-01", name: "Eric" },
-        { active: "2022-06-01", name: "Matt" },
         { active: "2022-06-01", name: "Chad" },
         { active: "2022-06-01", name: "Kenton" },
         { active: "2022-06-01", name: "Trav" },
-        { active: "2022-06-01", name: "John" },
         { active: "2022-06-01", name: "Cody" },
+        { active: "2022-06-01", name: "John" },
         { active: "2022-06-01", name: "Quincy" },
+        { active: "2022-06-01", name: "Eric" },
+        { active: "2022-06-01", name: "Matt" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/bibleClassLeaders.json`)
@@ -125,18 +125,6 @@ export class AdminService {
           {
             date: "2022-11-16",
             cancelled: true,
-          },
-          {
-            date: "2022-11-23",
-            changes: {
-              bibleClassLeader: "Kenton",
-            },
-          },
-          {
-            date: "2022-11-30",
-            changes: {
-              bibleClassLeader: "Kenton",
-            },
           },
           {
             date: "2022-12-03",
@@ -180,12 +168,6 @@ export class AdminService {
             },
           },
           {
-            date: "2022-12-21",
-            changes: {
-              bibleClassLeader: "Trav",
-            },
-          },
-          {
             date: "2022-12-24",
             changes: {
               description: "4pm Christmas Eve",
@@ -203,34 +185,15 @@ export class AdminService {
             cancelled: true,
           },
           {
-            date: "2022-12-29",
-            changes: {
-              description: "7pm Bible Class",
-              bibleClassLeader: "Cody",
-            },
-          },
-          {
             date: "2023-01-04",
             changes: {
               pianists: "Nate",
             },
           },
           {
-            date: "2023-01-11",
-            changes: {
-              bibleClassLeader: "John",
-            },
-          },
-          {
             date: "2023-01-15",
             changes: {
               description: "9am Annual Meeting",
-            },
-          },
-          {
-            date: "2023-01-18",
-            changes: {
-              bibleClassLeader: "Quincy",
             },
           },
           {
