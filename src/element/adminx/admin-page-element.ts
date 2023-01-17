@@ -25,7 +25,7 @@ interface ConfirmEvent {
   };
 }
 
-@customElement("llcuv-admin-page")
+@customElement("llcuv-admin-pagex")
 export class UtahAdminPageElement extends LitElement {
   static styles = [
     buttonStyles,
@@ -193,6 +193,6 @@ export class UtahAdminPageElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "llcuv-admin-page": UtahAdminPageElement;
+    "llcuv-admin-pagex": UtahAdminPageElement;
   }
 }

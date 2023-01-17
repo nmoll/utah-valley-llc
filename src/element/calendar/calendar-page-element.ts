@@ -28,12 +28,16 @@ export class UtahCalendarPageElement extends LitElement {
     WindowUtil.resize(() => {
       this.isMobile = WindowUtil.isMobile();
     });
+  }
 
-    // CalendarStore.reload();
+  connectedCallback(): void {
+    super.connectedCallback();
 
-    CalendarStore.getInstance().calendarEvents$.then((calendarEvents) => {
-      this.calendarEvents = calendarEvents;
-    });
+    CalendarStore.getInstance()
+      .reload()
+      .then((calendarEvents) => {
+        this.calendarEvents = calendarEvents;
+      });
   }
 
   render() {

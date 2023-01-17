@@ -20,6 +20,7 @@ export class CalendarStore {
   reload() {
     const instance = CalendarStore.getInstance();
     instance.calendarEvents$ = instance.load();
+    return instance.calendarEvents$;
   }
 
   private load() {

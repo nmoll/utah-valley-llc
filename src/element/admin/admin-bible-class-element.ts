@@ -73,8 +73,7 @@ export class UtahAdminBibleClassElement extends LitElement {
             (day) => html`
               <div class="item">
                 <div class="date">
-                  <span>${dayjs(day).format("DD")}</span>
-                  <span>${dayjs(day).format("MMM")}</span>
+                  <span>${dayjs(day).format("MMM DD")}</span>
                 </div>
                 <select
                   @change="${(e: Event) =>
@@ -152,18 +151,19 @@ export class UtahAdminBibleClassElement extends LitElement {
         display: flex;
         gap: 1rem;
         align-items: center;
+        font-size: 1.125rem;
       }
 
       .date {
-        display: flex;
-        flex-direction: column;
         color: var(--primary-700);
-        text-align: center;
+        width: 5rem;
+        text-align: right;
       }
 
       select {
         flex: 1;
         height: 2rem;
+        font-size: 1.25rem;
       }
     `,
   ];
