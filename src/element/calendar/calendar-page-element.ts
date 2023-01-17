@@ -29,6 +29,8 @@ export class UtahCalendarPageElement extends LitElement {
       this.isMobile = WindowUtil.isMobile();
     });
 
+    // CalendarStore.reload();
+
     CalendarStore.getInstance().calendarEvents$.then((calendarEvents) => {
       this.calendarEvents = calendarEvents;
     });

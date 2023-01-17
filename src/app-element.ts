@@ -1,6 +1,6 @@
 import { css, html, LitElement, TemplateResult } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import "./element/admin/admin-page-element";
+import "./element/admin/admin-bible-class-element";
 import "./element/calendar/calendar-page-element";
 import "./element/contact/contact-page-element";
 import "./element/donate/donate-page-element";
@@ -10,6 +10,7 @@ const routes: Record<string, TemplateResult> = {
   "/schedule": html`<llcuv-calendar-page></llcuv-calendar-page>`,
   "/contact": html`<llcuv-contact-page></llcuv-contact-page>`,
   "/donate": html`<llcuv-donate-page></llcuv-donate-page>`,
+  "/admin": html`<llcuv-admin-bible-class></llcuv-admin-bible-class>`,
 };
 
 @customElement("llcuv-app")

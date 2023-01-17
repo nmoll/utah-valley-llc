@@ -26,7 +26,10 @@ interface SerializedScheduleUpdate {
   cancelled?: boolean;
 }
 
-type ScheduleUpdateResponse = null | Array<SerializedScheduleUpdate | null>;
+type ScheduleUpdateResponse =
+  | null
+  | Record<string, SerializedScheduleUpdate>
+  | Array<SerializedScheduleUpdate>;
 
 const API = "https://llcuv-calendar-default-rtdb.firebaseio.com";
 
@@ -91,166 +94,166 @@ export class AdminService {
   }
 
   getScheduleUpdates(): Promise<ScheduleUpdate[]> {
-    return (
-      Promise.resolve([
-        {
-          date: "2022-11-09",
-          changes: {
-            description: "Home Services",
-            host: "TBD",
-            bibleClassLeader: "none",
-            pianists: "N/A",
+    return this.httpService
+      .get<ScheduleUpdateResponse>(`${API}/scheduleUpdates.json`)
+      .then(this.transformScheduleUpdatesResponse)
+      .then((scheduleUpdates) => {
+        return this.transformScheduleUpdatesResponse([
+          {
+            date: "2022-11-09",
+            changes: {
+              description: "Home Services",
+              host: "TBD",
+              bibleClassLeader: "none",
+              pianists: "N/A",
+            },
           },
-        },
-        {
-          date: "2022-11-12",
-          changes: {
-            description: "7pm Rory Sorvala",
+          {
+            date: "2022-11-12",
+            changes: {
+              description: "7pm Rory Sorvala",
+            },
           },
-        },
-        {
-          date: "2022-11-13",
-          changes: {
-            description: "10:30 Communion - Rory Sorvala",
-            pianists: "Emily, Kyleigh",
+          {
+            date: "2022-11-13",
+            changes: {
+              description: "10:30 Communion - Rory Sorvala",
+              pianists: "Emily, Kyleigh",
+            },
+            twoPianists: true,
           },
-          twoPianists: true,
-        },
-        {
-          date: "2022-11-16",
-          cancelled: true,
-        },
-        {
-          date: "2022-11-23",
-          changes: {
-            bibleClassLeader: "Kenton",
+          {
+            date: "2022-11-16",
+            cancelled: true,
           },
-        },
-        {
-          date: "2022-11-30",
-          changes: {
-            bibleClassLeader: "Kenton",
+          {
+            date: "2022-11-23",
+            changes: {
+              bibleClassLeader: "Kenton",
+            },
           },
-        },
-        {
-          date: "2022-12-03",
-          changes: {
-            description: "6:30pm Christmas Program",
-            pianists: "Nate",
+          {
+            date: "2022-11-30",
+            changes: {
+              bibleClassLeader: "Kenton",
+            },
           },
-        },
-        {
-          date: "2022-12-04",
-          changes: {
-            description: "10:30am Communion - Terry Ruonavaara",
+          {
+            date: "2022-12-03",
+            changes: {
+              description: "6:30pm Christmas Program",
+              pianists: "Nate",
+            },
           },
-          twoPianists: true,
-        },
-        {
-          date: "2022-12-07",
-          cancelled: true,
-        },
-        {
-          date: "2022-12-11",
-          changes: {
-            pianists: "Hayley S",
+          {
+            date: "2022-12-04",
+            changes: {
+              description: "10:30am Communion - Terry Ruonavaara",
+            },
+            twoPianists: true,
           },
-        },
-        {
-          date: "2022-12-14",
-          cancelled: true,
-        },
-        {
-          date: "2022-12-15",
-          changes: {
-            description: "7pm Xmas Song Services",
-            pianists: "Nate",
+          {
+            date: "2022-12-07",
+            cancelled: true,
           },
-        },
-        {
-          date: "2022-12-18",
-          changes: {
-            pianists: "Emily",
+          {
+            date: "2022-12-11",
+            changes: {
+              pianists: "Hayley S",
+            },
           },
-        },
-        {
-          date: "2022-12-21",
-          changes: {
-            bibleClassLeader: "Trav",
+          {
+            date: "2022-12-14",
+            cancelled: true,
           },
-        },
-        {
-          date: "2022-12-24",
-          changes: {
-            description: "4pm Christmas Eve",
-            host: "Wyatt & Kendra",
+          {
+            date: "2022-12-15",
+            changes: {
+              description: "7pm Xmas Song Services",
+              pianists: "Nate",
+            },
           },
-        },
-        {
-          date: "2022-12-25",
-          changes: {
-            description: "11am Christmas Day",
+          {
+            date: "2022-12-18",
+            changes: {
+              pianists: "Emily",
+            },
           },
-        },
-        {
-          date: "2022-12-28",
-          cancelled: true,
-        },
-        {
-          date: "2022-12-29",
-          changes: {
-            description: "7pm Bible Class",
-            bibleClassLeader: "Cody",
+          {
+            date: "2022-12-21",
+            changes: {
+              bibleClassLeader: "Trav",
+            },
           },
-        },
-        {
-          date: "2023-01-04",
-          changes: {
-            pianists: "Nate",
+          {
+            date: "2022-12-24",
+            changes: {
+              description: "4pm Christmas Eve",
+              host: "Wyatt & Kendra",
+            },
           },
-        },
-        {
-          date: "2023-01-11",
-          changes: {
-            bibleClassLeader: "John",
+          {
+            date: "2022-12-25",
+            changes: {
+              description: "11am Christmas Day",
+            },
           },
-        },
-        {
-          date: "2023-01-15",
-          changes: {
-            description: "9am Annual Meeting",
+          {
+            date: "2022-12-28",
+            cancelled: true,
           },
-        },
-        {
-          date: "2023-01-18",
-          changes: {
-            bibleClassLeader: "Quincy",
+          {
+            date: "2022-12-29",
+            changes: {
+              description: "7pm Bible Class",
+              bibleClassLeader: "Cody",
+            },
           },
-        },
-        {
-          date: "2023-01-29",
-          changes: {
-            pianists: "Heidi",
+          {
+            date: "2023-01-04",
+            changes: {
+              pianists: "Nate",
+            },
           },
-        },
-        {
-          date: "2023-02-11",
-          changes: {
-            description: "7pm Loren Hillukka",
+          {
+            date: "2023-01-11",
+            changes: {
+              bibleClassLeader: "John",
+            },
           },
-        },
-        {
-          date: "2023-02-12",
-          changes: {
-            description: "10:30am Communion - Loren Hillukka",
+          {
+            date: "2023-01-15",
+            changes: {
+              description: "9am Annual Meeting",
+            },
           },
-          twoPianists: true,
-        },
-      ])
-        // return this.httpService
-        //   .get<ScheduleUpdateResponse>(`${API}/scheduleUpdates.json`)
-        .then(this.transformScheduleUpdatesResponse)
-    );
+          {
+            date: "2023-01-18",
+            changes: {
+              bibleClassLeader: "Quincy",
+            },
+          },
+          {
+            date: "2023-01-29",
+            changes: {
+              pianists: "Heidi",
+            },
+          },
+          {
+            date: "2023-02-11",
+            changes: {
+              description: "7pm Loren Hillukka",
+            },
+          },
+          {
+            date: "2023-02-12",
+            changes: {
+              description: "10:30am Communion - Loren Hillukka",
+            },
+            twoPianists: true,
+          },
+        ]).concat(scheduleUpdates);
+      });
   }
 
   saveScheduleUpdate(update: ScheduleUpdate): Promise<ScheduleUpdate[]> {
@@ -311,7 +314,11 @@ export class AdminService {
       return [];
     }
 
-    return scheduleUpdates
+    const updates = Array.isArray(scheduleUpdates)
+      ? scheduleUpdates
+      : Object.values(scheduleUpdates);
+
+    return updates
       .filter((update) => !!update)
       .map((update) => {
         const result: ScheduleUpdate = {

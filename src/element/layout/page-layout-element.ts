@@ -116,6 +116,10 @@ export class PageLayoutElement extends LitElement {
       name: "Donate",
       route: "/donate",
     },
+    {
+      name: "Admin",
+      route: "/admin",
+    },
   ];
 
   render() {

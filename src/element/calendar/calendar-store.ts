@@ -7,16 +7,29 @@ import { HttpService } from "../../service/http.service";
 export class CalendarStore {
   private static INSTANCE: CalendarStore = new CalendarStore();
 
-  calendarEvents$: Promise<CalendarEvent[]>;
-
-  private adminService = new AdminService(new HttpService());
+  calendarEvents$!: Promise<CalendarEvent[]>;
 
   private constructor() {
-    this.calendarEvents$ = Promise.all([
-      this.adminService.getHosts(),
-      this.adminService.getPianists(),
-      this.adminService.getBibleClassLeaders(),
-      this.adminService.getScheduleUpdates(),
+    this.calendarEvents$ = this.load();
+  }
+
+  static getInstance() {
+    return CalendarStore.INSTANCE;
+  }
+
+  reload() {
+    const instance = CalendarStore.getInstance();
+    instance.calendarEvents$ = instance.load();
+  }
+
+  private load() {
+    const adminService = new AdminService(new HttpService());
+
+    return Promise.all([
+      adminService.getHosts(),
+      adminService.getPianists(),
+      adminService.getBibleClassLeaders(),
+      adminService.getScheduleUpdates(),
     ]).then(([hosts, pianists, bibleClassLeaders, scheduleUpdates]) => {
       const scheduler = new EventScheduler({
         hosts,
@@ -30,9 +43,5 @@ export class CalendarStore {
         dayjs().add(2, "month").endOf("month")
       );
     });
-  }
-
-  static getInstance() {
-    return CalendarStore.INSTANCE;
   }
 }
