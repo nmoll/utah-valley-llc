@@ -213,23 +213,18 @@ export class AdminService {
           {
             date: "2023-02-05",
             changes: {
-              pianists: "Heidi",
-            },
-          },
-          {
-            date: "2023-02-11",
-            changes: {
-              description: "7pm Loren Hillukka",
               pianists: "Nate",
             },
           },
           {
-            date: "2023-02-12",
+            date: "2023-02-10",
             changes: {
-              description: "10:30am Communion - Loren Hillukka",
-              pianists: "Kyleigh, Heidi",
+              description: "7pm Loren Hillukka",
             },
-            twoPianists: true,
+          },
+          {
+            date: "2023-02-11",
+            cancelled: true,
           },
           {
             date: "2023-02-15",
@@ -240,12 +235,6 @@ export class AdminService {
             changes: {
               description: "7pm Bible Class",
               bibleClassLeader: "",
-            },
-          },
-          {
-            date: "2023-02-22",
-            changes: {
-              pianists: "Nate",
             },
           },
         ]).concat(scheduleUpdates);
