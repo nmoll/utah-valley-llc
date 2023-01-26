@@ -203,17 +203,50 @@ export class AdminService {
             },
           },
           {
+            date: "2023-02-01",
+            changes: {
+              description: "7pm Home Services",
+              host: "Posted on Signal",
+              pianists: "N/A",
+            },
+          },
+          {
+            date: "2023-02-05",
+            changes: {
+              pianists: "Heidi",
+            },
+          },
+          {
             date: "2023-02-11",
             changes: {
               description: "7pm Loren Hillukka",
+              pianists: "Nate",
             },
           },
           {
             date: "2023-02-12",
             changes: {
               description: "10:30am Communion - Loren Hillukka",
+              pianists: "Kyleigh, Heidi",
             },
             twoPianists: true,
+          },
+          {
+            date: "2023-02-15",
+            cancelled: true,
+          },
+          {
+            date: "2023-02-16",
+            changes: {
+              description: "7pm Bible Class",
+              bibleClassLeader: "",
+            },
+          },
+          {
+            date: "2023-02-22",
+            changes: {
+              pianists: "Nate",
+            },
           },
         ]).concat(scheduleUpdates);
       });

@@ -17,6 +17,7 @@ const broadbentCommunityRoom: EventLocation = {
 
 export const locationData: Record<string, EventLocation> = {
   "2022-12-03": seniorCenter,
+  "2023-02-16": seniorCenter,
 };
 
 export const getLocation = (date: Dayjs): EventLocation | undefined => {
