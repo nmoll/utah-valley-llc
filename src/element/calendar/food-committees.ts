@@ -25,7 +25,7 @@ const committe5: FoodCommittee = {
 const committe6: FoodCommittee = {
   people: [
     "Wyatt & Kendra",
-    "Jake & Suzzane",
+    "Jake & Suzanne",
     // "Nathan & Marae",
     // "Joel & Rebecca",
   ],
