@@ -78,7 +78,6 @@ export class AdminService {
   getBibleClassLeaders(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-06-01", name: "Chad" },
         { active: "2022-06-01", name: "Kenton" },
         { active: "2022-06-01", name: "Trav" },
         { active: "2022-06-01", name: "Cody" },
@@ -86,6 +85,7 @@ export class AdminService {
         { active: "2022-06-01", name: "Quincy" },
         { active: "2022-06-01", name: "Eric" },
         { active: "2022-06-01", name: "Matt" },
+        { active: "2022-06-01", name: "Chad" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/bibleClassLeaders.json`)
@@ -239,7 +239,7 @@ export class AdminService {
             date: "2023-02-16",
             changes: {
               description: "7pm Bible Class",
-              bibleClassLeader: "",
+              bibleClassLeader: "Chad",
             },
           },
           {
