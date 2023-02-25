@@ -15,9 +15,22 @@ const broadbentCommunityRoom: EventLocation = {
   address: "128 North 100 East, Lehi, UT 43033",
 };
 
+const postedOnSignal: EventLocation = {
+  name: "Posted on Signal",
+  address: "",
+};
+
 export const locationData: Record<string, EventLocation> = {
   "2022-12-03": seniorCenter,
   "2023-02-16": seniorCenter,
+  "2023-03-04": seniorCenter,
+  "2023-03-11": seniorCenter,
+  "2023-03-24": seniorCenter,
+  "2023-03-30": seniorCenter,
+  "2023-04-07": seniorCenter,
+  "2023-04-11": seniorCenter,
+  "2023-04-19": postedOnSignal,
+  "2023-04-25": seniorCenter,
 };
 
 export const getLocation = (date: Dayjs): EventLocation | undefined => {

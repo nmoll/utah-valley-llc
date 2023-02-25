@@ -249,6 +249,84 @@ export class AdminService {
               pianists: "Abby",
             },
           },
+          {
+            date: "2023-03-04",
+            changes: {
+              description: "6pm Sunday School / 7:30 Church",
+            },
+          },
+          {
+            date: "2023-03-05",
+            cancelled: true,
+          },
+          {
+            date: "2023-03-11",
+            changes: {
+              description: "6pm Sunday School / 7:30 Church",
+            },
+          },
+          {
+            date: "2023-03-12",
+            cancelled: true,
+          },
+          {
+            date: "2023-03-24",
+            changes: {
+              description: "7pm Finnish Minister",
+            },
+          },
+          {
+            date: "2023-03-29",
+            cancelled: true,
+          },
+          {
+            date: "2023-03-30",
+            changes: {
+              description: "7pm Bible Class",
+            },
+          },
+          {
+            date: "2023-04-05",
+            cancelled: true,
+          },
+          {
+            date: "2023-04-07",
+            changes: {
+              description: "7pm Good Friday",
+            },
+          },
+          {
+            date: "2023-04-09",
+            changes: {
+              description: "10:30 Easter Services (no Sunday School)",
+            },
+          },
+          {
+            date: "2023-04-11",
+            changes: {
+              description: "7pm Bible Class",
+            },
+          },
+          {
+            date: "2023-04-12",
+            cancelled: true,
+          },
+          {
+            date: "2023-04-19",
+            changes: {
+              description: "7pm Home Services",
+            },
+          },
+          {
+            date: "2023-04-25",
+            changes: {
+              description: "7pm Bible Class",
+            },
+          },
+          {
+            date: "2023-04-26",
+            cancelled: true,
+          },
         ]).concat(scheduleUpdates);
       });
   }
