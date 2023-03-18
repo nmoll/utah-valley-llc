@@ -55,8 +55,8 @@ export class AdminService {
         { active: "2022-11-01", name: "Jeremy & Brooke" },
         { active: "2022-11-01", name: "Abby / Angela / Hannah" },
         { active: "2022-11-01", name: "Sean & Mandy" },
-        { active: "2022-11-01", name: "Kenton & Katie" },
         { active: "2022-11-01", name: "Wyatt & Kendra" },
+        { active: "2022-11-01", name: "Kenton & Katie" },
       ])
 
         // return this.httpService
