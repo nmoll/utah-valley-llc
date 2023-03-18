@@ -39,19 +39,24 @@ export class AdminService {
   getHosts(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-11-01", name: "Trav & Hayley" },
+        { active: "2022-11-01", name: "Jake & Suzanne" },
         { active: "2022-11-01", name: "Bryce & Emily" },
         { active: "2022-11-01", name: "Nate & Kate" },
+        { active: "2022-11-01", name: "Victoria / Kristina / Kenzie" },
+        {
+          active: "2022-11-01",
+          name: "Heidi / Claire / Maria / Lauren / Kyleigh",
+        },
+        { active: "2022-11-01", name: "Haps Guys" },
+        { active: "2022-11-01", name: "Quincy & Nora" },
+        { active: "2022-11-01", name: "Nathan & Marae" },
+        { active: "2022-11-01", name: "Trav & Hayley" },
         { active: "2022-11-01", name: "Eric & Janell" },
+        { active: "2022-11-01", name: "Jeremy & Brooke" },
+        { active: "2022-11-01", name: "Abby / Angela / Hannah" },
+        { active: "2022-11-01", name: "Sean & Mandy" },
         { active: "2022-11-01", name: "Kenton & Katie" },
         { active: "2022-11-01", name: "Wyatt & Kendra" },
-        { active: "2022-11-01", name: "Jake & Suzanne" },
-        { active: "2022-11-01", name: "Jeremy & Brooke" },
-        { active: "2022-11-01", name: "Girls Place" },
-        { active: "2022-11-01", name: "Draper Guys" },
-        { active: "2022-11-01", name: "Matt, Chad, Alan, Sam" },
-        { active: "2022-11-01", name: "Quincy & Nora" },
-        { active: "2022-11-01", name: "Cody & Briana" },
       ])
 
         // return this.httpService
@@ -283,6 +288,7 @@ export class AdminService {
             date: "2023-03-30",
             changes: {
               description: "7pm Bible Class",
+              bibleClassLeader: "Quincy",
             },
           },
           {
@@ -305,6 +311,7 @@ export class AdminService {
             date: "2023-04-11",
             changes: {
               description: "7pm Bible Class",
+              bibleClassLeader: "Eric",
             },
           },
           {
@@ -315,17 +322,51 @@ export class AdminService {
             date: "2023-04-19",
             changes: {
               description: "7pm Home Services",
+              bibleClassLeader: "N/A",
+              pianists: "N/A",
+              host: "N/A",
             },
           },
           {
             date: "2023-04-25",
             changes: {
               description: "7pm Bible Class",
+              bibleClassLeader: "Matt",
             },
           },
           {
             date: "2023-04-26",
             cancelled: true,
+          },
+          {
+            date: "2023-05-10",
+            changes: {
+              bibleClassLeader: "Chad",
+            },
+          },
+          {
+            date: "2023-05-17",
+            changes: {
+              bibleClassLeader: "Kenton",
+            },
+          },
+          {
+            date: "2023-05-24",
+            changes: {
+              bibleClassLeader: "Trav",
+            },
+          },
+          {
+            date: "2023-05-31",
+            changes: {
+              bibleClassLeader: "John",
+            },
+          },
+          {
+            date: "2023-06-07",
+            changes: {
+              bibleClassLeader: "Cody",
+            },
           },
         ]).concat(scheduleUpdates);
       });
