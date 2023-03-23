@@ -284,6 +284,16 @@ export class AdminService {
             },
           },
           {
+            date: "2023-03-25",
+            changes: {
+              description: "6pm Sunday School / 7pm Church",
+            },
+          },
+          {
+            date: "2023-03-26",
+            cancelled: true,
+          },
+          {
             date: "2023-03-29",
             cancelled: true,
           },
@@ -291,8 +301,18 @@ export class AdminService {
             date: "2023-03-30",
             changes: {
               description: "7pm Bible Class",
-              bibleClassLeader: "Quincy",
+              bibleClassLeader: "John",
             },
+          },
+          {
+            date: "2023-04-01",
+            changes: {
+              description: "6pm Sunday School / 7pm Church",
+            },
+          },
+          {
+            date: "2023-04-02",
+            cancelled: true,
           },
           {
             date: "2023-04-05",
@@ -314,11 +334,21 @@ export class AdminService {
             date: "2023-04-11",
             changes: {
               description: "7pm Bible Class",
-              bibleClassLeader: "Eric",
+              bibleClassLeader: "Quincy",
             },
           },
           {
             date: "2023-04-12",
+            cancelled: true,
+          },
+          {
+            date: "2023-04-15",
+            changes: {
+              description: "6pm Sunday School / 7pm Church",
+            },
+          },
+          {
+            date: "2023-04-16",
             cancelled: true,
           },
           {
@@ -331,10 +361,14 @@ export class AdminService {
             },
           },
           {
+            date: "2023-04-23",
+            cancelled: true,
+          },
+          {
             date: "2023-04-25",
             changes: {
               description: "7pm Bible Class",
-              bibleClassLeader: "Matt",
+              bibleClassLeader: "Eric",
             },
           },
           {
@@ -344,31 +378,31 @@ export class AdminService {
           {
             date: "2023-05-10",
             changes: {
-              bibleClassLeader: "Chad",
+              bibleClassLeader: "Matt",
             },
           },
           {
             date: "2023-05-17",
             changes: {
-              bibleClassLeader: "Kenton",
+              bibleClassLeader: "Chad",
             },
           },
           {
             date: "2023-05-24",
             changes: {
-              bibleClassLeader: "Trav",
+              bibleClassLeader: "Kenton",
             },
           },
           {
             date: "2023-05-31",
             changes: {
-              bibleClassLeader: "John",
+              bibleClassLeader: "Trav",
             },
           },
           {
             date: "2023-06-07",
             changes: {
-              bibleClassLeader: "Cody",
+              bibleClassLeader: "John",
             },
           },
         ]).concat(scheduleUpdates);

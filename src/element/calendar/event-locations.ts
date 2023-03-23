@@ -20,6 +20,11 @@ const postedOnSignal: EventLocation = {
   address: "",
 };
 
+const tbd: EventLocation = {
+  name: "TBD",
+  address: "",
+};
+
 export const locationData: Record<string, EventLocation> = {
   "2022-12-03": seniorCenter,
   "2023-02-16": seniorCenter,
@@ -28,6 +33,7 @@ export const locationData: Record<string, EventLocation> = {
   "2023-03-24": seniorCenter,
   "2023-03-30": seniorCenter,
   "2023-04-07": seniorCenter,
+  "2023-04-09": tbd,
   "2023-04-11": seniorCenter,
   "2023-04-19": postedOnSignal,
   "2023-04-25": seniorCenter,
