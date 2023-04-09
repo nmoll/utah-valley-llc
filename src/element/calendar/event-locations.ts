@@ -10,11 +10,6 @@ const seniorCenter: EventLocation = {
   address: "123 N Center Street, Lehi, UT 84043",
 };
 
-const broadbentCommunityRoom: EventLocation = {
-  name: "Broadbent Community Room",
-  address: "128 North 100 East, Lehi, UT 43033",
-};
-
 const postedOnSignal: EventLocation = {
   name: "Posted on Signal",
   address: "",
