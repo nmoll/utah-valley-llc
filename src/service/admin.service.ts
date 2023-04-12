@@ -342,16 +342,6 @@ export class AdminService {
             cancelled: true,
           },
           {
-            date: "2023-04-15",
-            changes: {
-              description: "6pm Sunday School / 7pm Church",
-            },
-          },
-          {
-            date: "2023-04-16",
-            cancelled: true,
-          },
-          {
             date: "2023-04-19",
             changes: {
               description: "7pm Home Services",
