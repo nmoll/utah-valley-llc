@@ -20,6 +20,11 @@ const cedarFort: EventLocation = {
   address: "475 100 E St, Cedar Fort, UT 84013",
 };
 
+const tbd: EventLocation = {
+  name: "TBD",
+  address: "",
+};
+
 export const locationData: Record<string, EventLocation> = {
   "2022-12-03": seniorCenter,
   "2023-02-16": seniorCenter,
@@ -32,6 +37,7 @@ export const locationData: Record<string, EventLocation> = {
   "2023-04-11": seniorCenter,
   "2023-04-19": postedOnSignal,
   "2023-04-25": seniorCenter,
+  "2023-05-20": tbd,
 };
 
 export const getLocation = (date: Dayjs): EventLocation | undefined => {

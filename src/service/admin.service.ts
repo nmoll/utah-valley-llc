@@ -380,6 +380,19 @@ export class AdminService {
             },
           },
           {
+            date: "2023-05-20",
+            changes: {
+              description: "7pm Jon Bloomquist",
+            },
+          },
+          {
+            date: "2023-05-21",
+            changes: {
+              description: "10:30 Communion - Jon Bloomquist",
+            },
+            twoPianists: true,
+          },
+          {
             date: "2023-05-24",
             changes: {
               bibleClassLeader: "Kenton",
