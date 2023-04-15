@@ -392,9 +392,21 @@ export class AdminService {
             },
           },
           {
-            date: "2023-06-07",
+            date: "2023-06-14",
+            changes: {
+              bibleClassLeader: "Cody",
+            },
+          },
+          {
+            date: "2023-06-21",
             changes: {
               bibleClassLeader: "John",
+            },
+          },
+          {
+            date: "2023-06-28",
+            changes: {
+              bibleClassLeader: "Quincy",
             },
           },
         ]).concat(scheduleUpdates);
