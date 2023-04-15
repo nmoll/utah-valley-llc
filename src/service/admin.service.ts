@@ -357,10 +357,6 @@ export class AdminService {
             },
           },
           {
-            date: "2023-04-23",
-            cancelled: true,
-          },
-          {
             date: "2023-04-25",
             changes: {
               description: "7pm Bible Class",
