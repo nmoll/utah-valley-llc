@@ -105,340 +105,335 @@ export class AdminService {
   }
 
   getScheduleUpdates(): Promise<ScheduleUpdate[]> {
-    return this.httpService
-      .get<ScheduleUpdateResponse>(`${API}/scheduleUpdates.json`)
-      .then(this.transformScheduleUpdatesResponse)
-      .then((scheduleUpdates) => {
-        return this.transformScheduleUpdatesResponse([
-          {
-            date: "2022-11-09",
-            changes: {
-              description: "Home Services",
-              host: "TBD",
-              bibleClassLeader: "none",
-              pianists: "N/A",
-            },
-          },
-          {
-            date: "2022-11-12",
-            changes: {
-              description: "7pm Rory Sorvala",
-            },
-          },
-          {
-            date: "2022-11-13",
-            changes: {
-              description: "10:30 Communion - Rory Sorvala",
-              pianists: "Emily, Kyleigh",
-            },
-            twoPianists: true,
-          },
-          {
-            date: "2022-11-16",
-            cancelled: true,
-          },
-          {
-            date: "2022-12-03",
-            changes: {
-              description: "6:30pm Christmas Program",
-              pianists: "Nate",
-            },
-          },
-          {
-            date: "2022-12-04",
-            changes: {
-              description: "10:30am Communion - Terry Ruonavaara",
-            },
-            twoPianists: true,
-          },
-          {
-            date: "2022-12-07",
-            cancelled: true,
-          },
-          {
-            date: "2022-12-11",
-            changes: {
-              pianists: "Hayley S",
-            },
-          },
-          {
-            date: "2022-12-14",
-            cancelled: true,
-          },
-          {
-            date: "2022-12-15",
-            changes: {
-              description: "7pm Xmas Song Services",
-              pianists: "Nate",
-            },
-          },
-          {
-            date: "2022-12-18",
-            changes: {
-              pianists: "Emily",
-            },
-          },
-          {
-            date: "2022-12-24",
-            changes: {
-              description: "4pm Christmas Eve",
-              host: "Wyatt & Kendra",
-            },
-          },
-          {
-            date: "2022-12-25",
-            changes: {
-              description: "11am Christmas Day",
-            },
-          },
-          {
-            date: "2022-12-28",
-            cancelled: true,
-          },
-          {
-            date: "2023-01-04",
-            changes: {
-              pianists: "Nate",
-            },
-          },
-          {
-            date: "2023-01-15",
-            changes: {
-              description: "9am Annual Meeting",
-            },
-          },
-          {
-            date: "2023-01-29",
-            changes: {
-              pianists: "Heidi",
-            },
-          },
-          {
-            date: "2023-02-01",
-            changes: {
-              description: "7pm Home Services",
-              host: "Posted on Signal",
-              pianists: "N/A",
-            },
-          },
-          {
-            date: "2023-02-05",
-            changes: {
-              pianists: "Nate",
-            },
-          },
-          {
-            date: "2023-02-10",
-            changes: {
-              description: "7pm Loren Hillukka",
-              pianists: "Nate",
-            },
-          },
-          {
-            date: "2023-02-12",
-            changes: {
-              description: "10:30 Communion - Loren Hillukka",
-              pianists: "Kyleigh, Heidi",
-            },
-            twoPianists: true,
-          },
-          {
-            date: "2023-02-15",
-            cancelled: true,
-          },
-          {
-            date: "2023-02-16",
-            changes: {
-              description: "7pm Bible Class",
-              bibleClassLeader: "Chad",
-            },
-          },
-          {
-            date: "2023-02-22",
-            changes: {
-              pianists: "Abby",
-            },
-          },
-          {
-            date: "2023-03-04",
-            changes: {
-              description: "6pm Sunday School / 7:30 Church",
-            },
-          },
-          {
-            date: "2023-03-05",
-            cancelled: true,
-          },
-          {
-            date: "2023-03-11",
-            changes: {
-              description: "6pm Sunday School / 7:30 Church",
-            },
-          },
-          {
-            date: "2023-03-12",
-            cancelled: true,
-          },
-          {
-            date: "2023-03-24",
-            changes: {
-              description: "7pm Finnish Minister",
-            },
-          },
-          {
-            date: "2023-03-25",
-            changes: {
-              description: "6pm Sunday School / 7pm Church",
-            },
-          },
-          {
-            date: "2023-03-26",
-            cancelled: true,
-          },
-          {
-            date: "2023-03-29",
-            cancelled: true,
-          },
-          {
-            date: "2023-03-30",
-            changes: {
-              description: "7pm Bible Class",
-              bibleClassLeader: "John",
-            },
-          },
-          {
-            date: "2023-04-01",
-            changes: {
-              description: "6pm Sunday School / 7pm Church",
-            },
-          },
-          {
-            date: "2023-04-02",
-            cancelled: true,
-          },
-          {
-            date: "2023-04-05",
-            cancelled: true,
-          },
-          {
-            date: "2023-04-07",
-            changes: {
-              description: "7pm Good Friday",
-            },
-          },
-          {
-            date: "2023-04-09",
-            changes: {
-              description: "10:30 Easter Services (no Sunday School)",
-            },
-          },
-          {
-            date: "2023-04-11",
-            changes: {
-              description: "7pm Bible Class",
-              bibleClassLeader: "Quincy",
-            },
-          },
-          {
-            date: "2023-04-12",
-            cancelled: true,
-          },
-          {
-            date: "2023-04-16",
-            changes: {
-              description: "9:30 Sunday School / 10:30 Church",
-            },
-          },
-          {
-            date: "2023-04-19",
-            changes: {
-              description: "7pm Home Services",
-              bibleClassLeader: "N/A",
-              pianists: "N/A",
-              host: "N/A",
-            },
-          },
-          {
-            date: "2023-04-22",
-            changes: {
-              description: "6pm Mikko Pasanen",
-            },
-          },
-          {
-            date: "2023-04-23",
-            changes: {
-              description: "10:30 Communion - Mikko Pasanen",
-            },
-            twoPianists: true,
-          },
-          {
-            date: "2023-04-25",
-            changes: {
-              description: "7pm Bible Class",
-              bibleClassLeader: "Eric",
-            },
-          },
-          {
-            date: "2023-04-26",
-            cancelled: true,
-          },
-          {
-            date: "2023-05-10",
-            changes: {
-              bibleClassLeader: "Matt",
-            },
-          },
-          {
-            date: "2023-05-17",
-            changes: {
-              bibleClassLeader: "Chad",
-            },
-          },
-          {
-            date: "2023-05-20",
-            changes: {
-              description: "7pm Jon Bloomquist",
-            },
-          },
-          {
-            date: "2023-05-21",
-            changes: {
-              description: "10:30 Communion - Jon Bloomquist",
-            },
-            twoPianists: true,
-          },
-          {
-            date: "2023-05-24",
-            changes: {
-              bibleClassLeader: "Kenton",
-            },
-          },
-          {
-            date: "2023-05-31",
-            changes: {
-              bibleClassLeader: "Trav",
-            },
-          },
-          {
-            date: "2023-06-14",
-            changes: {
-              bibleClassLeader: "Cody",
-            },
-          },
-          {
-            date: "2023-06-21",
-            changes: {
-              bibleClassLeader: "John",
-            },
-          },
-          {
-            date: "2023-06-28",
-            changes: {
-              bibleClassLeader: "Quincy",
-            },
-          },
-        ]).concat(scheduleUpdates);
-      });
+    return Promise.resolve([
+      {
+        date: "2022-11-09",
+        changes: {
+          description: "Home Services",
+          host: "TBD",
+          bibleClassLeader: "none",
+          pianists: "N/A",
+        },
+      },
+      {
+        date: "2022-11-12",
+        changes: {
+          description: "7pm Rory Sorvala",
+        },
+      },
+      {
+        date: "2022-11-13",
+        changes: {
+          description: "10:30 Communion - Rory Sorvala",
+          pianists: "Emily, Kyleigh",
+        },
+        twoPianists: true,
+      },
+      {
+        date: "2022-11-16",
+        cancelled: true,
+      },
+      {
+        date: "2022-12-03",
+        changes: {
+          description: "6:30pm Christmas Program",
+          pianists: "Nate",
+        },
+      },
+      {
+        date: "2022-12-04",
+        changes: {
+          description: "10:30am Communion - Terry Ruonavaara",
+        },
+        twoPianists: true,
+      },
+      {
+        date: "2022-12-07",
+        cancelled: true,
+      },
+      {
+        date: "2022-12-11",
+        changes: {
+          pianists: "Hayley S",
+        },
+      },
+      {
+        date: "2022-12-14",
+        cancelled: true,
+      },
+      {
+        date: "2022-12-15",
+        changes: {
+          description: "7pm Xmas Song Services",
+          pianists: "Nate",
+        },
+      },
+      {
+        date: "2022-12-18",
+        changes: {
+          pianists: "Emily",
+        },
+      },
+      {
+        date: "2022-12-24",
+        changes: {
+          description: "4pm Christmas Eve",
+          host: "Wyatt & Kendra",
+        },
+      },
+      {
+        date: "2022-12-25",
+        changes: {
+          description: "11am Christmas Day",
+        },
+      },
+      {
+        date: "2022-12-28",
+        cancelled: true,
+      },
+      {
+        date: "2023-01-04",
+        changes: {
+          pianists: "Nate",
+        },
+      },
+      {
+        date: "2023-01-15",
+        changes: {
+          description: "9am Annual Meeting",
+        },
+      },
+      {
+        date: "2023-01-29",
+        changes: {
+          pianists: "Heidi",
+        },
+      },
+      {
+        date: "2023-02-01",
+        changes: {
+          description: "7pm Home Services",
+          host: "Posted on Signal",
+          pianists: "N/A",
+        },
+      },
+      {
+        date: "2023-02-05",
+        changes: {
+          pianists: "Nate",
+        },
+      },
+      {
+        date: "2023-02-10",
+        changes: {
+          description: "7pm Loren Hillukka",
+          pianists: "Nate",
+        },
+      },
+      {
+        date: "2023-02-12",
+        changes: {
+          description: "10:30 Communion - Loren Hillukka",
+          pianists: "Kyleigh, Heidi",
+        },
+        twoPianists: true,
+      },
+      {
+        date: "2023-02-15",
+        cancelled: true,
+      },
+      {
+        date: "2023-02-16",
+        changes: {
+          description: "7pm Bible Class",
+          bibleClassLeader: "Chad",
+        },
+      },
+      {
+        date: "2023-02-22",
+        changes: {
+          pianists: "Abby",
+        },
+      },
+      {
+        date: "2023-03-04",
+        changes: {
+          description: "6pm Sunday School / 7:30 Church",
+        },
+      },
+      {
+        date: "2023-03-05",
+        cancelled: true,
+      },
+      {
+        date: "2023-03-11",
+        changes: {
+          description: "6pm Sunday School / 7:30 Church",
+        },
+      },
+      {
+        date: "2023-03-12",
+        cancelled: true,
+      },
+      {
+        date: "2023-03-24",
+        changes: {
+          description: "7pm Finnish Minister",
+        },
+      },
+      {
+        date: "2023-03-25",
+        changes: {
+          description: "6pm Sunday School / 7pm Church",
+        },
+      },
+      {
+        date: "2023-03-26",
+        cancelled: true,
+      },
+      {
+        date: "2023-03-29",
+        cancelled: true,
+      },
+      {
+        date: "2023-03-30",
+        changes: {
+          description: "7pm Bible Class",
+          bibleClassLeader: "John",
+        },
+      },
+      {
+        date: "2023-04-01",
+        changes: {
+          description: "6pm Sunday School / 7pm Church",
+        },
+      },
+      {
+        date: "2023-04-02",
+        cancelled: true,
+      },
+      {
+        date: "2023-04-05",
+        cancelled: true,
+      },
+      {
+        date: "2023-04-07",
+        changes: {
+          description: "7pm Good Friday",
+        },
+      },
+      {
+        date: "2023-04-09",
+        changes: {
+          description: "10:30 Easter Services (no Sunday School)",
+        },
+      },
+      {
+        date: "2023-04-11",
+        changes: {
+          description: "7pm Bible Class",
+          bibleClassLeader: "Quincy",
+        },
+      },
+      {
+        date: "2023-04-12",
+        cancelled: true,
+      },
+      {
+        date: "2023-04-16",
+        changes: {
+          description: "9:30 Sunday School / 10:30 Church",
+        },
+      },
+      {
+        date: "2023-04-19",
+        changes: {
+          description: "7pm Home Services",
+          bibleClassLeader: "N/A",
+          pianists: "N/A",
+          host: "N/A",
+        },
+      },
+      {
+        date: "2023-04-22",
+        changes: {
+          description: "6pm Mikko Pasanen",
+        },
+      },
+      {
+        date: "2023-04-23",
+        changes: {
+          description: "10:30 Communion - Mikko Pasanen",
+        },
+        twoPianists: true,
+      },
+      {
+        date: "2023-04-25",
+        changes: {
+          description: "7pm Bible Class",
+          bibleClassLeader: "Eric",
+        },
+      },
+      {
+        date: "2023-04-26",
+        cancelled: true,
+      },
+      {
+        date: "2023-05-10",
+        changes: {
+          bibleClassLeader: "Matt",
+        },
+      },
+      {
+        date: "2023-05-17",
+        changes: {
+          bibleClassLeader: "Chad",
+        },
+      },
+      {
+        date: "2023-05-20",
+        changes: {
+          description: "7pm Jon Bloomquist",
+        },
+      },
+      {
+        date: "2023-05-21",
+        changes: {
+          description: "10:30 Communion - Jon Bloomquist",
+        },
+        twoPianists: true,
+      },
+      {
+        date: "2023-05-24",
+        changes: {
+          bibleClassLeader: "Kenton",
+        },
+      },
+      {
+        date: "2023-05-31",
+        changes: {
+          bibleClassLeader: "Trav",
+        },
+      },
+      {
+        date: "2023-06-14",
+        changes: {
+          bibleClassLeader: "Cody",
+        },
+      },
+      {
+        date: "2023-06-21",
+        changes: {
+          bibleClassLeader: "John",
+        },
+      },
+      {
+        date: "2023-06-28",
+        changes: {
+          bibleClassLeader: "Quincy",
+        },
+      },
+    ]).then(this.transformScheduleUpdatesResponse);
   }
 
   saveScheduleUpdate(update: ScheduleUpdate): Promise<ScheduleUpdate[]> {
