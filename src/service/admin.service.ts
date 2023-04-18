@@ -60,7 +60,7 @@ export class AdminService {
         { active: "2022-11-01", name: "Eric & Janell" },
         {
           active: "2022-11-01",
-          name: "Heidi / Claire / Maria / Lauren / Kyleigh",
+          name: "Maria / Lauren / Kyleigh / Taryn / Julia",
         },
       ])
 
