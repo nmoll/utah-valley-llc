@@ -39,27 +39,29 @@ export class AdminService {
   getHosts(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-11-01", name: "Jake & Suzanne" },
-        { active: "2022-11-01", name: "Bryce & Emily" },
+        { active: "2022-11-01", name: "Sean & Mandy" },
+        { active: "2022-11-01", name: "Wyatt & Kendra" },
+        { active: "2022-11-01", name: "Kenton & Katie" },
         { active: "2022-11-01", name: "Nate & Kate" },
+        { active: "2022-11-01", name: "Bryce & Emily" },
+        { active: "2022-11-01", name: "Jake & Suzanne" },
         {
           active: "2022-11-01",
-          name: "Victoria / Kristina / Karole / Dani / Kenzie",
+          name: "Abby / Angela / Molly / Hannah / Avery",
         },
         { active: "2022-11-01", name: "Haps Guys" },
         {
           active: "2022-11-01",
-          name: "Heidi / Claire / Maria / Lauren / Kyleigh",
+          name: "Victoria / Kristina / Karole / Dani / Kenzie",
         },
         { active: "2022-11-01", name: "Quincy & Nora" },
-        { active: "2022-11-01", name: "Nathan & Marae" },
         { active: "2022-11-01", name: "Trav & Hayley" },
-        { active: "2022-11-01", name: "Eric & Janell" },
         { active: "2022-11-01", name: "Jeremy & Brooke" },
-        { active: "2022-11-01", name: "Abby / Angela / Molly / Hannah" },
-        { active: "2022-11-01", name: "Sean & Mandy" },
-        { active: "2022-11-01", name: "Wyatt & Kendra" },
-        { active: "2022-11-01", name: "Kenton & Katie" },
+        { active: "2022-11-01", name: "Eric & Janell" },
+        {
+          active: "2022-11-01",
+          name: "Heidi / Claire / Maria / Lauren / Kyleigh",
+        },
       ])
 
         // return this.httpService
@@ -355,6 +357,19 @@ export class AdminService {
               pianists: "N/A",
               host: "N/A",
             },
+          },
+          {
+            date: "2023-04-22",
+            changes: {
+              description: "6pm Mikko Pasanen",
+            },
+          },
+          {
+            date: "2023-04-23",
+            changes: {
+              description: "10:30 Communion - Mikko Pasanen",
+            },
+            twoPianists: true,
           },
           {
             date: "2023-04-25",
