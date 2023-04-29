@@ -39,12 +39,9 @@ export class AdminService {
   getHosts(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-11-01", name: "Sean & Mandy" },
-        { active: "2022-11-01", name: "Wyatt & Kendra" },
-        { active: "2022-11-01", name: "Kenton & Katie" },
-        { active: "2022-11-01", name: "Nate & Kate" },
-        { active: "2022-11-01", name: "Bryce & Emily" },
+        { active: "2022-11-01", name: "Joel & Rebecca" },
         { active: "2022-11-01", name: "Jake & Suzanne" },
+        { active: "2022-11-01", name: "Bryce & Emily" },
         {
           active: "2022-11-01",
           name: "Abby / Angela / Molly / Hannah / Avery",
@@ -62,6 +59,10 @@ export class AdminService {
           active: "2022-11-01",
           name: "Maria / Lauren / Kyleigh / Taryn / Julia",
         },
+        { active: "2022-11-01", name: "Sean & Mandy" },
+        { active: "2022-11-01", name: "Wyatt & Kendra" },
+        { active: "2022-11-01", name: "Kenton & Katie" },
+        { active: "2022-11-01", name: "Nate & Kate" },
       ])
 
         // return this.httpService
@@ -79,6 +80,7 @@ export class AdminService {
         { active: "2022-06-01", name: "Nate" },
         { active: "2022-06-01", name: "Emily" },
         { active: "2023-03-01", name: "Hayley" },
+        { active: "2023-05-10", name: "Rebecca" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/pianists.json`)
@@ -400,6 +402,7 @@ export class AdminService {
         date: "2023-05-21",
         changes: {
           description: "10:30 Communion - Jon Bloomquist",
+          pianists: "Abby, Heidi",
         },
         twoPianists: true,
       },
@@ -407,6 +410,7 @@ export class AdminService {
         date: "2023-05-24",
         changes: {
           bibleClassLeader: "Kenton",
+          pianists: "Rebecca",
         },
       },
       {
