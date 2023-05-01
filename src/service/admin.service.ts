@@ -389,7 +389,7 @@ export class AdminService {
       {
         date: "2023-05-17",
         changes: {
-          bibleClassLeader: "Chad",
+          bibleClassLeader: "Eric",
         },
       },
       {
@@ -409,32 +409,32 @@ export class AdminService {
       {
         date: "2023-05-24",
         changes: {
-          bibleClassLeader: "Kenton",
+          bibleClassLeader: "Chad",
           pianists: "Rebecca",
         },
       },
       {
         date: "2023-05-31",
         changes: {
-          bibleClassLeader: "Trav",
+          bibleClassLeader: "Kenton",
         },
       },
       {
         date: "2023-06-14",
         changes: {
-          bibleClassLeader: "Cody",
+          bibleClassLeader: "Trav",
         },
       },
       {
         date: "2023-06-21",
         changes: {
-          bibleClassLeader: "John",
+          bibleClassLeader: "Cody",
         },
       },
       {
         date: "2023-06-28",
         changes: {
-          bibleClassLeader: "Quincy",
+          bibleClassLeader: "John",
         },
       },
     ]).then(this.transformScheduleUpdatesResponse);
