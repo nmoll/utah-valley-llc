@@ -393,7 +393,7 @@ export class AdminService {
       {
         date: "2023-05-20",
         changes: {
-          description: "7pm Jon Bloomquist",
+          description: "6pm Jon Bloomquist",
         },
       },
       {
