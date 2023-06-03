@@ -10,9 +10,9 @@ const committee2: FoodCommittee = {
   people: ["Plough girls house", "Menahga girls house", "Hannah & Avery"],
 };
 
-// const committee3: FoodCommittee = {
-//   people: ["Haps Guys"],
-// };
+const committee3: FoodCommittee = {
+  people: ["Haps Guys"],
+};
 
 // const committe4: FoodCommittee = {
 //   people: ["Nate & Kate", "Sean & Mandy", "Brook & Jeremy", "Chad & Sarah"],
@@ -33,4 +33,5 @@ const committee2: FoodCommittee = {
 export const foodCommitteeByDate: Record<string, FoodCommittee> = {
   "2023-04-23": committee1,
   "2023-05-21": committee2,
+  "2023-06-11": committee3,
 };

@@ -420,6 +420,27 @@ export class AdminService {
         },
       },
       {
+        date: "2023-06-04",
+        changes: {
+          description: "10:30 Sunday School Picnic",
+          host: "N/A",
+          pianists: "N/A",
+        },
+      },
+      {
+        date: "2023-06-10",
+        changes: {
+          description: "6pm Rod Nikula",
+        },
+      },
+      {
+        date: "2023-06-11",
+        changes: {
+          description: "10:30 Communion - Rod Nikula",
+        },
+        twoPianists: true,
+      },
+      {
         date: "2023-06-14",
         changes: {
           bibleClassLeader: "Trav",
