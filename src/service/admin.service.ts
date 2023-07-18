@@ -492,34 +492,36 @@ export class AdminService {
         },
       },
       {
-        date: "2023-08-12",
-        changes: {
-          description: "6pm discussion - Dave Edwards",
-        },
-      },
-      {
-        date: "2023-08-13",
-        changes: {
-          description: "10:30 Communion - Dave Edwards",
-        },
-        twoPianists: true,
-      },
-      {
         date: "2023-08-16",
         changes: {
           bibleClassLeader: "Chad",
         },
       },
       {
+        date: "2023-08-19",
+        changes: {
+          description: "6pm discussion - Dave Edwards",
+        },
+      },
+      {
+        date: "2023-08-20",
+        changes: {
+          description: "10:30 Communion - Dave Edwards",
+        },
+        twoPianists: true,
+      },
+      {
         date: "2023-08-23",
         changes: {
           bibleClassLeader: "Kenton",
+          host: "Nate & Kate",
         },
       },
       {
         date: "2023-08-27",
         changes: {
           description: "10:30 Service - Daniel Jurmu",
+          host: "Kenton & Katie",
         },
       },
       {
