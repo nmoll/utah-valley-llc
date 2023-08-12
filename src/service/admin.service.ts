@@ -78,6 +78,7 @@ export class AdminService {
         { active: "2022-06-01", name: "Abby" },
         { active: "2022-10-01", name: "Heidi" },
         { active: "2022-10-01", name: "Kyleigh" },
+        { active: "2023-08-30", name: "Angela" },
         { active: "2022-06-01", name: "Nate" },
         { active: "2022-06-01", name: "Emily" },
         { active: "2023-03-01", name: "Hayley" },
@@ -136,15 +137,58 @@ export class AdminService {
         },
       },
       {
+        date: "2023-08-26",
+        changes: {
+          description: "7pm - Dave Edwards",
+        },
+      },
+      {
         date: "2023-08-27",
         changes: {
-          description: "10:30 Service - Daniel Jurmu",
+          description: "10:30 Communion - Dave Edwards",
         },
+        twoPianists: true,
       },
       {
         date: "2023-08-30",
         changes: {
-          bibleClassLeader: "Trav",
+          bibleClassLeader: "Cody",
+        },
+      },
+      {
+        date: "2023-09-13",
+        changes: {
+          bibleClassLeader: "John",
+        },
+      },
+      {
+        date: "2023-09-20",
+        changes: {
+          bibleClassLeader: "Quincy",
+        },
+      },
+      {
+        date: "2023-09-27",
+        changes: {
+          bibleClassLeader: "Eric",
+        },
+      },
+      {
+        date: "2023-10-11",
+        changes: {
+          bibleClassLeader: "Matt",
+        },
+      },
+      {
+        date: "2023-10-18",
+        changes: {
+          bibleClassLeader: "Chad",
+        },
+      },
+      {
+        date: "2023-10-25",
+        changes: {
+          bibleClassLeader: "Kenton",
         },
       },
     ]).then(this.transformScheduleUpdatesResponse);
