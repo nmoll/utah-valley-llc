@@ -5,12 +5,14 @@ import "./element/calendar/calendar-page-element";
 import "./element/contact/contact-page-element";
 import "./element/donate/donate-page-element";
 import "./element/layout/page-layout-element";
+import "./element/suggestion-box/suggestion-box-page-element";
 
 const routes: Record<string, TemplateResult> = {
   "/schedule": html`<llcuv-calendar-page></llcuv-calendar-page>`,
   "/contact": html`<llcuv-contact-page></llcuv-contact-page>`,
   "/donate": html`<llcuv-donate-page></llcuv-donate-page>`,
   "/admin": html`<llcuv-admin-page></llcuv-admin-page>`,
+  "/suggestion-box": html`<llcuv-suggestion-box-page></llcuv-suggestion-box-page>`,
 };
 
 @customElement("llcuv-app")

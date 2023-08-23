@@ -117,8 +117,8 @@ export class PageLayoutElement extends LitElement {
       route: "/donate",
     },
     {
-      name: "Admin",
-      route: "/admin",
+      name: "Suggestion Box",
+      route: "/suggestion-box",
     },
   ];
 
