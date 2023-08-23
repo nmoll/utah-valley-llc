@@ -75,14 +75,14 @@ export class AdminService {
   getPianists(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-06-01", name: "Abby" },
-        { active: "2022-10-01", name: "Heidi" },
-        { active: "2022-10-01", name: "Kyleigh" },
-        { active: "2023-08-30", name: "Angela" },
-        { active: "2022-06-01", name: "Nate" },
+        // { active: "2022-06-01", name: "Abby" },
         { active: "2022-06-01", name: "Emily" },
         { active: "2023-03-01", name: "Hayley" },
         { active: "2023-05-10", name: "Rebecca" },
+        { active: "2022-06-01", name: "Nate" },
+        { active: "2022-10-01", name: "Heidi" },
+        { active: "2022-10-01", name: "Kyleigh" },
+        { active: "2023-08-30", name: "Angela" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/pianists.json`)
