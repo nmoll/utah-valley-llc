@@ -119,24 +119,6 @@ export class AdminService {
         cancelled: true,
       },
       {
-        date: "2023-08-09",
-        changes: {
-          bibleClassLeader: "Matt",
-        },
-      },
-      {
-        date: "2023-08-16",
-        changes: {
-          bibleClassLeader: "Chad",
-        },
-      },
-      {
-        date: "2023-08-23",
-        changes: {
-          bibleClassLeader: "Kenton",
-        },
-      },
-      {
         date: "2023-08-26",
         changes: {
           description: "7pm - Dave Edwards",
@@ -190,6 +172,18 @@ export class AdminService {
         changes: {
           bibleClassLeader: "Kenton",
         },
+      },
+      {
+        date: "2023-09-06",
+        changes: {
+          description: "Home Services",
+          pianists: "N/A",
+          host: "N/A",
+        },
+      },
+      {
+        date: "2023-09-10",
+        cancelled: true,
       },
     ]).then(this.transformScheduleUpdatesResponse);
   }
