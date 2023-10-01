@@ -30,19 +30,29 @@ export class CalendarStore {
       adminService.getHosts(),
       adminService.getPianists(),
       adminService.getBibleClassLeaders(),
+      adminService.getServiceDirectors(),
       adminService.getScheduleUpdates(),
-    ]).then(([hosts, pianists, bibleClassLeaders, scheduleUpdates]) => {
-      const scheduler = new EventScheduler({
+    ]).then(
+      ([
         hosts,
         pianists,
         bibleClassLeaders,
+        serviceDirectors,
         scheduleUpdates,
-      });
+      ]) => {
+        const scheduler = new EventScheduler({
+          hosts,
+          pianists,
+          bibleClassLeaders,
+          serviceDirectors,
+          scheduleUpdates,
+        });
 
-      return scheduler.scheduleAll(
-        dayjs().startOf("month"),
-        dayjs().add(2, "month").endOf("month")
-      );
-    });
+        return scheduler.scheduleAll(
+          dayjs().startOf("month"),
+          dayjs().add(2, "month").endOf("month")
+        );
+      }
+    );
   }
 }

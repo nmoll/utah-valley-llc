@@ -33,6 +33,7 @@ describe("EventScheduler", () => {
     bibleClassLeaders: bibleClassLeaders,
     pianists: pianists,
     scheduleUpdates: [],
+    serviceDirectors: [],
   };
 
   describe("scheduleAll()", () => {
@@ -63,6 +64,7 @@ describe("EventScheduler", () => {
         bibleClassLeader: null,
         host: hostsByName["B"],
         pianists: [pianistsByName["C"]],
+        serviceDirector: null,
       });
     });
 

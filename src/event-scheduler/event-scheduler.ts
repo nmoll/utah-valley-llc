@@ -35,6 +35,7 @@ export class EventScheduler {
     const host = this.scheduleHost(date);
     const pianists = this.schedulePianists(date);
     const bibleClassLeader = this.scheduleBibleClassLeader(date);
+    const serviceDirector = this.scheduleServiceDirector(date);
 
     if (!host) {
       return null;
@@ -46,6 +47,7 @@ export class EventScheduler {
       host,
       pianists,
       bibleClassLeader,
+      serviceDirector,
 
       ...update?.changes,
     };
@@ -109,6 +111,19 @@ export class EventScheduler {
       this.config.bibleClassLeaders,
       eventDates
     );
+  }
+
+  private scheduleServiceDirector(date: Dayjs): Member | null {
+    const start = this.config.serviceDirectors[0].active;
+
+    const weeksSinceStart = date.diff(start, "week");
+
+    const serviceDirectors = this.config.serviceDirectors;
+    // get the service director for the week
+    const serviceDirector =
+      serviceDirectors[weeksSinceStart % serviceDirectors.length];
+
+    return serviceDirector || null;
   }
 
   /**

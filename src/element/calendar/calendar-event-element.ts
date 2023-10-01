@@ -6,7 +6,7 @@ import "../icon/food-committee-icon-element";
 import "../icon/location-icon-element";
 import "../icon/pianist-icon-element";
 import "../icon/service-host-icon-element";
-import { getLocation } from "./event-locations";
+import "../icon/service-director-icon-element";
 import { foodCommitteeByDate } from "./food-committees";
 
 @customElement("llcuv-calendar-event")
@@ -52,30 +52,14 @@ export class UtahCalendarEventElement extends LitElement {
             </span>
           `
         : ""}
+      <div class="event-detail">
+        <llcuv-service-director-icon></llcuv-service-director-icon>
+        <div>${this.event.serviceDirector?.name ?? ""}</div>
+      </div>
       <span class="event-detail">
         <llcuv-pianist-icon></llcuv-pianist-icon>
         ${this.event.pianists.map((p) => p.name).join(", ")}
       </span>
-      ${this.renderLocation()}
-    `;
-  }
-
-  private renderLocation() {
-    const location = getLocation(this.event.date);
-    if (!location) {
-      return "";
-    }
-
-    return html`
-      <div class="event-detail">
-        <llcuv-location-icon></llcuv-location-icon>
-        <div>
-          <span>${location.name}</span>
-          ${location.address
-            ? html`<address>${location.address}</address>`
-            : ""}
-        </div>
-      </div>
     `;
   }
 

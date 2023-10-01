@@ -3,7 +3,7 @@ export interface FoodCommittee {
 }
 
 const committee1: FoodCommittee = {
-  people: ["Hall girls house", "Maria & Claire", "Taryn & Julia", "Kenzie"],
+  people: ["Hall girls house", "Maria & Claire", "Taryn & Julia"],
 };
 
 const committee2: FoodCommittee = {
@@ -18,12 +18,12 @@ const committee4: FoodCommittee = {
   people: ["Nate & Kate", "Sean & Mandy", "Brook & Jeremy", "Chad & Sarah"],
 };
 
-// const committe5: FoodCommittee = {
-//   people: ['Eric & Janell', 'Bryce & Emily', 'Cody & Briana']
-// }
+const committe5: FoodCommittee = {
+  people: ["Eric & Janell", "Bryce & Emily", "Cody & Briana"],
+};
 
 // const committe6: FoodCommittee = {
-//   people: ["Trav & Hayley", "Quincy & Nora", "Kenton & Katie"],
+//   people: ["Trav & Hayley", "Quincy & Nora", "Kenton & Katie", "Jon & Hanna"],
 // };
 
 // const committee7: FoodCommittee = {
@@ -35,4 +35,5 @@ export const foodCommitteeByDate: Record<string, FoodCommittee> = {
   "2023-05-21": committee2,
   "2023-06-11": committee3,
   "2023-08-27": committee4,
+  "2023-10-08": committe5,
 };

@@ -39,12 +39,15 @@ export class AdminService {
   getHosts(): Promise<Member[]> {
     return (
       Promise.resolve([
+        // { active: "2022-11-01", name: "Wyatt & Kendra" },
+        { active: "2022-11-01", name: "Jeremy & Brooke" },
+        { active: "2022-11-01", name: "Jon & Hanna" },
+        { active: "2022-11-01", name: "Eric & Janell" },
         {
           active: "2022-11-01",
           name: "Maria / Lauren / Kyleigh / Taryn / Julia",
         },
         { active: "2022-11-01", name: "Sean & Mandy" },
-        { active: "2022-11-01", name: "Wyatt & Kendra" },
         { active: "2022-11-01", name: "Kenton & Katie" },
         { active: "2022-11-01", name: "Cody & Briana" },
         { active: "2022-11-01", name: "Nate & Kate" },
@@ -56,14 +59,9 @@ export class AdminService {
           name: "Abby / Angela / Molly / Hannah / Avery",
         },
         { active: "2022-11-01", name: "Haps Guys" },
-        {
-          active: "2022-11-01",
-          name: "Victoria / Kristina / Karole / Dani / Kenzie",
-        },
+        { active: "2022-11-01", name: "Victoria / Kristina / Karole" },
         { active: "2022-11-01", name: "Quincy & Nora" },
         { active: "2022-11-01", name: "Trav & Hayley" },
-        { active: "2022-11-01", name: "Jeremy & Brooke" },
-        { active: "2022-11-01", name: "Eric & Janell" },
       ])
 
         // return this.httpService
@@ -76,13 +74,13 @@ export class AdminService {
     return (
       Promise.resolve([
         // { active: "2022-06-01", name: "Abby" },
-        { active: "2022-06-01", name: "Emily" },
-        { active: "2023-03-01", name: "Hayley" },
-        { active: "2023-05-10", name: "Rebecca" },
-        { active: "2022-06-01", name: "Nate" },
-        { active: "2022-10-01", name: "Heidi" },
-        { active: "2022-10-01", name: "Kyleigh" },
-        { active: "2023-08-30", name: "Angela" },
+        { active: "2023-10-01", name: "Angela" },
+        { active: "2023-10-01", name: "Emily" },
+        { active: "2023-10-01", name: "Hayley" },
+        { active: "2023-10-01", name: "Rebecca" },
+        { active: "2023-10-01", name: "Nate" },
+        { active: "2023-10-01", name: "Heidi" },
+        { active: "2023-10-01", name: "Kyleigh" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/pianists.json`)
@@ -93,7 +91,6 @@ export class AdminService {
   getBibleClassLeaders(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-06-01", name: "Kenton" },
         { active: "2022-06-01", name: "Trav" },
         { active: "2022-06-01", name: "Cody" },
         { active: "2022-06-01", name: "John" },
@@ -101,6 +98,7 @@ export class AdminService {
         { active: "2022-06-01", name: "Eric" },
         { active: "2022-06-01", name: "Matt" },
         { active: "2022-06-01", name: "Chad" },
+        { active: "2022-06-01", name: "Kenton" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/bibleClassLeaders.json`)
@@ -108,82 +106,67 @@ export class AdminService {
     );
   }
 
+  getServiceDirectors(): Promise<Member[]> {
+    return Promise.resolve([
+      { active: "2023-10-01", name: "Alan" },
+      { active: "2023-10-01", name: "Trent" },
+      { active: "2023-10-01", name: "Ben" },
+      { active: "2023-10-01", name: "Jake" },
+      { active: "2023-10-01", name: "Quincy" },
+      { active: "2023-10-01", name: "Joel" },
+      { active: "2023-10-01", name: "Sean" },
+    ]).then(this.transformMembersResponse);
+  }
+
   getScheduleUpdates(): Promise<ScheduleUpdate[]> {
     return Promise.resolve([
       {
-        date: "2023-07-05",
-        cancelled: true,
+        date: "2023-10-04",
+        twoPianists: true,
       },
       {
-        date: "2023-07-09",
-        cancelled: true,
-      },
-      {
-        date: "2023-08-26",
+        date: "2023-10-07",
         changes: {
-          description: "7pm - Dave Edwards",
+          description: "6pm Discussion - Jim Moll",
         },
       },
       {
-        date: "2023-08-27",
+        date: "2023-10-08",
         changes: {
-          description: "10:30 Communion - Dave Edwards",
+          description: "10:30 Communion - Jim Moll",
         },
         twoPianists: true,
       },
       {
-        date: "2023-08-30",
+        date: "2023-10-31",
         changes: {
-          bibleClassLeader: "Cody",
+          description: "7pm - All Saints Eve",
         },
       },
       {
-        date: "2023-09-13",
-        changes: {
-          bibleClassLeader: "John",
-        },
+        date: "2023-11-01",
+        cancelled: true,
       },
       {
-        date: "2023-09-20",
-        changes: {
-          bibleClassLeader: "Quincy",
-        },
-      },
-      {
-        date: "2023-09-27",
-        changes: {
-          bibleClassLeader: "Eric",
-        },
-      },
-      {
-        date: "2023-10-11",
-        changes: {
-          bibleClassLeader: "Matt",
-        },
-      },
-      {
-        date: "2023-10-18",
-        changes: {
-          bibleClassLeader: "Chad",
-        },
-      },
-      {
-        date: "2023-10-25",
-        changes: {
-          bibleClassLeader: "Kenton",
-        },
-      },
-      {
-        date: "2023-09-06",
+        date: "2023-11-08",
         changes: {
           description: "Home Services",
           pianists: "N/A",
-          host: "N/A",
+          host: "Posted on Signal",
+          bibleClassLeader: "none",
         },
       },
       {
-        date: "2023-09-10",
-        cancelled: true,
+        date: "2023-11-11",
+        changes: {
+          description: "6pm Discussion Evening",
+        },
+      },
+      {
+        date: "2023-12-09",
+        changes: {
+          description: "6pm Christmas Program",
+        },
       },
     ]).then(this.transformScheduleUpdatesResponse);
   }

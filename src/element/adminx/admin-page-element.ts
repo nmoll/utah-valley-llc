@@ -86,20 +86,30 @@ export class UtahAdminPageElement extends LitElement {
       adminService.getHosts(),
       adminService.getPianists(),
       adminService.getBibleClassLeaders(),
+      adminService.getServiceDirectors(),
       adminService.getScheduleUpdates(),
-    ]).then(([hosts, pianists, bibleClassLeaders, scheduleUpdates]) => {
-      const scheduler = new EventScheduler({
+    ]).then(
+      ([
         hosts,
         pianists,
         bibleClassLeaders,
+        serviceDirectors,
         scheduleUpdates,
-      });
+      ]) => {
+        const scheduler = new EventScheduler({
+          hosts,
+          pianists,
+          bibleClassLeaders,
+          serviceDirectors,
+          scheduleUpdates,
+        });
 
-      this.calendarEvents = scheduler.scheduleAll(
-        dayjs(),
-        dayjs().add(35, "days")
-      );
-    });
+        this.calendarEvents = scheduler.scheduleAll(
+          dayjs(),
+          dayjs().add(35, "days")
+        );
+      }
+    );
   }
 
   render() {

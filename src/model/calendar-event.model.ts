@@ -6,6 +6,7 @@ export interface CalendarEvent {
   description: string;
   host: Member;
   bibleClassLeader: Member | null;
+  serviceDirector: Member | null;
   pianists: Member[];
 }
 

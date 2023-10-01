@@ -5,5 +5,6 @@ export interface ScheduleConfig {
   hosts: Member[];
   pianists: Member[];
   bibleClassLeaders: Member[];
+  serviceDirectors: Member[];
   scheduleUpdates: ScheduleUpdate[];
 }
