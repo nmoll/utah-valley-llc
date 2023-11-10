@@ -138,28 +138,23 @@ export class AdminService {
         twoPianists: true,
       },
       {
-        date: "2023-10-31",
-        changes: {
-          description: "7pm - All Saints Eve",
-        },
-      },
-      {
-        date: "2023-11-01",
-        cancelled: true,
-      },
-      {
-        date: "2023-11-08",
-        changes: {
-          description: "Home Services",
-          pianists: "N/A",
-          host: "Posted on Signal",
-          bibleClassLeader: "none",
-        },
-      },
-      {
         date: "2023-11-11",
         changes: {
-          description: "6pm Discussion Evening",
+          description: "6pm Roger Plough",
+        },
+      },
+      {
+        date: "2023-11-12",
+        changes: {
+          description: "10:30 Communion - Roger Plough",
+        },
+        twoPianists: true,
+      },
+      {
+        date: "2023-11-22",
+        changes: {
+          description: "7pm Church",
+          bibleClassLeader: "none",
         },
       },
       {
