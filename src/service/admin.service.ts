@@ -39,7 +39,6 @@ export class AdminService {
   getHosts(): Promise<Member[]> {
     return (
       Promise.resolve([
-        // { active: "2022-11-01", name: "Wyatt & Kendra" },
         { active: "2022-11-01", name: "Jeremy & Brooke" },
         { active: "2022-11-01", name: "Jon & Hanna" },
         { active: "2022-11-01", name: "Eric & Janell" },
@@ -53,7 +52,8 @@ export class AdminService {
         { active: "2022-11-01", name: "Nate & Kate" },
         { active: "2022-11-01", name: "Joel & Rebecca" },
         { active: "2022-11-01", name: "Jake & Suzanne" },
-        { active: "2022-11-01", name: "Bryce & Emily" },
+        // { active: "2022-11-01", name: "Bryce & Emily" },
+        { active: "2022-11-01", name: "Wyatt & Kendra" },
         {
           active: "2022-11-01",
           name: "Abby / Angela / Molly / Hannah / Avery",
@@ -74,13 +74,13 @@ export class AdminService {
     return (
       Promise.resolve([
         // { active: "2022-06-01", name: "Abby" },
-        { active: "2023-10-01", name: "Angela" },
-        { active: "2023-10-01", name: "Emily" },
-        { active: "2023-10-01", name: "Hayley" },
+        // { active: "2023-10-01", name: "Emily" },
         { active: "2023-10-01", name: "Rebecca" },
-        { active: "2023-10-01", name: "Nate" },
-        { active: "2023-10-01", name: "Heidi" },
         { active: "2023-10-01", name: "Kyleigh" },
+        { active: "2023-10-01", name: "Heidi" },
+        { active: "2023-10-01", name: "Angela" },
+        { active: "2023-10-01", name: "Nate" },
+        { active: "2023-10-01", name: "Hayley" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/pianists.json`)
@@ -91,14 +91,14 @@ export class AdminService {
   getBibleClassLeaders(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-06-01", name: "Trav" },
+        { active: "2022-06-01", name: "Kenton" },
+        { active: "2022-06-01", name: "Sean" },
         { active: "2022-06-01", name: "Cody" },
         { active: "2022-06-01", name: "John" },
         { active: "2022-06-01", name: "Quincy" },
-        { active: "2022-06-01", name: "Eric" },
         { active: "2022-06-01", name: "Matt" },
+        { active: "2022-06-01", name: "Eric" },
         { active: "2022-06-01", name: "Chad" },
-        { active: "2022-06-01", name: "Kenton" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/bibleClassLeaders.json`)
