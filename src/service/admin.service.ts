@@ -39,8 +39,6 @@ export class AdminService {
   getHosts(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-11-01", name: "Jeremy & Brooke" },
-        { active: "2022-11-01", name: "Jon & Hanna" },
         { active: "2022-11-01", name: "Eric & Janell" },
         {
           active: "2022-11-01",
@@ -62,6 +60,8 @@ export class AdminService {
         { active: "2022-11-01", name: "Victoria / Kristina / Karole" },
         { active: "2022-11-01", name: "Quincy & Nora" },
         { active: "2022-11-01", name: "Trav & Hayley" },
+        { active: "2022-11-01", name: "Jeremy & Brooke" },
+        { active: "2022-11-01", name: "Jon & Hanna" },
       ])
 
         // return this.httpService
@@ -75,12 +75,12 @@ export class AdminService {
       Promise.resolve([
         // { active: "2022-06-01", name: "Abby" },
         // { active: "2023-10-01", name: "Emily" },
+        { active: "2023-10-01", name: "Hayley" },
         { active: "2023-10-01", name: "Rebecca" },
         { active: "2023-10-01", name: "Kyleigh" },
         { active: "2023-10-01", name: "Heidi" },
         { active: "2023-10-01", name: "Angela" },
         { active: "2023-10-01", name: "Nate" },
-        { active: "2023-10-01", name: "Hayley" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/pianists.json`)
@@ -121,46 +121,53 @@ export class AdminService {
   getScheduleUpdates(): Promise<ScheduleUpdate[]> {
     return Promise.resolve([
       {
-        date: "2023-10-04",
-        twoPianists: true,
-      },
-      {
-        date: "2023-10-07",
-        changes: {
-          description: "6pm Discussion - Jim Moll",
-        },
-      },
-      {
-        date: "2023-10-08",
-        changes: {
-          description: "10:30 Communion - Jim Moll",
-        },
-        twoPianists: true,
-      },
-      {
-        date: "2023-11-11",
-        changes: {
-          description: "6pm Roger Plough",
-        },
-      },
-      {
-        date: "2023-11-12",
-        changes: {
-          description: "10:30 Communion - Roger Plough",
-        },
-        twoPianists: true,
-      },
-      {
-        date: "2023-11-22",
-        changes: {
-          description: "7pm Church",
-          bibleClassLeader: "none",
-        },
-      },
-      {
         date: "2023-12-09",
         changes: {
           description: "6pm Christmas Program",
+        },
+      },
+      {
+        date: "2023-12-24",
+        changes: {
+          description: "4pm Christmas Eve Service",
+        },
+      },
+      {
+        date: "2023-12-25",
+        changes: {
+          description: "11am Christmas Service",
+        },
+      },
+      {
+        date: "2023-12-31",
+        changes: {
+          description: "10:30 Service / 6:30 Service",
+        },
+        twoPianists: true,
+      },
+      {
+        date: "2024-01-03",
+        changes: {
+          description: "Home Services",
+        },
+      },
+      {
+        date: "2024-01-06",
+        changes: {
+          description: "6pm Discussion - Ross Fredrickson",
+        },
+      },
+      {
+        date: "2024-01-07",
+        changes: {
+          description: "10:30 Communion - Ross Fredrickson",
+        },
+        twoPianists: true,
+      },
+      {
+        date: "2024-01-14",
+        changes: {
+          description: "9:30 Annual Meeting",
         },
       },
     ]).then(this.transformScheduleUpdatesResponse);
