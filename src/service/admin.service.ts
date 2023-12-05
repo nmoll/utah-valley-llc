@@ -78,9 +78,9 @@ export class AdminService {
         { active: "2023-10-01", name: "Hayley" },
         { active: "2023-10-01", name: "Rebecca" },
         { active: "2023-10-01", name: "Kyleigh" },
-        { active: "2023-10-01", name: "Heidi" },
-        { active: "2023-10-01", name: "Angela" },
         { active: "2023-10-01", name: "Nate" },
+        { active: "2023-10-01", name: "Angela" },
+        { active: "2023-10-01", name: "Heidi" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/pianists.json`)
@@ -121,10 +121,21 @@ export class AdminService {
   getScheduleUpdates(): Promise<ScheduleUpdate[]> {
     return Promise.resolve([
       {
+        date: "2023-12-06",
+        twoPianists: true,
+      },
+      {
         date: "2023-12-09",
         changes: {
           description: "6pm Christmas Program",
         },
+      },
+      {
+        date: "2023-12-10",
+        changes: {
+          description: "10:30 Communion - Travis Ruonavaara",
+        },
+        twoPianists: true,
       },
       {
         date: "2023-12-24",
