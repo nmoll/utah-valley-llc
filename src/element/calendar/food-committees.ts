@@ -3,7 +3,7 @@ export interface FoodCommittee {
 }
 
 const committee1: FoodCommittee = {
-  people: ["Hall girls house", "Maria & Claire", "Taryn & Julia"],
+  people: ["Kristina", "Brooke", "Jodi", "Claire", "Heidi", "Taryn", "Julia"],
 };
 
 const committee2: FoodCommittee = {
@@ -43,4 +43,6 @@ export const foodCommitteeByDate: Record<string, FoodCommittee> = {
   "2023-10-08": committee5,
   "2023-11-12": committee6,
   "2023-12-10": committee7,
+  "2024-01-07": committee1,
+  "2024-01-28": committee2,
 };
