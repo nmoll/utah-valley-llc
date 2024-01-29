@@ -91,14 +91,14 @@ export class AdminService {
   getBibleClassLeaders(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-06-01", name: "Kenton" },
-        { active: "2022-06-01", name: "Sean" },
-        { active: "2022-06-01", name: "Cody" },
-        { active: "2022-06-01", name: "John" },
-        { active: "2022-06-01", name: "Quincy" },
-        { active: "2022-06-01", name: "Matt" },
-        { active: "2022-06-01", name: "Eric" },
         { active: "2022-06-01", name: "Chad" },
+        { active: "2022-06-01", name: "Sean" },
+        { active: "2022-06-01", name: "Kenton" },
+        { active: "2022-06-01", name: "John" },
+        { active: "2022-06-01", name: "Cody" },
+        { active: "2022-06-01", name: "Quincy" },
+        { active: "2022-06-01", name: "Eric" },
+        { active: "2022-06-01", name: "Matt" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/bibleClassLeaders.json`)
