@@ -39,8 +39,6 @@ export class AdminService {
   getHosts(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-11-01", name: "Haps Guys" },
-        { active: "2022-11-01", name: "Victoria / Kristina / Karole" },
         { active: "2022-11-01", name: "Quincy & Nora" },
         { active: "2022-11-01", name: "Trav & Hayley" },
         { active: "2022-11-01", name: "Jeremy & Brooke" },
@@ -60,6 +58,8 @@ export class AdminService {
           active: "2022-11-01",
           name: "Abby / Angela / Molly / Hannah / Avery",
         },
+        { active: "2022-11-01", name: "Haps Guys" },
+        { active: "2022-11-01", name: "Victoria / Kristina / Karole" },
         // { active: "2022-11-01", name: "Nate & Kate" },
         // { active: "2022-11-01", name: "Bryce & Emily" },
       ])
@@ -75,12 +75,12 @@ export class AdminService {
       Promise.resolve([
         // { active: "2022-06-01", name: "Abby" },
         // { active: "2023-10-01", name: "Emily" },
+        { active: "2023-10-01", name: "Nate" },
         { active: "2023-10-01", name: "Angela" },
         { active: "2023-10-01", name: "Heidi" },
         { active: "2023-10-01", name: "Hayley" },
         { active: "2023-10-01", name: "Rebecca" },
         { active: "2023-10-01", name: "Kyleigh" },
-        { active: "2023-10-01", name: "Nate" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/pianists.json`)
@@ -121,51 +121,6 @@ export class AdminService {
   getScheduleUpdates(): Promise<ScheduleUpdate[]> {
     return Promise.resolve([
       {
-        date: "2023-12-31",
-        changes: {
-          description: "10:30 Service / 6:30 Service",
-        },
-        twoPianists: true,
-      },
-      {
-        date: "2024-01-03",
-        changes: {
-          description: "Home Services",
-        },
-      },
-      {
-        date: "2024-01-06",
-        changes: {
-          description: "6pm Discussion - Ross Fredrickson",
-        },
-      },
-      {
-        date: "2024-01-07",
-        changes: {
-          description: "10:30 Communion - Ross Fredrickson",
-        },
-        twoPianists: true,
-      },
-      {
-        date: "2024-01-14",
-        changes: {
-          description: "9:30 Annual Meeting",
-        },
-      },
-      {
-        date: "2024-01-27",
-        changes: {
-          description: "6pm Discussion - Nathan Muhonnen",
-        },
-      },
-      {
-        date: "2024-01-28",
-        changes: {
-          description: "10:30 Communion - Nathan Muhonnen",
-        },
-        twoPianists: true,
-      },
-      {
         date: "2024-02-24",
         changes: {
           description: "6pm Discussion - Keith Moll",
@@ -177,6 +132,45 @@ export class AdminService {
           description: "10:30 Communion - Keith Moll",
         },
         twoPianists: true,
+      },
+      {
+        date: "2024-03-06",
+        changes: {
+          description: "Home Services",
+          host: "Posted on Signal",
+        },
+      },
+      {
+        date: "2024-03-18",
+        changes: {
+          description: "7pm Services - Ilkka Hakulinen",
+        },
+      },
+      {
+        date: "2024-03-19",
+        changes: {
+          description: "7pm Services - Ilkka Hakulinen",
+        },
+      },
+      {
+        date: "2024-03-20",
+        cancelled: true,
+      },
+      {
+        date: "2024-03-27",
+        cancelled: true,
+      },
+      {
+        date: "2024-03-28",
+        changes: {
+          description: "7pm Services",
+        },
+      },
+      {
+        date: "2024-03-29",
+        changes: {
+          description: "7pm Services",
+        },
       },
     ]).then(this.transformScheduleUpdatesResponse);
   }
