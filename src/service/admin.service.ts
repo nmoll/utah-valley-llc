@@ -147,14 +147,10 @@ export class AdminService {
         },
       },
       {
-        date: "2024-03-19",
+        date: "2024-03-20",
         changes: {
           description: "7pm Services - Ilkka Hakulinen",
         },
-      },
-      {
-        date: "2024-03-20",
-        cancelled: true,
       },
       {
         date: "2024-03-27",
