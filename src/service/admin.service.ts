@@ -39,15 +39,6 @@ export class AdminService {
   getHosts(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-11-01", name: "Quincy & Nora" },
-        { active: "2022-11-01", name: "Trav & Hayley" },
-        { active: "2022-11-01", name: "Jeremy & Brooke" },
-        { active: "2022-11-01", name: "Jon & Hanna" },
-        { active: "2022-11-01", name: "Eric & Janell" },
-        {
-          active: "2022-11-01",
-          name: "Maria / Lauren / Kyleigh / Taryn / Julia",
-        },
         { active: "2022-11-01", name: "Sean & Mandy" },
         { active: "2022-11-01", name: "Kenton & Katie" },
         { active: "2022-11-01", name: "Cody & Briana" },
@@ -60,6 +51,15 @@ export class AdminService {
         },
         { active: "2022-11-01", name: "Haps Guys" },
         { active: "2022-11-01", name: "Victoria / Kristina / Karole" },
+        { active: "2022-11-01", name: "Quincy & Nora" },
+        { active: "2022-11-01", name: "Trav & Hayley" },
+        { active: "2022-11-01", name: "Jon & Hanna" },
+        { active: "2022-11-01", name: "Eric & Janell" },
+        {
+          active: "2022-11-01",
+          name: "Maria / Lauren / Kyleigh / Taryn / Julia",
+        },
+        // { active: "2022-11-01", name: "Jeremy & Brooke" },
         // { active: "2022-11-01", name: "Nate & Kate" },
         // { active: "2022-11-01", name: "Bryce & Emily" },
       ])
@@ -75,12 +75,12 @@ export class AdminService {
       Promise.resolve([
         // { active: "2022-06-01", name: "Abby" },
         // { active: "2023-10-01", name: "Emily" },
-        { active: "2023-10-01", name: "Nate" },
-        { active: "2023-10-01", name: "Angela" },
         { active: "2023-10-01", name: "Heidi" },
         { active: "2023-10-01", name: "Hayley" },
         { active: "2023-10-01", name: "Rebecca" },
         { active: "2023-10-01", name: "Kyleigh" },
+        { active: "2023-10-01", name: "Nate" },
+        { active: "2023-10-01", name: "Angela" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/pianists.json`)
@@ -121,19 +121,6 @@ export class AdminService {
   getScheduleUpdates(): Promise<ScheduleUpdate[]> {
     return Promise.resolve([
       {
-        date: "2024-02-24",
-        changes: {
-          description: "6pm Discussion - Keith Moll",
-        },
-      },
-      {
-        date: "2024-02-25",
-        changes: {
-          description: "10:30 Communion - Keith Moll",
-        },
-        twoPianists: true,
-      },
-      {
         date: "2024-03-06",
         changes: {
           description: "Home Services",
@@ -165,7 +152,32 @@ export class AdminService {
       {
         date: "2024-03-29",
         changes: {
-          description: "7pm Services",
+          description: "Good Friday - Art Harju",
+        },
+      },
+      {
+        date: "2024-3-31",
+        changes: {
+          description: "Easter Sunday - Art Harju",
+        },
+      },
+      {
+        date: "2024-04-20",
+        changes: {
+          description: "6pm - Jim Moll",
+        },
+      },
+      {
+        date: "2024-04-21",
+        changes: {
+          description: "10:30 Communion - Jim Moll",
+        },
+        twoPianists: true,
+      },
+      {
+        date: "2024-04-27",
+        changes: {
+          description: "5pm Couples Evening - Brett Nikula",
         },
       },
     ]).then(this.transformScheduleUpdatesResponse);

@@ -46,4 +46,5 @@ export const foodCommitteeByDate: Record<string, FoodCommittee> = {
   "2024-01-07": committee1,
   "2024-01-28": committee2,
   "2024-02-25": committee3,
+  "2024-04-20": committee4,
 };
