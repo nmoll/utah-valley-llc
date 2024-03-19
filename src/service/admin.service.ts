@@ -146,19 +146,19 @@ export class AdminService {
       {
         date: "2024-03-28",
         changes: {
-          description: "7pm Services",
+          description: "7pm Maundy Thursday - Art Harju",
         },
       },
       {
         date: "2024-03-29",
         changes: {
-          description: "Good Friday - Art Harju",
+          description: "7pm Good Friday - Art Harju",
         },
       },
       {
         date: "2024-3-31",
         changes: {
-          description: "Easter Sunday - Art Harju",
+          description: "10:30 Easter - Art Harju",
         },
       },
       {
