@@ -148,6 +148,7 @@ export class AdminService {
         changes: {
           description: "7pm Maundy Thursday - Art Harju",
         },
+        twoPianists: true,
       },
       {
         date: "2024-03-29",
