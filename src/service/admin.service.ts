@@ -47,10 +47,13 @@ export class AdminService {
         { active: "2022-11-01", name: "Wyatt & Kendra" },
         {
           active: "2022-11-01",
-          name: "Abby / Angela / Molly / Hannah / Avery",
+          name: "Abby / Angela / Molly / Hannah / Avery / Karole",
         },
         { active: "2022-11-01", name: "Haps Guys" },
-        { active: "2022-11-01", name: "Victoria / Kristina / Karole" },
+        {
+          active: "2022-11-01",
+          name: "Victoria / Kristina / Brooke / Jodi / Adeline",
+        },
         { active: "2022-11-01", name: "Quincy & Nora" },
         { active: "2022-11-01", name: "Trav & Hayley" },
         { active: "2022-11-01", name: "Jon & Hanna" },
