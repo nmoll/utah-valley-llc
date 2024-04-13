@@ -39,8 +39,7 @@ export class AdminService {
   getHosts(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-11-01", name: "Sean & Mandy" },
-        { active: "2022-11-01", name: "Kenton & Katie" },
+        // { active: "2022-11-01", name: "Kenton & Katie" },
         { active: "2022-11-01", name: "Cody & Briana" },
         { active: "2022-11-01", name: "Joel & Rebecca" },
         { active: "2022-11-01", name: "Jake & Suzanne" },
@@ -56,15 +55,17 @@ export class AdminService {
         },
         { active: "2022-11-01", name: "Quincy & Nora" },
         { active: "2022-11-01", name: "Trav & Hayley" },
+        { active: "2022-11-01", name: "Jeremy & Brooke" },
+        { active: "2022-11-01", name: "Nate & Kate" },
+        { active: "2022-11-01", name: "Bryce & Emily" },
+        { active: "2022-11-01", name: "Chad & Sarah" },
         { active: "2022-11-01", name: "Jon & Hanna" },
         { active: "2022-11-01", name: "Eric & Janell" },
         {
           active: "2022-11-01",
           name: "Maria / Lauren / Kyleigh / Taryn / Julia",
         },
-        // { active: "2022-11-01", name: "Jeremy & Brooke" },
-        // { active: "2022-11-01", name: "Nate & Kate" },
-        // { active: "2022-11-01", name: "Bryce & Emily" },
+        { active: "2022-11-01", name: "Sean & Mandy" },
       ])
 
         // return this.httpService
@@ -77,13 +78,13 @@ export class AdminService {
     return (
       Promise.resolve([
         // { active: "2022-06-01", name: "Abby" },
-        // { active: "2023-10-01", name: "Emily" },
+        { active: "2023-10-01", name: "Emily" },
         { active: "2023-10-01", name: "Heidi" },
         { active: "2023-10-01", name: "Hayley" },
-        { active: "2023-10-01", name: "Rebecca" },
         { active: "2023-10-01", name: "Kyleigh" },
-        { active: "2023-10-01", name: "Nate" },
+        { active: "2023-10-01", name: "Rebecca" },
         { active: "2023-10-01", name: "Angela" },
+        { active: "2023-10-01", name: "Nate" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/pianists.json`)
@@ -94,14 +95,14 @@ export class AdminService {
   getBibleClassLeaders(): Promise<Member[]> {
     return (
       Promise.resolve([
-        { active: "2022-06-01", name: "Chad" },
-        { active: "2022-06-01", name: "Sean" },
-        { active: "2022-06-01", name: "Kenton" },
-        { active: "2022-06-01", name: "John" },
-        { active: "2022-06-01", name: "Cody" },
-        { active: "2022-06-01", name: "Quincy" },
         { active: "2022-06-01", name: "Eric" },
         { active: "2022-06-01", name: "Matt" },
+        { active: "2022-06-01", name: "Chad" },
+        { active: "2022-06-01", name: "Kenton" },
+        { active: "2022-06-01", name: "Quincy" },
+        { active: "2022-06-01", name: "Sean" },
+        { active: "2022-06-01", name: "Cody" },
+        { active: "2022-06-01", name: "John" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/bibleClassLeaders.json`)
@@ -124,48 +125,6 @@ export class AdminService {
   getScheduleUpdates(): Promise<ScheduleUpdate[]> {
     return Promise.resolve([
       {
-        date: "2024-03-06",
-        changes: {
-          description: "Home Services",
-          host: "Posted on Signal",
-        },
-      },
-      {
-        date: "2024-03-18",
-        changes: {
-          description: "7pm Services - Ilkka Hakulinen",
-        },
-      },
-      {
-        date: "2024-03-20",
-        changes: {
-          description: "7pm Services - Ilkka Hakulinen",
-        },
-      },
-      {
-        date: "2024-03-27",
-        cancelled: true,
-      },
-      {
-        date: "2024-03-28",
-        changes: {
-          description: "7pm Maundy Thursday - Art Harju",
-        },
-        twoPianists: true,
-      },
-      {
-        date: "2024-03-29",
-        changes: {
-          description: "7pm Good Friday - Art Harju",
-        },
-      },
-      {
-        date: "2024-3-31",
-        changes: {
-          description: "10:30 Easter - Art Harju",
-        },
-      },
-      {
         date: "2024-04-20",
         changes: {
           description: "6pm - Jim Moll",
@@ -182,6 +141,24 @@ export class AdminService {
         date: "2024-04-27",
         changes: {
           description: "5pm Couples Evening - Brett Nikula",
+        },
+      },
+      {
+        date: "2024-05-01",
+        changes: {
+          description: "7pm Home Services",
+        },
+      },
+      {
+        date: "2024-05-04",
+        changes: {
+          description: "6pm Youth Discussion",
+        },
+      },
+      {
+        date: "2024-05-05",
+        changes: {
+          description: "10:30 Sunday School Picnic",
         },
       },
     ]).then(this.transformScheduleUpdatesResponse);
