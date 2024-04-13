@@ -24,7 +24,7 @@ const committee4: FoodCommittee = {
 };
 
 const committee5: FoodCommittee = {
-  people: ["Nate & Kate", "Sean & Mandy", "Brook & Jeremy", "Chad & Sarah"],
+  people: ["Nate & Kate", "Sean & Mandy", "Jeremy & Brooke", "Chad & Sarah"],
 };
 
 // const committee6: FoodCommittee = {
