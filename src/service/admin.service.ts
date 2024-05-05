@@ -139,7 +139,7 @@ export class AdminService {
       {
         date: "2024-05-05",
         changes: {
-          description: "10:30 Sunday School Picnic - Daren Hendrickson",
+          description: "10:30 Services - Daren Hendrickson",
         },
       },
     ]).then(this.transformScheduleUpdatesResponse);
