@@ -35,6 +35,9 @@ export class UtahCalendarEventElement extends LitElement {
   @property()
   event!: CalendarEvent;
 
+  @property()
+  bibleClassLeaders!: Record<string, string>;
+
   render() {
     return html`
       <span class="event-description">${this.event.description}</span>
@@ -42,16 +45,7 @@ export class UtahCalendarEventElement extends LitElement {
         <llcuv-service-host-icon></llcuv-service-host-icon>
         ${this.event.host.name}
       </span>
-      ${this.renderFoodCommittee()}
-      ${this.event.bibleClassLeader &&
-      this.event.bibleClassLeader.name !== "none"
-        ? html`
-            <span class="event-detail">
-              <llcuv-bible-class-leader-icon></llcuv-bible-class-leader-icon>
-              ${this.event.bibleClassLeader.name}
-            </span>
-          `
-        : ""}
+      ${this.renderFoodCommittee()} ${this.renderBibleClassLeader()}
       <div class="event-detail">
         <llcuv-service-director-icon></llcuv-service-director-icon>
         <div>${this.event.serviceDirector?.name ?? ""}</div>
@@ -59,6 +53,20 @@ export class UtahCalendarEventElement extends LitElement {
       <span class="event-detail">
         <llcuv-pianist-icon></llcuv-pianist-icon>
         ${this.event.pianists.map((p) => p.name).join(", ")}
+      </span>
+    `;
+  }
+
+  private renderBibleClassLeader() {
+    const bibleClassLeader =
+      this.bibleClassLeaders[this.event.date.format("M/D/YYYY")];
+    if (!bibleClassLeader) {
+      return "";
+    }
+    return html`
+      <span class="event-detail">
+        <llcuv-bible-class-leader-icon></llcuv-bible-class-leader-icon>
+        ${bibleClassLeader}
       </span>
     `;
   }

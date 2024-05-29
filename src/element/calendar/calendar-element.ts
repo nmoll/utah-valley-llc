@@ -7,6 +7,8 @@ import { ScheduleUtil } from "../../util/schedule.util";
 import "../icon/chevron-left-icon-element";
 import "../icon/chevron-right-icon-element";
 import "./calendar-event-element";
+import { BibleClassLeaderStore } from "./bible-class-leader-store";
+
 @customElement("llcuv-calendar")
 export class UtahCalendarElement extends LitElement {
   static styles = css`
@@ -94,6 +96,40 @@ export class UtahCalendarElement extends LitElement {
   @state()
   month = dayjs();
 
+  @state()
+  bibleClassLeaderState:
+    | {
+        type: "initial";
+      }
+    | {
+        type: "loading";
+      }
+    | {
+        type: "loaded";
+        bibleClassLeaders: Record<string, string>;
+      } = {
+    type: "initial",
+  };
+
+  constructor() {
+    super();
+    this.loadBibleClassLeaders();
+  }
+
+  private async loadBibleClassLeaders() {
+    if (this.bibleClassLeaderState.type !== "initial") {
+      return;
+    }
+
+    const bibleClassLeaderStore = new BibleClassLeaderStore();
+    const bibleClassLeaders =
+      await bibleClassLeaderStore.getBibleClassLeaders();
+    this.bibleClassLeaderState = {
+      type: "loaded",
+      bibleClassLeaders,
+    };
+  }
+
   render() {
     return html`
       <llcuv-calendar-header>
@@ -128,6 +164,10 @@ export class UtahCalendarElement extends LitElement {
               ${event
                 ? html`<llcuv-calendar-event
                     .event="${event}"
+                    .bibleClassLeaders="${this.bibleClassLeaderState.type ===
+                    "loaded"
+                      ? this.bibleClassLeaderState.bibleClassLeaders
+                      : {}}"
                   ></llcuv-calendar-event>`
                 : ""}
             </div>
