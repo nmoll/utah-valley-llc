@@ -59,6 +59,9 @@ export class UtahCalendarMobileElement extends LitElement {
   @property()
   events!: CalendarEvent[];
 
+  @property()
+  bibleClassLeaders!: Record<string, string>;
+
   render() {
     const futureEvents = this.events.filter(
       (event) => !event.date.isBefore(dayjs(), "day")
@@ -90,6 +93,7 @@ export class UtahCalendarMobileElement extends LitElement {
                 <div class="day-details">
                   <llcuv-calendar-event
                     .event="${event}"
+                    .bibleClassLeaders="${this.bibleClassLeaders}"
                   ></llcuv-calendar-event>
                 </div>
               </div>

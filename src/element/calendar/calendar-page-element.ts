@@ -6,6 +6,10 @@ import "./calendar-element";
 import "./calendar-header-element";
 import "./calendar-mobile-element";
 import { CalendarStore } from "./calendar-store";
+import {
+  BibleClassLeaderState,
+  BibleClassLeaderStore,
+} from "./bible-class-leader-store";
 
 @customElement("llcuv-calendar-page")
 export class UtahCalendarPageElement extends LitElement {
@@ -21,6 +25,11 @@ export class UtahCalendarPageElement extends LitElement {
 
   @state()
   calendarEvents: CalendarEvent[] = [];
+
+  @state()
+  bibleClassLeaderState: BibleClassLeaderState = {
+    type: "initial",
+  };
 
   constructor() {
     super();
@@ -38,6 +47,26 @@ export class UtahCalendarPageElement extends LitElement {
       .then((calendarEvents) => {
         this.calendarEvents = calendarEvents;
       });
+
+    this.loadBibleClassLeaders();
+  }
+
+  private async loadBibleClassLeaders() {
+    if (this.bibleClassLeaderState.type !== "initial") {
+      return;
+    }
+
+    this.bibleClassLeaderState = {
+      type: "loading",
+    };
+
+    const bibleClassLeaderStore = new BibleClassLeaderStore();
+    const bibleClassLeaders =
+      await bibleClassLeaderStore.getBibleClassLeaders();
+    this.bibleClassLeaderState = {
+      type: "loaded",
+      bibleClassLeaders,
+    };
   }
 
   render() {
@@ -45,12 +74,19 @@ export class UtahCalendarPageElement extends LitElement {
       return "";
     }
 
+    const bibleClassLeaders =
+      this.bibleClassLeaderState.type === "loaded"
+        ? this.bibleClassLeaderState.bibleClassLeaders
+        : {};
+
     return this.isMobile
       ? html`<llcuv-calendar-mobile
           .events="${this.calendarEvents}"
+          .bibleClassLeaders="${bibleClassLeaders}"
         ></llcuv-calendar-mobile>`
       : html`<llcuv-calendar
           .events="${this.calendarEvents}"
+          .bibleClassLeaders="${bibleClassLeaders}"
         ></llcuv-calendar>`;
   }
 }

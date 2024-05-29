@@ -4,6 +4,18 @@ interface SpreadsheetResponse {
 
 const sheetsApiKey = import.meta.env.VITE_GOOGLE_SHEETS_API_KEY;
 
+export type BibleClassLeaderState =
+  | {
+      type: "initial";
+    }
+  | {
+      type: "loading";
+    }
+  | {
+      type: "loaded";
+      bibleClassLeaders: Record<string, string>;
+    };
+
 export class BibleClassLeaderStore {
   async getBibleClassLeaders(): Promise<Record<string, string>> {
     try {
