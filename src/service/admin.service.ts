@@ -40,7 +40,6 @@ export class AdminService {
     return (
       Promise.resolve([
         // { active: "2022-11-01", name: "Kenton & Katie" },
-        { active: "2022-11-01", name: "Jake & Suzanne" },
         { active: "2022-11-01", name: "Wyatt & Kendra" },
         {
           active: "2022-11-01",
@@ -66,6 +65,7 @@ export class AdminService {
         { active: "2022-11-01", name: "Sean & Mandy" },
         { active: "2022-11-01", name: "Cody & Briana" },
         { active: "2022-11-01", name: "Joel & Rebecca" },
+        { active: "2022-11-01", name: "Jake & Suzanne" },
       ])
 
         // return this.httpService
@@ -78,13 +78,13 @@ export class AdminService {
     return (
       Promise.resolve([
         // { active: "2022-06-01", name: "Abby" },
-        { active: "2023-10-01", name: "Kyleigh" },
         { active: "2023-10-01", name: "Rebecca" },
         { active: "2023-10-01", name: "Angela" },
         { active: "2023-10-01", name: "Nate" },
         { active: "2023-10-01", name: "Emily" },
         { active: "2023-10-01", name: "Heidi" },
         { active: "2023-10-01", name: "Hayley" },
+        { active: "2023-10-01", name: "Kyleigh" },
       ])
         // return this.httpService
         //   .get<MemberResponse>(`${API}/pianists.json`)
@@ -125,22 +125,17 @@ export class AdminService {
   getScheduleUpdates(): Promise<ScheduleUpdate[]> {
     return Promise.resolve([
       {
-        date: "2024-05-01",
+        date: "2024-06-29",
         changes: {
-          description: "7pm Home Services",
+          description: "6pm Discussion - George Koivukangas",
         },
       },
       {
-        date: "2024-05-04",
+        date: "2024-06-30",
         changes: {
-          description: "6pm Youth Discussion - Daren Hendrickson",
+          description: "10:30 Communion - George Koivukangas",
         },
-      },
-      {
-        date: "2024-05-05",
-        changes: {
-          description: "10:30 Services - Daren Hendrickson",
-        },
+        twoPianists: true,
       },
     ]).then(this.transformScheduleUpdatesResponse);
   }
