@@ -39,22 +39,6 @@ export class AdminService {
   getHosts(): Promise<Member[]> {
     return (
       Promise.resolve([
-        // { active: "2022-11-01", name: "Kenton & Katie" },
-        { active: "2022-11-01", name: "Wyatt & Kendra" },
-        {
-          active: "2022-11-01",
-          name: "Abby / Angela / Molly / Hannah / Avery / Karole",
-        },
-        { active: "2022-11-01", name: "Haps Guys" },
-        {
-          active: "2022-11-01",
-          name: "Victoria / Kristina / Brooke / Jodi / Adeline",
-        },
-        { active: "2022-11-01", name: "Quincy & Nora" },
-        { active: "2022-11-01", name: "Trav & Hayley" },
-        { active: "2022-11-01", name: "Jeremy & Brooke" },
-        { active: "2022-11-01", name: "Chad & Sarah" },
-        { active: "2022-11-01", name: "Bryce & Emily" },
         { active: "2022-11-01", name: "Nate & Kate" },
         { active: "2022-11-01", name: "Jon & Hanna" },
         { active: "2022-11-01", name: "Eric & Janell" },
@@ -66,6 +50,19 @@ export class AdminService {
         { active: "2022-11-01", name: "Cody & Briana" },
         { active: "2022-11-01", name: "Joel & Rebecca" },
         { active: "2022-11-01", name: "Jake & Suzanne" },
+        { active: "2022-11-01", name: "Wyatt & Kendra" },
+        {
+          active: "2022-11-01",
+          name: "Abby / Angela / Molly / Hannah / Avery / Karole",
+        },
+        { active: "2022-11-01", name: "Haps Guys" },
+        { active: "2022-11-01", name: "Kristina / Brooke / Jodi / Adeline" },
+        { active: "2022-11-01", name: "Quincy & Nora" },
+        { active: "2022-11-01", name: "Trav & Hayley" },
+        { active: "2022-11-01", name: "Jeremy & Brooke" },
+        { active: "2022-11-01", name: "Kenton & Katie" },
+        { active: "2022-11-01", name: "Chad & Sarah" },
+        { active: "2022-11-01", name: "Bryce & Emily" },
       ])
 
         // return this.httpService
