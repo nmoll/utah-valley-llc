@@ -120,21 +120,7 @@ export class AdminService {
   }
 
   getScheduleUpdates(): Promise<ScheduleUpdate[]> {
-    return Promise.resolve([
-      {
-        date: "2024-06-29",
-        changes: {
-          description: "6pm Discussion - George Koivukangas",
-        },
-      },
-      {
-        date: "2024-06-30",
-        changes: {
-          description: "10:30 Communion - George Koivukangas",
-        },
-        twoPianists: true,
-      },
-    ]).then(this.transformScheduleUpdatesResponse);
+    return Promise.resolve([]).then(this.transformScheduleUpdatesResponse);
   }
 
   saveScheduleUpdate(update: ScheduleUpdate): Promise<ScheduleUpdate[]> {
