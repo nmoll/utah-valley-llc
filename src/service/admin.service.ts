@@ -78,8 +78,8 @@ export class AdminService {
         { active: "2023-10-01", name: "Rebecca" },
         { active: "2023-10-01", name: "Angela" },
         { active: "2023-10-01", name: "Nate" },
-        { active: "2023-10-01", name: "Emily" },
         { active: "2023-10-01", name: "Heidi" },
+        { active: "2023-10-01", name: "Emily" },
         { active: "2023-10-01", name: "Hayley" },
         { active: "2023-10-01", name: "Kyleigh" },
       ])
@@ -120,7 +120,48 @@ export class AdminService {
   }
 
   getScheduleUpdates(): Promise<ScheduleUpdate[]> {
-    return Promise.resolve([]).then(this.transformScheduleUpdatesResponse);
+    return Promise.resolve([
+      {
+        date: "2024-07-31",
+        changes: {
+          description: "7pm Song Services",
+          bibleClassLeader: "",
+        },
+        twoPianists: true,
+      },
+      {
+        date: "2024-08-07",
+        changes: {
+          description: "7pm Bible Class",
+        },
+      },
+      {
+        date: "2024-08-17",
+        changes: {
+          description: "4pm Services/6:30 Discussion - Erkki Joensuu",
+        },
+      },
+      {
+        date: "2024-08-18",
+        changes: {
+          description: "10:30 Communion - Erkki Joensuu",
+        },
+        twoPianists: true,
+      },
+      {
+        date: "2024-09-07",
+        changes: {
+          description: "6pm Discussion - Rick Nevela",
+        },
+      },
+      {
+        date: "2024-09-08",
+        changes: {
+          description: "10:30 Communion - Rick Nevela",
+        },
+        twoPianists: true,
+      },
+    ]).then(this.transformScheduleUpdatesResponse);
   }
 
   saveScheduleUpdate(update: ScheduleUpdate): Promise<ScheduleUpdate[]> {
